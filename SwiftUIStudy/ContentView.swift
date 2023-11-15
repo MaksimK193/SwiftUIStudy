@@ -11,6 +11,17 @@ struct ContentView: View {
     @State var isSideBarOpened = false
     
     var body: some View {
+        
+        let drag = DragGesture()
+            .onEnded { gesture in
+                print(gesture.location.x, gesture.translation.width)
+                if gesture.location.x < 170 && gesture.translation.width > 30 {
+                    withAnimation {
+                        isSideBarOpened.toggle()
+                    }
+                }
+            }
+        
         ZStack {
             NavigationStack {
                 Text("Hello world!")
@@ -24,7 +35,7 @@ struct ContentView: View {
                         }
                     }
             }
-            
+            .gesture(drag)
             SidebarView(isSidebarOpened: $isSideBarOpened)
         }
     }
