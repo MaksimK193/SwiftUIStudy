@@ -8,20 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isSideBarOpened = false
+    @State var isSideBarOpened = false
     
     var body: some View {
-        NavigationStack {
-            Text("Hello world!")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "line.3.horizontal")
+        ZStack {
+            NavigationStack {
+                Text("Hello world!")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button {
+                                isSideBarOpened.toggle()
+                            } label: {
+                                Image(systemName: "line.3.horizontal")
+                            }
+                        }
                     }
-                }
             }
+            
+            SidebarView(isSidebarOpened: $isSideBarOpened)
         }
     }
 }
