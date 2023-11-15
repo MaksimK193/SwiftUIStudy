@@ -11,6 +11,16 @@ struct SidebarView: View {
     @Binding var isSidebarOpened: Bool
     var sidebarWidth = UIScreen.main.bounds.size.width * 0.8
     var body: some View {
+        
+        let drag = DragGesture()
+            .onEnded {
+                if $0.translation.width < -100 {
+                    withAnimation {
+                        isSidebarOpened.toggle()
+                    }
+                }
+            }
+        
         ZStack {
             GeometryReader { _ in
                 EmptyView()
@@ -21,8 +31,8 @@ struct SidebarView: View {
             .onTapGesture {
                 isSidebarOpened.toggle()
             }
-            
             content
+                .gesture(drag)
         }
         .edgesIgnoringSafeArea(.all)
     }
@@ -32,15 +42,15 @@ struct SidebarView: View {
             ZStack {
                 Color.white
                     .frame(width: sidebarWidth)
-                VStack {                    List() {
-                        ForEach(1..<10) { item in
-                            Text("\(item)")
-                        }
+                List() {
+                    ForEach(1..<25) { item in
+                        Text("\(item)")
                     }
-                    .listStyle(.plain)
+
                 }
+                .listStyle(.plain)
+                .padding([.top], 60)
             }
-            
             .frame(width: sidebarWidth)
             .offset(x: isSidebarOpened ? 0 : -sidebarWidth)
             .animation(.default, value: isSidebarOpened)
