@@ -8,14 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isSideBarOpened = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        let drag = DragGesture()
+            .onEnded { gesture in
+                if gesture.location.x < 170 && gesture.translation.width > 30 {
+                    withAnimation {
+                        isSideBarOpened.toggle()
+                    }
+                }
+            }
+        
+        NavigationView {
+            ZStack {
+                NavigationStack {
+                    Text("Hello world!")
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                Button {
+                                    isSideBarOpened.toggle()
+                                } label: {
+                                    Image(systemName: "line.3.horizontal")
+                                }
+                            }
+                        }
+                }
+                .gesture(drag)
+                SidebarView(isSidebarOpened: $isSideBarOpened)
+            }
         }
-        .padding()
     }
 }
 
