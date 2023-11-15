@@ -10,8 +10,8 @@ import SwiftUI
 struct SidebarView: View {
     @Binding var isSidebarOpened: Bool
     var sidebarWidth = UIScreen.main.bounds.size.width * 0.8
+    
     var body: some View {
-        
         let drag = DragGesture()
             .onEnded {
                 if $0.translation.width < -100 {
@@ -25,7 +25,7 @@ struct SidebarView: View {
             GeometryReader { _ in
                 EmptyView()
             }
-            .background(.black.opacity(0.7))
+            .background(.black.opacity(0.2))
             .opacity(isSidebarOpened ? 1 : 0)
             .animation(.easeInOut.delay(0.2), value: isSidebarOpened)
             .onTapGesture {
@@ -44,9 +44,10 @@ struct SidebarView: View {
                     .frame(width: sidebarWidth)
                 List() {
                     ForEach(1..<25) { item in
-                        Text("\(item)")
+                        NavigationLink(destination: NewTaskView(text: "\(item)")) {
+                            Text("\(item)")
+                        }
                     }
-
                 }
                 .listStyle(.plain)
                 .padding([.top], 60)
@@ -61,7 +62,6 @@ struct SidebarView: View {
 
 struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
-//        SidebarView(isSidebarVisible: true)
         ContentView()
     }
 }

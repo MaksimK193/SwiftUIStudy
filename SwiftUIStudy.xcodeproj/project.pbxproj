@@ -15,6 +15,7 @@
 		CE7BCAE22B04EABA0015230C /* SwiftUIStudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAE12B04EABA0015230C /* SwiftUIStudyUITests.swift */; };
 		CE7BCAE42B04EABA0015230C /* SwiftUIStudyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAE32B04EABA0015230C /* SwiftUIStudyUITestsLaunchTests.swift */; };
 		CE7BCAF12B04F2AC0015230C /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAF02B04F2AC0015230C /* Sidebar.swift */; };
+		CE7BCAF32B0512EE0015230C /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAF22B0512EE0015230C /* NewTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CE7BCAE12B04EABA0015230C /* SwiftUIStudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIStudyUITests.swift; sourceTree = "<group>"; };
 		CE7BCAE32B04EABA0015230C /* SwiftUIStudyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIStudyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE7BCAF02B04F2AC0015230C /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
+		CE7BCAF22B0512EE0015230C /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				CE7BCAC52B04EAB90015230C /* SwiftUIStudyApp.swift */,
-				CE7BCAF02B04F2AC0015230C /* Sidebar.swift */,
 				CE7BCAC72B04EAB90015230C /* ContentView.swift */,
+				CE7BCAF02B04F2AC0015230C /* Sidebar.swift */,
+				CE7BCAF22B0512EE0015230C /* NewTaskView.swift */,
 				CE7BCAC92B04EABA0015230C /* Assets.xcassets */,
 				CE7BCACB2B04EABA0015230C /* SwiftUIStudy.entitlements */,
 				CE7BCACC2B04EABA0015230C /* Preview Content */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7BCAF32B0512EE0015230C /* NewTaskView.swift in Sources */,
 				CE7BCAC82B04EAB90015230C /* ContentView.swift in Sources */,
 				CE7BCAF12B04F2AC0015230C /* Sidebar.swift in Sources */,
 				CE7BCAC62B04EAB90015230C /* SwiftUIStudyApp.swift in Sources */,
