@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SidebarView: View {
+    @StateObject var vm = SidebarViewModel()
     @Binding var isSidebarOpened: Bool
     var sidebarWidth = UIScreen.main.bounds.size.width * 0.8
     
@@ -43,9 +44,14 @@ struct SidebarView: View {
                 Color.white
                     .frame(width: sidebarWidth)
                 List() {
-                    ForEach(1..<25) { item in
-                        NavigationLink(destination: NewTaskView(text: "\(item)")) {
-                            Text("\(item)")
+                    ForEach(vm.screens) { item in
+                        NavigationLink(destination: {
+                            switch item.screen {
+                            case .coreData:
+                                CoreDataView()
+                            }
+                        }) {
+                            Text("\(item.screen.rawValue)")
                         }
                     }
                 }

@@ -16,6 +16,9 @@
 		CE7BCAE42B04EABA0015230C /* SwiftUIStudyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAE32B04EABA0015230C /* SwiftUIStudyUITestsLaunchTests.swift */; };
 		CE7BCAF12B04F2AC0015230C /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAF02B04F2AC0015230C /* Sidebar.swift */; };
 		CE7BCAF32B0512EE0015230C /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAF22B0512EE0015230C /* NewTaskView.swift */; };
+		CEBC55792B05FCBF007F9B19 /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55782B05FCBF007F9B19 /* SidebarViewModel.swift */; };
+		CEBC557D2B05FDB6007F9B19 /* SidebarListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC557C2B05FDB6007F9B19 /* SidebarListModel.swift */; };
+		CEBC55822B0617BD007F9B19 /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55812B0617BD007F9B19 /* CoreDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		CE7BCAE32B04EABA0015230C /* SwiftUIStudyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIStudyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE7BCAF02B04F2AC0015230C /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		CE7BCAF22B0512EE0015230C /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
+		CEBC55782B05FCBF007F9B19 /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
+		CEBC557C2B05FDB6007F9B19 /* SidebarListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarListModel.swift; sourceTree = "<group>"; };
+		CEBC55812B0617BD007F9B19 /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +105,8 @@
 		CE7BCAC42B04EAB90015230C /* SwiftUIStudy */ = {
 			isa = PBXGroup;
 			children = (
+				CEBC557A2B05FD88007F9B19 /* Screens */,
 				CE7BCAC52B04EAB90015230C /* SwiftUIStudyApp.swift */,
-				CE7BCAC72B04EAB90015230C /* ContentView.swift */,
-				CE7BCAF02B04F2AC0015230C /* Sidebar.swift */,
-				CE7BCAF22B0512EE0015230C /* NewTaskView.swift */,
 				CE7BCAC92B04EABA0015230C /* Assets.xcassets */,
 				CE7BCACB2B04EABA0015230C /* SwiftUIStudy.entitlements */,
 				CE7BCACC2B04EABA0015230C /* Preview Content */,
@@ -133,6 +137,51 @@
 				CE7BCAE32B04EABA0015230C /* SwiftUIStudyUITestsLaunchTests.swift */,
 			);
 			path = SwiftUIStudyUITests;
+			sourceTree = "<group>";
+		};
+		CEBC557A2B05FD88007F9B19 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CEBC55802B0617A0007F9B19 /* CoreData */,
+				CEBC557F2B061487007F9B19 /* NewTask */,
+				CEBC557E2B061453007F9B19 /* Content */,
+				CEBC557B2B05FD9D007F9B19 /* Sidebar */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CEBC557B2B05FD9D007F9B19 /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BCAF02B04F2AC0015230C /* Sidebar.swift */,
+				CEBC55782B05FCBF007F9B19 /* SidebarViewModel.swift */,
+				CEBC557C2B05FDB6007F9B19 /* SidebarListModel.swift */,
+			);
+			path = Sidebar;
+			sourceTree = "<group>";
+		};
+		CEBC557E2B061453007F9B19 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BCAC72B04EAB90015230C /* ContentView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		CEBC557F2B061487007F9B19 /* NewTask */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BCAF22B0512EE0015230C /* NewTaskView.swift */,
+			);
+			path = NewTask;
+			sourceTree = "<group>";
+		};
+		CEBC55802B0617A0007F9B19 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CEBC55812B0617BD007F9B19 /* CoreDataView.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +315,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7BCAF32B0512EE0015230C /* NewTaskView.swift in Sources */,
+				CEBC55822B0617BD007F9B19 /* CoreDataView.swift in Sources */,
+				CEBC55792B05FCBF007F9B19 /* SidebarViewModel.swift in Sources */,
 				CE7BCAC82B04EAB90015230C /* ContentView.swift in Sources */,
 				CE7BCAF12B04F2AC0015230C /* Sidebar.swift in Sources */,
+				CEBC557D2B05FDB6007F9B19 /* SidebarListModel.swift in Sources */,
 				CE7BCAC62B04EAB90015230C /* SwiftUIStudyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
