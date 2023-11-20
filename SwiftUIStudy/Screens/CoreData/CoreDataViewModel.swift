@@ -8,44 +8,46 @@
 import Foundation
 import CoreData
 
+enum entityName: String {
+    case department
+    case employee
+    
+    var string: String {
+        switch self {
+        case .department:
+            return "DepartmentEntity"
+        case .employee:
+            return "EmployeeEntity"
+        }
+    }
+}
+
 class CoreDataViewModel: ObservableObject {
     let coreDataManager = CoreDataManager.shared
     @Published var departments: [DepartmentEntity] = []
     @Published var employees: [EmployeeEntity] = []
     
     init() {
-        getDepartments()
-        getEmployees()
+        getEntity(entity: .department)
+        getEntity(entity: .employee)
     }
     
-    func getDepartments() {
-        let request = NSFetchRequest<DepartmentEntity>(entityName: "DepartmentEntity")
+    func getEntity(entity: entityName) {
+        let request = NSFetchRequest<DepartmentEntity>(entityName: entity.string)
         do {
             departments = try coreDataManager.context.fetch(request)
         } catch let error {
-            print("Error fetching departments: \(error.localizedDescription)")
-        }
-    }
-    
-    func getEmployees() {
-        let request = NSFetchRequest<EmployeeEntity>(entityName: "EmployeeEntity")
-        do {
-            employees = try coreDataManager.context.fetch(request)
-        } catch let error {
-            print("Error fetching departments: \(error.localizedDescription)")
+            print("Error fetching entity: \(error.localizedDescription)")
         }
     }
     
     func reset(entity: String) {
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
-        do
-        {
+        do {
             try coreDataManager.context.execute(deleteRequest)
             try coreDataManager.context.save()
-        }
-        catch
-        {
+        } catch {
             print ("There was an error")
         }
     }
@@ -61,10 +63,8 @@ class CoreDataViewModel: ObservableObject {
         let newEmployee = EmployeeEntity(context: coreDataManager.context)
         newEmployee.id = id
         newEmployee.name = name
-        departments.map {
-            if $0.name == departmentName {
-                $0.addToEmployees(newEmployee)
-            }
+        if let i = departments.firstIndex(where: { $0.name == departmentName }) {
+            departments[i].addToEmployees(newEmployee)
         }
         save()
     }
@@ -78,7 +78,7 @@ class CoreDataViewModel: ObservableObject {
         departments.removeAll()
         employees.removeAll()
         coreDataManager.save()
-        getDepartments()
-        getEmployees()
+        getEntity(entity: .department)
+        getEntity(entity: .employee)
     }
 }

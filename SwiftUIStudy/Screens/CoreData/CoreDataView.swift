@@ -14,11 +14,20 @@ struct CoreDataView: View {
     var body: some View {
         List(vm.departments) { department in
             if let employees = department.employees?.allObjects as? [EmployeeEntity] {
-                NavigationLink(destination: EmployeesView(vm: vm, department: department.name ?? "", employees: employees)) {
+                NavigationLink(destination: EmployeesView(department: department.name ?? "", vm: vm, employees: employees)) {
                     Text(department.name ?? "Unknown")
                 }
             }
         }
+        Button(action: {
+            // Add entities for testing
+            vm.addDepartment(name: "Backend")
+            vm.addDepartment(name: "Fromtend")
+            vm.addDepartment(name: "QA")
+            vm.addDepartment(name: "Design")
+        }, label: {
+            Text("Add departments")
+        })
     }
 }
 
@@ -40,6 +49,35 @@ struct EmployeesView: View {
             })
         }
         .navigationTitle(department)
+        Button {
+            // Add entities for testing
+            if department == "Backend" {
+                vm.addEmployee(name: "Илья", departmentName: department)
+                vm.addEmployee(name: "Олег", departmentName: department)
+                vm.addEmployee(name: "Сергей", departmentName: department)
+            }
+            if department == "Frontend" {
+                vm.addEmployee(name: "Ислам", departmentName: department)
+                vm.addEmployee(name: "Беслан", departmentName: department)
+                vm.addEmployee(name: "Максим", departmentName: department)
+                vm.addEmployee(name: "Сергей", departmentName: department)
+                vm.addEmployee(name: "Александр", departmentName: department)
+                vm.addEmployee(name: "Анна", departmentName: department)
+            }
+            if department == "QA" {
+                vm.addEmployee(name: "Юлия", departmentName: department)
+                vm.addEmployee(name: "Сергей", departmentName: department)
+                vm.addEmployee(name: "Виктория", departmentName: department)
+                vm.addEmployee(name: "Константин", departmentName: department)
+            }
+            if department == "Design" {
+                vm.addEmployee(name: "Никита", departmentName: department)
+                vm.addEmployee(name: "Юлия", departmentName: department)
+            }
+        } label: {
+            Text("Add entity")
+        }
+
     }
 }
 
