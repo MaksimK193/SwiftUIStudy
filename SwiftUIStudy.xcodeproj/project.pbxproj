@@ -19,6 +19,9 @@
 		CEBC55792B05FCBF007F9B19 /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55782B05FCBF007F9B19 /* SidebarViewModel.swift */; };
 		CEBC557D2B05FDB6007F9B19 /* SidebarListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC557C2B05FDB6007F9B19 /* SidebarListModel.swift */; };
 		CEBC55822B0617BD007F9B19 /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55812B0617BD007F9B19 /* CoreDataView.swift */; };
+		CEBC55852B06424B007F9B19 /* CoreDataStudy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55832B06424B007F9B19 /* CoreDataStudy.xcdatamodeld */; };
+		CEBC55892B0B3808007F9B19 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55882B0B3808007F9B19 /* CoreDataViewModel.swift */; };
+		CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		CEBC55782B05FCBF007F9B19 /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
 		CEBC557C2B05FDB6007F9B19 /* SidebarListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarListModel.swift; sourceTree = "<group>"; };
 		CEBC55812B0617BD007F9B19 /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
+		CEBC55842B06424B007F9B19 /* Departments.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Departments.xcdatamodel; sourceTree = "<group>"; };
+		CEBC55882B0B3808007F9B19 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
+		CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,8 @@
 		CE7BCAC42B04EAB90015230C /* SwiftUIStudy */ = {
 			isa = PBXGroup;
 			children = (
+				CEBC558A2B0B384D007F9B19 /* Core */,
+				CEBC55832B06424B007F9B19 /* CoreDataStudy.xcdatamodeld */,
 				CEBC557A2B05FD88007F9B19 /* Screens */,
 				CE7BCAC52B04EAB90015230C /* SwiftUIStudyApp.swift */,
 				CE7BCAC92B04EABA0015230C /* Assets.xcassets */,
@@ -180,8 +188,25 @@
 			isa = PBXGroup;
 			children = (
 				CEBC55812B0617BD007F9B19 /* CoreDataView.swift */,
+				CEBC55882B0B3808007F9B19 /* CoreDataViewModel.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		CEBC558A2B0B384D007F9B19 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CEBC558B2B0B3856007F9B19 /* Managers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CEBC558B2B0B3856007F9B19 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,9 +343,12 @@
 				CEBC55822B0617BD007F9B19 /* CoreDataView.swift in Sources */,
 				CEBC55792B05FCBF007F9B19 /* SidebarViewModel.swift in Sources */,
 				CE7BCAC82B04EAB90015230C /* ContentView.swift in Sources */,
+				CEBC55892B0B3808007F9B19 /* CoreDataViewModel.swift in Sources */,
 				CE7BCAF12B04F2AC0015230C /* Sidebar.swift in Sources */,
 				CEBC557D2B05FDB6007F9B19 /* SidebarListModel.swift in Sources */,
 				CE7BCAC62B04EAB90015230C /* SwiftUIStudyApp.swift in Sources */,
+				CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */,
+				CEBC55852B06424B007F9B19 /* CoreDataStudy.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +700,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEBC55832B06424B007F9B19 /* CoreDataStudy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEBC55842B06424B007F9B19 /* Departments.xcdatamodel */,
+			);
+			currentVersion = CEBC55842B06424B007F9B19 /* Departments.xcdatamodel */;
+			path = CoreDataStudy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE7BCABA2B04EAB90015230C /* Project object */;
 }
