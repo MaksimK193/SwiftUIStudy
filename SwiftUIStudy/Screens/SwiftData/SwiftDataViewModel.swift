@@ -14,16 +14,10 @@ final class SwiftDataViewModel {
     var departments: [Department]
     var employees: [Employee]
     
-    var currentDepartment: Department?
-    
     init(swiftDataManager: SwiftDataManager = SwiftDataManager.shared) {
         self.swiftDataManager = swiftDataManager
         departments = swiftDataManager.fetchDepartments()
         employees = swiftDataManager.fetchEmployees()
-    }
-    
-    func updateCurrentDepartment(_ dep: Department) {
-        currentDepartment = dep
     }
     
     func addObject<T>(_ model: T) {

@@ -20,19 +20,19 @@ struct SwiftDataView: View {
                 TextField("name", text: $departmentName)
                     .textFieldStyle(.roundedBorder)
                 Button(action: {
-                    let dep1 = Department(id: Int(id) ?? 1, name: departmentName, employees: [])
-                    viewModel.addObject(dep1)
+                    let department = Department(id: Int(id) ?? 1, name: departmentName, employees: [])
+                    viewModel.addObject(department)
                 }) {
                     Label("Add Item", systemImage: "plus")
                 }
             }
             .padding()
             List {
-                ForEach(viewModel.departments) { dep in
+                ForEach(viewModel.departments) { department in
                     NavigationLink {
-                        SwiftDataEmployeesView(department: dep, vm: viewModel)
+                        SwiftDataEmployeesView(department: department, vm: viewModel)
                     } label: {
-                        Text(dep.name)
+                        Text(department.name)
                     }
                 }
                 .onDelete(perform: { offsets in
@@ -58,9 +58,9 @@ struct SwiftDataEmployeesView: View {
             TextField("name", text: $employeeName)
                 .textFieldStyle(.roundedBorder)
             Button(action: {
-                let emp = Employee(id: Int(id) ?? 1, name: employeeName)
-                emp.department = department
-                vm.addObject(emp)
+                let employee = Employee(id: Int(id) ?? 1, name: employeeName)
+                employee.department = department
+                vm.addObject(employee)
             }) {
                 Label("Add Item", systemImage: "plus")
             }
