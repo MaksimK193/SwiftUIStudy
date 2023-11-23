@@ -33,9 +33,14 @@ class CoreDataViewModel: ObservableObject {
     }
     
     func getEntity(entity: entityName) {
-        let request = NSFetchRequest<DepartmentEntity>(entityName: entity.string)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity.string)
         do {
-            departments = try coreDataManager.context.fetch(request)
+            switch entity {
+            case .department:
+                departments = try coreDataManager.context.fetch(request) as [DepartmentEntity]
+            case .employee:
+                employees = try coreDataManager.context.fetch(request) as [EmployeeEntity]
+            }
         } catch let error {
             print("Error fetching entity: \(error.localizedDescription)")
         }

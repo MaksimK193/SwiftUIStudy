@@ -49,6 +49,8 @@ struct SidebarView: View {
                             switch item.screen {
                             case .coreData:
                                 CoreDataView()
+                            case .swiftData:
+                                SwiftDataView()
                             }
                         }) {
                             Text("\(item.screen.rawValue)")
