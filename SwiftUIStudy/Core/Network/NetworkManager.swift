@@ -26,8 +26,8 @@ final class NetworkManager: NetworkManagerProtocol {
     private let session: Session
     private let decoder: DataDecoder
     private let dataPreprocessor: DataPreprocessor
-    private var tokenStorage: TokenStorage?
-    private var apiBaseURL: String?
+    private var tokenStorage: TokenStorage? = TokenStorage()
+    private var apiBaseURL: String? = "https://api.weather.yandex.ru/"
     private var clientID: String?
     
     public static var shared: NetworkManagerUnionProtocol = NetworkManager()
