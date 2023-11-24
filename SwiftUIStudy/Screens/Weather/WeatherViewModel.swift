@@ -15,7 +15,7 @@ class WeatherViewModel: ObservableObject {
         self.networkManager = networkManager
     }
     
-    func getCurrentWeather() -> Int? {
+    func getCurrentWeather() {
         let gateway = WeatherNetworkGateway.getWeather
         
         self.networkManager.request(gateway,
@@ -28,6 +28,5 @@ class WeatherViewModel: ObservableObject {
                 print(error)
             }
         })
-        return temperature
     }
 }

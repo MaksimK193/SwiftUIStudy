@@ -11,7 +11,6 @@ import Alamofire
 typealias NetworkManagerUnionProtocol = NetworkManagerProtocol & NetworkManagerConfigurationProtocol
 
 protocol NetworkManagerConfigurationProtocol {
-    func set(tokenStorage: TokenStorage)
     func set(apiBaseURL: String)
     func set(clientID: String)
 }
@@ -26,7 +25,7 @@ final class NetworkManager: NetworkManagerProtocol {
     private let session: Session
     private let decoder: DataDecoder
     private let dataPreprocessor: DataPreprocessor
-    private var tokenStorage: TokenStorage? = TokenStorage()
+    private let token: String?
     private var apiBaseURL: String? = "https://api.weather.yandex.ru/"
     private var clientID: String?
     
@@ -39,6 +38,7 @@ final class NetworkManager: NetworkManagerProtocol {
         self.session = Session(configuration: configuration)
         self.decoder = JSONDecoder()
         self.dataPreprocessor = .passthrough
+        self.token = "26792f4a-06cb-4c0c-aecd-b5ca965b50ab"
     }
     
     func request<T>(_ gateway: NetworkGatewayProtocol,
@@ -64,7 +64,7 @@ final class NetworkManager: NetworkManagerProtocol {
                            resultType: T.Type,
                            result: @escaping (Result<T?, Error>) -> Void) where T: Codable {
         guard let baseURL = self.apiBaseURL,
-              let token = self.tokenStorage?.get(tokenBy: .weather)
+              let token = self.token
         else { return }
         self.session
             .request(NetworkGatewayAdapter(gateway: gateway,
@@ -95,10 +95,6 @@ final class NetworkManager: NetworkManagerProtocol {
 }
 
 extension NetworkManager: NetworkManagerConfigurationProtocol {
-    func set(tokenStorage: TokenStorage) {
-        self.tokenStorage = tokenStorage
-    }
-    
     func set(apiBaseURL: String) {
         self.apiBaseURL = apiBaseURL
     }
@@ -106,6 +102,4 @@ extension NetworkManager: NetworkManagerConfigurationProtocol {
     func set(clientID: String) {
         self.clientID = clientID
     }
-    
-    
 }

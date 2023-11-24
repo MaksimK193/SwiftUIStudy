@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct WeatherView: View {
-    @State private var viewModel = WeatherViewModel()
-    private var tokenStorage = TokenStorage()
+    @StateObject private var viewModel = WeatherViewModel()
     
     var body: some View {
-        Text("Температура: \(viewModel.temperature ?? 999) градусов")
+        let temp = viewModel.temperature == nil ? "--" : "\(viewModel.temperature!)"
+        Text("Температура: \(temp) градусов")
         Button {
-            tokenStorage.set(token: "26792f4a-06cb-4c0c-aecd-b5ca965b50ab", key: .weather)
             viewModel.getCurrentWeather()
         } label: {
             Text("Обновить")

@@ -10,8 +10,6 @@
 		CE0647A22B0F926E00FDEE12 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647A12B0F926E00FDEE12 /* WeatherView.swift */; };
 		CE0647A52B0F959500FDEE12 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE0647A42B0F959500FDEE12 /* Alamofire */; };
 		CE0647AB2B107AA200FDEE12 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647AA2B107AA200FDEE12 /* NetworkManager.swift */; };
-		CE0647AD2B107B3800FDEE12 /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647AC2B107B3800FDEE12 /* TokenStorage.swift */; };
-		CE0647B02B107C2100FDEE12 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE0647AF2B107C2100FDEE12 /* KeychainSwift */; };
 		CE0647B22B107D1400FDEE12 /* NetworkGatewayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647B12B107D1400FDEE12 /* NetworkGatewayProtocol.swift */; };
 		CE0647B42B108FE900FDEE12 /* HTTPCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647B32B108FE900FDEE12 /* HTTPCodes.swift */; };
 		CE0647B62B10994E00FDEE12 /* NetworkGatewayAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647B52B10994D00FDEE12 /* NetworkGatewayAdapter.swift */; };
@@ -59,7 +57,6 @@
 /* Begin PBXFileReference section */
 		CE0647A12B0F926E00FDEE12 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		CE0647AA2B107AA200FDEE12 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		CE0647AC2B107B3800FDEE12 /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
 		CE0647B12B107D1400FDEE12 /* NetworkGatewayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkGatewayProtocol.swift; sourceTree = "<group>"; };
 		CE0647B32B108FE900FDEE12 /* HTTPCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPCodes.swift; sourceTree = "<group>"; };
 		CE0647B52B10994D00FDEE12 /* NetworkGatewayAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkGatewayAdapter.swift; sourceTree = "<group>"; };
@@ -96,7 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0647B02B107C2100FDEE12 /* KeychainSwift in Frameworks */,
 				CE0647A52B0F959500FDEE12 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				CE0647AA2B107AA200FDEE12 /* NetworkManager.swift */,
-				CE0647AC2B107B3800FDEE12 /* TokenStorage.swift */,
 				CE0647B12B107D1400FDEE12 /* NetworkGatewayProtocol.swift */,
 				CE0647B32B108FE900FDEE12 /* HTTPCodes.swift */,
 				CE0647B52B10994D00FDEE12 /* NetworkGatewayAdapter.swift */,
@@ -302,7 +297,6 @@
 			name = SwiftUIStudy;
 			packageProductDependencies = (
 				CE0647A42B0F959500FDEE12 /* Alamofire */,
-				CE0647AF2B107C2100FDEE12 /* KeychainSwift */,
 			);
 			productName = SwiftUIStudy;
 			productReference = CE7BCAC22B04EAB90015230C /* SwiftUIStudy.app */;
@@ -378,7 +372,6 @@
 			mainGroup = CE7BCAB92B04EAB90015230C;
 			packageReferences = (
 				CE0647A32B0F959500FDEE12 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				CE0647AE2B107C2100FDEE12 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = CE7BCAC32B04EAB90015230C /* Products */;
 			projectDirPath = "";
@@ -432,7 +425,6 @@
 				CEBC55792B05FCBF007F9B19 /* SidebarViewModel.swift in Sources */,
 				CE7BCAC82B04EAB90015230C /* ContentView.swift in Sources */,
 				CEBC55892B0B3808007F9B19 /* CoreDataViewModel.swift in Sources */,
-				CE0647AD2B107B3800FDEE12 /* TokenStorage.swift in Sources */,
 				CE0647B82B109D4A00FDEE12 /* WeatherViewModel.swift in Sources */,
 				CE7BCAF12B04F2AC0015230C /* Sidebar.swift in Sources */,
 				CEBC557D2B05FDB6007F9B19 /* SidebarListModel.swift in Sources */,
@@ -806,14 +798,6 @@
 				minimumVersion = 5.8.1;
 			};
 		};
-		CE0647AE2B107C2100FDEE12 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 20.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -821,11 +805,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE0647A32B0F959500FDEE12 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		CE0647AF2B107C2100FDEE12 /* KeychainSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE0647AE2B107C2100FDEE12 /* XCRemoteSwiftPackageReference "keychain-swift" */;
-			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 
