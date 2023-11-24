@@ -139,18 +139,11 @@
 		CE2A27CC2B0C98F9003F9601 /* SwiftData */ = {
 			isa = PBXGroup;
 			children = (
+				CE2A27D42B0C9996003F9601 /* SwiftDataEntities.swift */,
 				CE2A27CD2B0C994A003F9601 /* SwiftDataView.swift */,
 				CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */,
 			);
 			path = SwiftData;
-			sourceTree = "<group>";
-		};
-		CE2A27D32B0C9987003F9601 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				CE2A27D42B0C9996003F9601 /* SwiftDataEntities.swift */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		CE7BCAB92B04EAB90015230C = {
@@ -176,8 +169,8 @@
 		CE7BCAC42B04EAB90015230C /* SwiftUIStudy */ = {
 			isa = PBXGroup;
 			children = (
-				CEBC558A2B0B384D007F9B19 /* Core */,
-				CEBC557A2B05FD88007F9B19 /* Screens */,
+				CEBC558A2B0B384D007F9B19 /* Common */,
+				CEBC557A2B05FD88007F9B19 /* Flows */,
 				CE7BCAC52B04EAB90015230C /* SwiftUIStudyApp.swift */,
 				CE7BCAC92B04EABA0015230C /* Assets.xcassets */,
 				CE7BCACB2B04EABA0015230C /* SwiftUIStudy.entitlements */,
@@ -211,7 +204,7 @@
 			path = SwiftUIStudyUITests;
 			sourceTree = "<group>";
 		};
-		CEBC557A2B05FD88007F9B19 /* Screens */ = {
+		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
 				CE0647A02B0F926300FDEE12 /* Weather */,
@@ -221,7 +214,7 @@
 				CEBC557E2B061453007F9B19 /* Content */,
 				CEBC557B2B05FD9D007F9B19 /* Sidebar */,
 			);
-			path = Screens;
+			path = Flows;
 			sourceTree = "<group>";
 		};
 		CEBC557B2B05FD9D007F9B19 /* Sidebar */ = {
@@ -253,21 +246,20 @@
 		CEBC55802B0617A0007F9B19 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				CEBC55832B06424B007F9B19 /* CoreDataStudy.xcdatamodeld */,
 				CEBC55812B0617BD007F9B19 /* CoreDataView.swift */,
 				CEBC55882B0B3808007F9B19 /* CoreDataViewModel.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		CEBC558A2B0B384D007F9B19 /* Core */ = {
+		CEBC558A2B0B384D007F9B19 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				CE0647A92B107A8B00FDEE12 /* Network */,
-				CEBC55832B06424B007F9B19 /* CoreDataStudy.xcdatamodeld */,
-				CE2A27D32B0C9987003F9601 /* Entities */,
 				CEBC558B2B0B3856007F9B19 /* Managers */,
 			);
-			path = Core;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		CEBC558B2B0B3856007F9B19 /* Managers */ = {
@@ -595,6 +587,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Разрешите доступ приложению к геолокации для предоставления данных о погоде";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -633,6 +626,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Разрешите доступ приложению к геолокации для предоставления данных о погоде";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
