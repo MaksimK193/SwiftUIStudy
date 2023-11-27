@@ -10,6 +10,7 @@ import CoreLocation
 
 class WeatherViewModel: NSObject, ObservableObject {
     let networkManager: NetworkManagerProtocol
+    
     @Published var temperature: Int?
     var locationManager: CLLocationManager?
     var coordinate: CLLocationCoordinate2D?
@@ -21,11 +22,12 @@ class WeatherViewModel: NSObject, ObservableObject {
 
 extension WeatherViewModel: CLLocationManagerDelegate {
     func checkLocationIsEnable() {
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager = CLLocationManager()
-            locationManager?.delegate = self
-        } else {
-            print("alert")
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                self.locationManager = CLLocationManager()
+                self.locationManager?.delegate = self
+                self.checkLocationAuth()
+            }
         }
     }
     
@@ -53,9 +55,17 @@ extension WeatherViewModel: CLLocationManagerDelegate {
 
 extension WeatherViewModel {
     func getCurrentWeather() {
-        let gateway = WeatherNetworkGateway.getWeather
+        checkLocationIsEnable()
+        let url = "https://api.weather.yandex.ru/v2/forecast?"
+        let token = "26792f4a-06cb-4c0c-aecd-b5ca965b50ab"
+        let parameters = ["lat": coordinate?.latitude,
+                          "lon": coordinate?.longitude]
+        let headers = ["X-Yandex-API-Key": token]
         
-        self.networkManager.request(gateway,
+        self.networkManager.request(url: url,
+                                    method: .get,
+                                    parameters: parameters,
+                                    headers: headers,
                                     resultType: Weather.self,
                                     result: { result in
             switch result {
