@@ -21,7 +21,7 @@ class WeatherViewModel: NSObject, ObservableObject {
 }
 
 extension WeatherViewModel: CLLocationManagerDelegate {
-    func checkLocationIsEnable() {
+    func checkLocationIsEnabled() {
         DispatchQueue.global().async {
             if CLLocationManager.locationServicesEnabled() {
                 self.locationManager = CLLocationManager()
@@ -55,25 +55,27 @@ extension WeatherViewModel: CLLocationManagerDelegate {
 
 extension WeatherViewModel {
     func getCurrentWeather() {
-        checkLocationIsEnable()
-        let url = "https://api.weather.yandex.ru/v2/forecast?"
-        let token = "26792f4a-06cb-4c0c-aecd-b5ca965b50ab"
-        let parameters = ["lat": coordinate?.latitude,
-                          "lon": coordinate?.longitude]
-        let headers = ["X-Yandex-API-Key": token]
+        checkLocationIsEnabled()
         
-        self.networkManager.request(url: url,
-                                    method: .get,
-                                    parameters: parameters,
-                                    headers: headers,
-                                    resultType: Weather.self,
-                                    result: { result in
-            switch result {
-            case .success(let data):
-                self.temperature = data?.fact.temp
-            case .failure(let error):
-                print(error)
-            }
-        })
+        if let url = ProcessInfo.processInfo.environment["YNDX_WEATHER_API_URL"],
+           let token = ProcessInfo.processInfo.environment["YNDX_WEATHER_API_TOKEN"] {
+            let parameters = ["lat": coordinate?.latitude,
+                              "lon": coordinate?.longitude]
+            let headers = ["X-Yandex-API-Key": token]
+            
+            self.networkManager.request(url: url,
+                                        method: .get,
+                                        parameters: parameters,
+                                        headers: headers,
+                                        resultType: Weather.self,
+                                        result: { result in
+                switch result {
+                case .success(let data):
+                    self.temperature = data?.fact.temp
+                case .failure(let error):
+                    print(error)
+                }
+            })
+        }
     }
 }

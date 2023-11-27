@@ -21,7 +21,7 @@ struct WeatherView: View {
             }
         }
         .onAppear {
-            viewModel.checkLocationIsEnable()
+            viewModel.checkLocationIsEnabled()
         }
     }
 }
