@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct SwiftUIStudyApp: App {
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup { 
+            switch scenePhase {
+            case .background:
+                InactiveView()
+            case .inactive:
+                InactiveView()
+            case .active:
+                ContentView()
+            @unknown default:
+                fatalError()
+            }
         }
+        
     }
 }
