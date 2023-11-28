@@ -74,6 +74,6 @@ struct SidebarView: View {
 
 struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(stateManager: AppStateManager.shared)
     }
 }

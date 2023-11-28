@@ -92,5 +92,5 @@ struct EmployeeRowView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(stateManager: AppStateManager.shared)
 }

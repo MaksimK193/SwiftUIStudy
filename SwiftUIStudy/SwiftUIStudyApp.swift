@@ -12,18 +12,18 @@ struct SwiftUIStudyApp: App {
     @Environment(\.scenePhase) var scenePhase
     
     var body: some Scene {
-        WindowGroup { 
-            switch scenePhase {
-            case .background:
-                InactiveView()
-            case .inactive:
-                InactiveView()
-            case .active:
-                ContentView()
-            @unknown default:
-                fatalError()
-            }
+        WindowGroup {
+            ContentView(stateManager: AppStateManager.shared)
+                .onChange(of: scenePhase) { phase in
+                    switch phase {
+                    case .background, .inactive:
+                        AppStateManager.shared.isActive = false
+                    case .active:
+                        AppStateManager.shared.isActive = true
+                    @unknown default:
+                        AppStateManager.shared.isActive = false
+                    }
+                }
         }
-        
     }
 }
