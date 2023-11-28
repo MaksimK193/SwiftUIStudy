@@ -51,6 +51,8 @@ struct SidebarView: View {
                                 CoreDataView()
                             case .swiftData:
                                 SwiftDataView()
+                            case .weather:
+                                WeatherView()
                             }
                         }) {
                             Text("\(item.screen.rawValue)")
