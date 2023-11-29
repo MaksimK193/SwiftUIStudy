@@ -30,7 +30,7 @@ final class CameraService: NSObject, ObservableObject {
         setupAndStartCaptureSession()
     }
     
-    private func currentDevice() -> AVCaptureDevice? {
+    private func getCurrentDevice() -> AVCaptureDevice? {
         let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInDualWideCamera,
                                                                               .builtInLiDARDepthCamera, .builtInTelephotoCamera,
                                                                               .builtInTripleCamera, .builtInTrueDepthCamera,
@@ -60,7 +60,7 @@ final class CameraService: NSObject, ObservableObject {
     }
     
     private func setupInputs() {
-        backCamera = currentDevice()
+        backCamera = getCurrentDevice()
         
         guard let backCamera = backCamera else { return }
         
@@ -87,7 +87,6 @@ final class CameraService: NSObject, ObservableObject {
 }
 
 extension CameraService: AVCapturePhotoCaptureDelegate {
-
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         guard error == nil else {
             print("Fail to capture photo: \(String(describing: error))")
