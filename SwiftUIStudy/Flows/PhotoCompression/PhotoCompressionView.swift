@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PhotoCompressionView: View {
     @State var imageData: UIImage = UIImage()
-    @State var compressedImage: Data = .init(capacity: 0)
+    @State var compressedImage: Data = .init()
     @State var show = true
     @State var imagepicker = false
     
@@ -44,8 +44,7 @@ struct PhotoCompressionView: View {
                         .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 200)
                 }
                 Spacer()
-                let dataCount = convertFromBToMB(imageData.pngData()?.count)
-                Text("\(dataCount)")
+                Text(convertFromBToMB(imageData.pngData()?.count))
             }
             .padding()
             HStack() {
@@ -62,19 +61,19 @@ struct PhotoCompressionView: View {
                         .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 200)
                 }
                 Spacer()
-                Text("\(convertFromBToMB(compressedImage.count))")
+                Text(convertFromBToMB(compressedImage.count))
             }
             .padding()
         }
     }
     
-    func convertFromBToMB(_ bytes: Int?) -> Int {
-        guard let bytes = bytes else { return 0 }
+    func convertFromBToMB(_ bytes: Int?) -> String {
         let bcf = ByteCountFormatter()
         bcf.allowedUnits = [.useMB]
         bcf.countStyle = .file
+        guard let bytes = bytes else { return bcf.string(fromByteCount: 0) }
         let mb = bcf.string(fromByteCount: Int64(bytes))
-        return Int(mb) ?? 0
+        return mb
     }
 }
 

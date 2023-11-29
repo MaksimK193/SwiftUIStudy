@@ -18,7 +18,7 @@ final class CameraService: NSObject, ObservableObject {
     private var backCamera: AVCaptureDevice?
     
     private var backInput: AVCaptureInput!
-    private let cameraQueue = DispatchQueue(label: "com.shpeklord.CapturingModelQueue")
+    private let cameraQueue = DispatchQueue(label: "com.CapturingModelQueue")
     
     weak var delegate: CameraServiceDelegate?
     
