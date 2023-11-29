@@ -53,6 +53,8 @@ struct SidebarView: View {
                                 SwiftDataView()
                             case .weather:
                                 WeatherView()
+                            case .photoCompression:
+                                PhotoCompressionView()
                             }
                         }) {
                             Text("\(item.screen.rawValue)")
@@ -72,6 +74,6 @@ struct SidebarView: View {
 
 struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(stateManager: AppStateManager.shared)
     }
 }

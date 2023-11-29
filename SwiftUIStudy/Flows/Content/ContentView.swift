@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isSideBarOpened = false
+    @ObservedObject var stateManager: AppStateManager
     
     var body: some View {
         let drag = DragGesture()
@@ -20,29 +21,34 @@ struct ContentView: View {
                 }
             }
         
-        NavigationView {
-            ZStack {
-                NavigationStack {
-                    Text("Hello world!")
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarLeading) {
-                                Button {
-                                    isSideBarOpened.toggle()
-                                } label: {
-                                    Image(systemName: "line.3.horizontal")
+        ZStack {
+            NavigationView {
+                ZStack {
+                    NavigationStack {
+                        Text("Hello world!")
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarLeading) {
+                                    Button {
+                                        isSideBarOpened.toggle()
+                                    } label: {
+                                        Image(systemName: "line.3.horizontal")
+                                    }
                                 }
                             }
-                        }
+                    }
+                    .gesture(drag)
+                    SidebarView(isSidebarOpened: $isSideBarOpened)
+                    
                 }
-                .gesture(drag)
-                SidebarView(isSidebarOpened: $isSideBarOpened)
             }
+            InactiveView()
+                .opacity(stateManager.isActive ? 0 : 100 )
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(stateManager: AppStateManager.shared)
     }
 }

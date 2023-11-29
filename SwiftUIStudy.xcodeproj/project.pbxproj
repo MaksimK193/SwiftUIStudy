@@ -16,7 +16,11 @@
 		CE2A27D02B0C9979003F9601 /* SwiftDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */; };
 		CE2A27D22B0C9983003F9601 /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */; };
 		CE2A27D52B0C9996003F9601 /* SwiftDataEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27D42B0C9996003F9601 /* SwiftDataEntities.swift */; };
+		CE5962622B15F101005BDEEB /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5962612B15F101005BDEEB /* AppStateManager.swift */; };
+		CE5962652B17209E005BDEEB /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5962642B17209E005BDEEB /* CameraService.swift */; };
+		CE5962842B172926005BDEEB /* CamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59627E2B172926005BDEEB /* CamViewController.swift */; };
 		CE6329932B15C77C0020D37F /* InactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329922B15C77C0020D37F /* InactiveView.swift */; };
+		CE6329962B15CFAB0020D37F /* PhotoCompressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */; };
 		CE7BCAC62B04EAB90015230C /* SwiftUIStudyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAC52B04EAB90015230C /* SwiftUIStudyApp.swift */; };
 		CE7BCAC82B04EAB90015230C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAC72B04EAB90015230C /* ContentView.swift */; };
 		CE7BCACA2B04EABA0015230C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7BCAC92B04EABA0015230C /* Assets.xcassets */; };
@@ -61,7 +65,11 @@
 		CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataViewModel.swift; sourceTree = "<group>"; };
 		CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
 		CE2A27D42B0C9996003F9601 /* SwiftDataEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataEntities.swift; sourceTree = "<group>"; };
+		CE5962612B15F101005BDEEB /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
+		CE5962642B17209E005BDEEB /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		CE59627E2B172926005BDEEB /* CamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamViewController.swift; sourceTree = "<group>"; };
 		CE6329922B15C77C0020D37F /* InactiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveView.swift; sourceTree = "<group>"; };
+		CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCompressionView.swift; sourceTree = "<group>"; };
 		CE7BCAC22B04EAB90015230C /* SwiftUIStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BCAC52B04EAB90015230C /* SwiftUIStudyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIStudyApp.swift; sourceTree = "<group>"; };
 		CE7BCAC72B04EAB90015230C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,12 +145,29 @@
 			path = SwiftData;
 			sourceTree = "<group>";
 		};
+		CE5962632B172093005BDEEB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE5962642B17209E005BDEEB /* CameraService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		CE6329912B15C7620020D37F /* Inactive */ = {
 			isa = PBXGroup;
 			children = (
 				CE6329922B15C77C0020D37F /* InactiveView.swift */,
 			);
 			path = Inactive;
+			sourceTree = "<group>";
+		};
+		CE6329942B15CDD90020D37F /* PhotoCompression */ = {
+			isa = PBXGroup;
+			children = (
+				CE59627E2B172926005BDEEB /* CamViewController.swift */,
+				CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */,
+			);
+			path = PhotoCompression;
 			sourceTree = "<group>";
 		};
 		CE7BCAB92B04EAB90015230C = {
@@ -207,6 +232,7 @@
 		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CE6329942B15CDD90020D37F /* PhotoCompression */,
 				CE6329912B15C7620020D37F /* Inactive */,
 				CE0647A02B0F926300FDEE12 /* Weather */,
 				CE2A27CC2B0C98F9003F9601 /* SwiftData */,
@@ -257,6 +283,7 @@
 		CEBC558A2B0B384D007F9B19 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CE5962632B172093005BDEEB /* Services */,
 				CE0647A92B107A8B00FDEE12 /* Network */,
 				CEBC558B2B0B3856007F9B19 /* Managers */,
 			);
@@ -268,6 +295,7 @@
 			children = (
 				CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */,
 				CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */,
+				CE5962612B15F101005BDEEB /* AppStateManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -412,14 +440,18 @@
 				CE2A27D52B0C9996003F9601 /* SwiftDataEntities.swift in Sources */,
 				CE7BCAF32B0512EE0015230C /* NewTaskView.swift in Sources */,
 				CEBC55822B0617BD007F9B19 /* CoreDataView.swift in Sources */,
+				CE5962622B15F101005BDEEB /* AppStateManager.swift in Sources */,
 				CE0647AB2B107AA200FDEE12 /* NetworkManager.swift in Sources */,
+				CE5962652B17209E005BDEEB /* CameraService.swift in Sources */,
 				CEBC55792B05FCBF007F9B19 /* SidebarViewModel.swift in Sources */,
 				CE7BCAC82B04EAB90015230C /* ContentView.swift in Sources */,
 				CE6329932B15C77C0020D37F /* InactiveView.swift in Sources */,
 				CEBC55892B0B3808007F9B19 /* CoreDataViewModel.swift in Sources */,
+				CE5962842B172926005BDEEB /* CamViewController.swift in Sources */,
 				CE0647B82B109D4A00FDEE12 /* WeatherViewModel.swift in Sources */,
 				CE7BCAF12B04F2AC0015230C /* Sidebar.swift in Sources */,
 				CEBC557D2B05FDB6007F9B19 /* SidebarListModel.swift in Sources */,
+				CE6329962B15CFAB0020D37F /* PhotoCompressionView.swift in Sources */,
 				CE7BCAC62B04EAB90015230C /* SwiftUIStudyApp.swift in Sources */,
 				CE2A27CE2B0C994A003F9601 /* SwiftDataView.swift in Sources */,
 				CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */,
@@ -586,6 +618,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftUIStudy/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Используйте камеру для создания фотографий";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Разрешите доступ приложению к геолокации для предоставления данных о погоде";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -626,6 +659,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftUIStudy/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Используйте камеру для создания фотографий";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Разрешите доступ приложению к геолокации для предоставления данных о погоде";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
