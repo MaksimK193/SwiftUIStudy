@@ -16,6 +16,7 @@
 		CE2A27D02B0C9979003F9601 /* SwiftDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */; };
 		CE2A27D22B0C9983003F9601 /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */; };
 		CE2A27D52B0C9996003F9601 /* SwiftDataEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27D42B0C9996003F9601 /* SwiftDataEntities.swift */; };
+		CE5962622B15F101005BDEEB /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5962612B15F101005BDEEB /* AppStateManager.swift */; };
 		CE6329932B15C77C0020D37F /* InactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329922B15C77C0020D37F /* InactiveView.swift */; };
 		CE6329962B15CFAB0020D37F /* PhotoCompressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */; };
 		CE7BCAC62B04EAB90015230C /* SwiftUIStudyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAC52B04EAB90015230C /* SwiftUIStudyApp.swift */; };
@@ -62,6 +63,7 @@
 		CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataViewModel.swift; sourceTree = "<group>"; };
 		CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
 		CE2A27D42B0C9996003F9601 /* SwiftDataEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataEntities.swift; sourceTree = "<group>"; };
+		CE5962612B15F101005BDEEB /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
 		CE6329922B15C77C0020D37F /* InactiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveView.swift; sourceTree = "<group>"; };
 		CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCompressionView.swift; sourceTree = "<group>"; };
 		CE7BCAC22B04EAB90015230C /* SwiftUIStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,6 +281,7 @@
 			children = (
 				CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */,
 				CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */,
+				CE5962612B15F101005BDEEB /* AppStateManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				CE2A27D52B0C9996003F9601 /* SwiftDataEntities.swift in Sources */,
 				CE7BCAF32B0512EE0015230C /* NewTaskView.swift in Sources */,
 				CEBC55822B0617BD007F9B19 /* CoreDataView.swift in Sources */,
+				CE5962622B15F101005BDEEB /* AppStateManager.swift in Sources */,
 				CE0647AB2B107AA200FDEE12 /* NetworkManager.swift in Sources */,
 				CEBC55792B05FCBF007F9B19 /* SidebarViewModel.swift in Sources */,
 				CE7BCAC82B04EAB90015230C /* ContentView.swift in Sources */,
@@ -598,6 +602,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftUIStudy/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Используйте камеру для создания фотографий";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Разрешите доступ приложению к геолокации для предоставления данных о погоде";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -638,6 +643,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftUIStudy/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Используйте камеру для создания фотографий";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Разрешите доступ приложению к геолокации для предоставления данных о погоде";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
