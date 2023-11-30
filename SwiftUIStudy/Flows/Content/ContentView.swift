@@ -28,10 +28,8 @@ struct ContentView: View {
                         Text("Hello world!")
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarLeading) {
-                                    Button {
+                                    Button("", systemImage: "line.3.horizontal") {
                                         isSideBarOpened.toggle()
-                                    } label: {
-                                        Image(systemName: "line.3.horizontal")
                                     }
                                 }
                             }

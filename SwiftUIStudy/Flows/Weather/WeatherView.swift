@@ -14,10 +14,8 @@ struct WeatherView: View {
         let temp = viewModel.temperature == nil ? "--" : "\(viewModel.temperature!)"
         VStack {
             Text("Температура: \(temp) градусов")
-            Button {
+            Button("Обновить") {
                 viewModel.getCurrentWeather()
-            } label: {
-                Text("Обновить")
             }
         }
         .onAppear {

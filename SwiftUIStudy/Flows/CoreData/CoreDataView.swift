@@ -19,15 +19,13 @@ struct CoreDataView: View {
                 }
             }
         }
-        Button(action: {
+        Button("Add departments") {
             // Add entities for testing
             vm.addDepartment(name: "Backend")
             vm.addDepartment(name: "Fromtend")
             vm.addDepartment(name: "QA")
             vm.addDepartment(name: "Design")
-        }, label: {
-            Text("Add departments")
-        })
+        }
     }
 }
 
@@ -49,7 +47,7 @@ struct EmployeesView: View {
             })
         }
         .navigationTitle(department)
-        Button {
+        Button("Add entity") {
             // Add entities for testing
             if department == "Backend" {
                 vm.addEmployee(name: "Илья", departmentName: department)
@@ -74,10 +72,7 @@ struct EmployeesView: View {
                 vm.addEmployee(name: "Никита", departmentName: department)
                 vm.addEmployee(name: "Юлия", departmentName: department)
             }
-        } label: {
-            Text("Add entity")
         }
-
     }
 }
 

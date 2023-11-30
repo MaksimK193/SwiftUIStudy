@@ -19,11 +19,9 @@ struct SwiftDataView: View {
                     .textFieldStyle(.roundedBorder)
                 TextField("name", text: $departmentName)
                     .textFieldStyle(.roundedBorder)
-                Button(action: {
+                Button("Add Item", systemImage: "plus"){
                     let department = Department(id: Int(id) ?? 1, name: departmentName, employees: [])
                     viewModel.addObject(department)
-                }) {
-                    Label("Add Item", systemImage: "plus")
                 }
             }
             .padding()
@@ -57,12 +55,10 @@ struct SwiftDataEmployeesView: View {
                 .textFieldStyle(.roundedBorder)
             TextField("name", text: $employeeName)
                 .textFieldStyle(.roundedBorder)
-            Button(action: {
+            Button("Add Item", systemImage: "plus") {
                 let employee = Employee(id: Int(id) ?? 1, name: employeeName)
                 employee.department = department
                 vm.addObject(employee)
-            }) {
-                Label("Add Item", systemImage: "plus")
             }
         }
         .padding()
