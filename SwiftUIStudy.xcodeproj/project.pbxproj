@@ -12,6 +12,8 @@
 		CE0647AB2B107AA200FDEE12 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647AA2B107AA200FDEE12 /* NetworkManager.swift */; };
 		CE0647B82B109D4A00FDEE12 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647B72B109D4A00FDEE12 /* WeatherViewModel.swift */; };
 		CE0647BC2B10A1AB00FDEE12 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647BB2B10A1AB00FDEE12 /* WeatherModel.swift */; };
+		CE0D617E2B186A6000E93536 /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D617D2B186A6000E93536 /* TokenStorage.swift */; };
+		CE0D61812B186B1200E93536 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE0D61802B186B1200E93536 /* KeychainSwift */; };
 		CE2A27CE2B0C994A003F9601 /* SwiftDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27CD2B0C994A003F9601 /* SwiftDataView.swift */; };
 		CE2A27D02B0C9979003F9601 /* SwiftDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */; };
 		CE2A27D22B0C9983003F9601 /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */; };
@@ -61,6 +63,7 @@
 		CE0647B72B109D4A00FDEE12 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		CE0647BB2B10A1AB00FDEE12 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		CE0647BF2B14BF5600FDEE12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CE0D617D2B186A6000E93536 /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
 		CE2A27CD2B0C994A003F9601 /* SwiftDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataView.swift; sourceTree = "<group>"; };
 		CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataViewModel.swift; sourceTree = "<group>"; };
 		CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0D61812B186B1200E93536 /* KeychainSwift in Frameworks */,
 				CE0647A52B0F959500FDEE12 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +137,14 @@
 				CE0647AA2B107AA200FDEE12 /* NetworkManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CE0D617C2B186A5500E93536 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CE0D617D2B186A6000E93536 /* TokenStorage.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CE2A27CC2B0C98F9003F9601 /* SwiftData */ = {
@@ -283,6 +295,7 @@
 		CEBC558A2B0B384D007F9B19 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CE0D617C2B186A5500E93536 /* Helpers */,
 				CE5962632B172093005BDEEB /* Services */,
 				CE0647A92B107A8B00FDEE12 /* Network */,
 				CEBC558B2B0B3856007F9B19 /* Managers */,
@@ -318,6 +331,7 @@
 			name = SwiftUIStudy;
 			packageProductDependencies = (
 				CE0647A42B0F959500FDEE12 /* Alamofire */,
+				CE0D61802B186B1200E93536 /* KeychainSwift */,
 			);
 			productName = SwiftUIStudy;
 			productReference = CE7BCAC22B04EAB90015230C /* SwiftUIStudy.app */;
@@ -393,6 +407,7 @@
 			mainGroup = CE7BCAB92B04EAB90015230C;
 			packageReferences = (
 				CE0647A32B0F959500FDEE12 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CE0D617F2B186B1200E93536 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = CE7BCAC32B04EAB90015230C /* Products */;
 			projectDirPath = "";
@@ -455,6 +470,7 @@
 				CE7BCAC62B04EAB90015230C /* SwiftUIStudyApp.swift in Sources */,
 				CE2A27CE2B0C994A003F9601 /* SwiftDataView.swift in Sources */,
 				CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */,
+				CE0D617E2B186A6000E93536 /* TokenStorage.swift in Sources */,
 				CE0647BC2B10A1AB00FDEE12 /* WeatherModel.swift in Sources */,
 				CE2A27D02B0C9979003F9601 /* SwiftDataViewModel.swift in Sources */,
 				CEBC55852B06424B007F9B19 /* CoreDataStudy.xcdatamodeld in Sources */,
@@ -826,6 +842,14 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		CE0D617F2B186B1200E93536 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -833,6 +857,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE0647A32B0F959500FDEE12 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		CE0D61802B186B1200E93536 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE0D617F2B186B1200E93536 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

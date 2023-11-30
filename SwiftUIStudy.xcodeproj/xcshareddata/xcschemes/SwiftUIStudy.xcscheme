@@ -73,18 +73,6 @@
             ReferencedContainer = "container:SwiftUIStudy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "YNDX_WEATHER_API_TOKEN"
-            value = "26792f4a-06cb-4c0c-aecd-b5ca965b50ab"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "YNDX_WEATHER_API_URL"
-            value = "https://api.weather.yandex.ru/v2/forecast?"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
       <LocationScenarioReference
          identifier = "Moscow, Russia"
          referenceType = "1">

@@ -10,13 +10,17 @@ import CoreLocation
 
 class WeatherViewModel: NSObject, ObservableObject {
     let networkManager: NetworkManagerProtocol
+    let tokenStorage: TokenStorage
+    private let weatherAPIurl = "https://api.weather.yandex.ru/v2/forecast?"
     
     @Published var temperature: Int?
     var locationManager: CLLocationManager?
     var coordinate: CLLocationCoordinate2D?
     
-    init(networkManager: NetworkManagerProtocol = NetworkManager.shared) {
+    init(networkManager: NetworkManagerProtocol = NetworkManager.shared,
+         tokenStorage: TokenStorage = TokenStorageImpl()) {
         self.networkManager = networkManager
+        self.tokenStorage = tokenStorage
     }
 }
 
@@ -37,7 +41,6 @@ extension WeatherViewModel: CLLocationManagerDelegate {
     
     private func checkLocationAuth() {
         guard let locationManager = locationManager else { return }
-        
         switch locationManager.authorizationStatus {
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -56,14 +59,12 @@ extension WeatherViewModel: CLLocationManagerDelegate {
 extension WeatherViewModel {
     func getCurrentWeather() {
         checkLocationIsEnabled()
-        
-        if let url = ProcessInfo.processInfo.environment["YNDX_WEATHER_API_URL"],
-           let token = ProcessInfo.processInfo.environment["YNDX_WEATHER_API_TOKEN"] {
+        if let token = self.tokenStorage.get(tokenBy: .tokenWeather) {
             let parameters = ["lat": coordinate?.latitude,
                               "lon": coordinate?.longitude]
             let headers = ["X-Yandex-API-Key": token]
             
-            self.networkManager.request(url: url,
+            self.networkManager.request(url: weatherAPIurl,
                                         method: .get,
                                         parameters: parameters,
                                         headers: headers,

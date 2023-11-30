@@ -40,7 +40,6 @@ final class NetworkManager: NetworkManagerProtocol {
                      method: method,
                      parameters: parameters,
                      headers: headers.toHeader())
-            .validate()
             .responseDecodable(of: T.self) { response in
                 switch response.result {
                 case .success(let data):
