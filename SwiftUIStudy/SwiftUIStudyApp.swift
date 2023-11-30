@@ -13,7 +13,9 @@ struct SwiftUIStudyApp: App {
     private let tokenStorage = TokenStorageImpl()
     var body: some Scene {
         WindowGroup {
-            ContentView(stateManager: AppStateManager.shared)
+            MainCoordinator()
+                .view()
+//            ContentView(stateManager: AppStateManager.shared)
                 .onChange(of: scenePhase) { phase in
                     switch phase {
                     case .background, .inactive:

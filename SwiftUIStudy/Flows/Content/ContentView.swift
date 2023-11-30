@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Stinsen
 
 struct ContentView: View {
     @State var isSideBarOpened = false
@@ -24,24 +25,35 @@ struct ContentView: View {
         ZStack {
             NavigationView {
                 ZStack {
-                    NavigationStack {
-                        Text("Hello world!")
-                            .toolbar {
-                                ToolbarItem(placement: .navigationBarLeading) {
-                                    Button("", systemImage: "line.3.horizontal") {
-                                        isSideBarOpened.toggle()
-                                    }
-                                }
-                            }
-                    }
-                    .gesture(drag)
-                    SidebarView(isSidebarOpened: $isSideBarOpened)
+                    //                    NavigationStack {
+                    Text("Hello world!")
+                    
+                    //                    }
+                        .gesture(drag)
+                    
                     
                 }
+                .navigationBarItems(leading: button)
             }
+            SidebarView(isSidebarOpened: $isSideBarOpened)
             InactiveView()
                 .opacity(stateManager.isActive ? 0 : 100 )
+            
+                
         }
+//        .toolbar {
+//            ToolbarItem(placement: .navigationBarLeading) {
+//                Button("", systemImage: "line.3.horizontal") {
+//                    isSideBarOpened.toggle()
+//                }
+//            }
+//        }
+    }
+    
+    @ViewBuilder var button: some View {
+        Button("", systemImage: "line.3.horizontal") {
+                                isSideBarOpened.toggle()
+                            }
     }
 }
 

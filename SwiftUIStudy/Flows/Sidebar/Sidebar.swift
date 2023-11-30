@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import Stinsen
 
 struct SidebarView: View {
     @StateObject var vm = SidebarViewModel()
     @Binding var isSidebarOpened: Bool
     var sidebarWidth = UIScreen.main.bounds.size.width * 0.8
+    @EnvironmentObject private var sidebarRouter: ContentCoordinator.Router
     
     var body: some View {
         let drag = DragGesture()
@@ -41,29 +43,41 @@ struct SidebarView: View {
     var content: some View {
         HStack {
             ZStack {
-                Color.white
-                    .frame(width: sidebarWidth)
+//                Color
+//                    .frame(width: sidebarWidth)
                 List() {
                     ForEach(vm.screens) { item in
-                        NavigationLink(destination: {
-                            switch item.screen {
-                            case .coreData:
-                                CoreDataView()
-                            case .swiftData:
-                                SwiftDataView()
-                            case .weather:
-                                WeatherView()
-                            case .photoCompression:
-                                PhotoCompressionView()
+//                        NavigationLink(destination: {
+//                            switch item.screen {
+//                            case .coreData:
+//                                CoreDataView()
+//                            case .swiftData:
+//                                SwiftDataView()
+//                            case .weather:
+//                                WeatherView()
+//                            case .photoCompression:
+//                                PhotoCompressionView()
+//                            }
+//                        }) {
+                        Button("\(item.screen.rawValue)") {
+                                switch item.screen {
+                                case .coreData:
+                                    sidebarRouter.route(to: \.coreData)
+                                case .swiftData:
+                                    sidebarRouter.route(to: \.swiftData)
+                                case .weather:
+                                    sidebarRouter.route(to: \.weather)
+                                case .photoCompression:
+                                    sidebarRouter.route(to: \.photoCompression)
+                                }
                             }
-                        }) {
-                            Text("\(item.screen.rawValue)")
-                        }
+//                        }
                     }
                 }
                 .listStyle(.plain)
                 .padding([.top], 60)
             }
+            .background()
             .frame(width: sidebarWidth)
             .offset(x: isSidebarOpened ? 0 : -sidebarWidth)
             .animation(.default, value: isSidebarOpened)

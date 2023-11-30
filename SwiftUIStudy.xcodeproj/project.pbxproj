@@ -14,6 +14,9 @@
 		CE0647BC2B10A1AB00FDEE12 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647BB2B10A1AB00FDEE12 /* WeatherModel.swift */; };
 		CE0D617E2B186A6000E93536 /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D617D2B186A6000E93536 /* TokenStorage.swift */; };
 		CE0D61812B186B1200E93536 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE0D61802B186B1200E93536 /* KeychainSwift */; };
+		CE0D61842B188FCD00E93536 /* Stinsen in Frameworks */ = {isa = PBXBuildFile; productRef = CE0D61832B188FCD00E93536 /* Stinsen */; };
+		CE0D61892B189B5600E93536 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D61882B189B5600E93536 /* MainCoordinator.swift */; };
+		CE0D618B2B18AD0B00E93536 /* ContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D618A2B18AD0B00E93536 /* ContentCoordinator.swift */; };
 		CE2A27CE2B0C994A003F9601 /* SwiftDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27CD2B0C994A003F9601 /* SwiftDataView.swift */; };
 		CE2A27D02B0C9979003F9601 /* SwiftDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */; };
 		CE2A27D22B0C9983003F9601 /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */; };
@@ -64,6 +67,8 @@
 		CE0647BB2B10A1AB00FDEE12 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		CE0647BF2B14BF5600FDEE12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CE0D617D2B186A6000E93536 /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
+		CE0D61882B189B5600E93536 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		CE0D618A2B18AD0B00E93536 /* ContentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCoordinator.swift; sourceTree = "<group>"; };
 		CE2A27CD2B0C994A003F9601 /* SwiftDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataView.swift; sourceTree = "<group>"; };
 		CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataViewModel.swift; sourceTree = "<group>"; };
 		CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
@@ -99,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0D61842B188FCD00E93536 /* Stinsen in Frameworks */,
 				CE0D61812B186B1200E93536 /* KeychainSwift in Frameworks */,
 				CE0647A52B0F959500FDEE12 /* Alamofire in Frameworks */,
 			);
@@ -145,6 +151,14 @@
 				CE0D617D2B186A6000E93536 /* TokenStorage.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CE0D61872B189B4000E93536 /* MainCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CE0D61882B189B5600E93536 /* MainCoordinator.swift */,
+			);
+			path = MainCoordinator;
 			sourceTree = "<group>";
 		};
 		CE2A27CC2B0C98F9003F9601 /* SwiftData */ = {
@@ -270,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7BCAC72B04EAB90015230C /* ContentView.swift */,
+				CE0D618A2B18AD0B00E93536 /* ContentCoordinator.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -295,6 +310,7 @@
 		CEBC558A2B0B384D007F9B19 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CE0D61872B189B4000E93536 /* MainCoordinator */,
 				CE0D617C2B186A5500E93536 /* Helpers */,
 				CE5962632B172093005BDEEB /* Services */,
 				CE0647A92B107A8B00FDEE12 /* Network */,
@@ -332,6 +348,7 @@
 			packageProductDependencies = (
 				CE0647A42B0F959500FDEE12 /* Alamofire */,
 				CE0D61802B186B1200E93536 /* KeychainSwift */,
+				CE0D61832B188FCD00E93536 /* Stinsen */,
 			);
 			productName = SwiftUIStudy;
 			productReference = CE7BCAC22B04EAB90015230C /* SwiftUIStudy.app */;
@@ -408,6 +425,7 @@
 			packageReferences = (
 				CE0647A32B0F959500FDEE12 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CE0D617F2B186B1200E93536 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				CE0D61822B188FCD00E93536 /* XCRemoteSwiftPackageReference "stinsen" */,
 			);
 			productRefGroup = CE7BCAC32B04EAB90015230C /* Products */;
 			projectDirPath = "";
@@ -464,6 +482,7 @@
 				CEBC55892B0B3808007F9B19 /* CoreDataViewModel.swift in Sources */,
 				CE5962842B172926005BDEEB /* CamViewController.swift in Sources */,
 				CE0647B82B109D4A00FDEE12 /* WeatherViewModel.swift in Sources */,
+				CE0D61892B189B5600E93536 /* MainCoordinator.swift in Sources */,
 				CE7BCAF12B04F2AC0015230C /* Sidebar.swift in Sources */,
 				CEBC557D2B05FDB6007F9B19 /* SidebarListModel.swift in Sources */,
 				CE6329962B15CFAB0020D37F /* PhotoCompressionView.swift in Sources */,
@@ -472,6 +491,7 @@
 				CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */,
 				CE0D617E2B186A6000E93536 /* TokenStorage.swift in Sources */,
 				CE0647BC2B10A1AB00FDEE12 /* WeatherModel.swift in Sources */,
+				CE0D618B2B18AD0B00E93536 /* ContentCoordinator.swift in Sources */,
 				CE2A27D02B0C9979003F9601 /* SwiftDataViewModel.swift in Sources */,
 				CEBC55852B06424B007F9B19 /* CoreDataStudy.xcdatamodeld in Sources */,
 				CE2A27D22B0C9983003F9601 /* SwiftDataManager.swift in Sources */,
@@ -850,6 +870,14 @@
 				minimumVersion = 20.0.0;
 			};
 		};
+		CE0D61822B188FCD00E93536 /* XCRemoteSwiftPackageReference "stinsen" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rundfunk47/stinsen";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.13;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -862,6 +890,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE0D617F2B186B1200E93536 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		CE0D61832B188FCD00E93536 /* Stinsen */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE0D61822B188FCD00E93536 /* XCRemoteSwiftPackageReference "stinsen" */;
+			productName = Stinsen;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WeatherView: View {
     @ObservedObject private var viewModel = WeatherViewModel()
+    @EnvironmentObject private var sidebarRouter: ContentCoordinator.Router
     
     var body: some View {
         let temp = viewModel.temperature == nil ? "--" : "\(viewModel.temperature!)"
