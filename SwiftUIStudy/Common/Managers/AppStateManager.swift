@@ -12,5 +12,5 @@ class AppStateManager: ObservableObject {
     
     static var shared = AppStateManager()
     
-    private init() {}
+    init() {}
 }

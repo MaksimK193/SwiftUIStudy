@@ -19,23 +19,27 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var weather = makeWeather
     @Route(.push) var photoCompression = makePhotoCompression
     
+    
+    deinit {
+        print("Content Coordinator deinited")
+    }
 }
 
 extension ContentCoordinator {
-    @ViewBuilder func makeCoreData() -> some View {
-        CoreDataView()
+    @ViewBuilder func makeCoreData(stateManager: AppStateManager) -> some View {
+        CoreDataView(stateManager: stateManager)
     }
     
-    @ViewBuilder func makeSwiftData() -> some View {
-        SwiftDataView()
+    @ViewBuilder func makeSwiftData(stateManager: AppStateManager) -> some View {
+        SwiftDataView(stateManager: stateManager)
     }
     
-    @ViewBuilder func makeWeather() -> some View {
-        WeatherView()
+    @ViewBuilder func makeWeather(stateManager: AppStateManager) -> some View {
+        WeatherView(stateManager: stateManager)
     }
     
-    @ViewBuilder func makePhotoCompression() -> some View {
-        PhotoCompressionView()
+    @ViewBuilder func makePhotoCompression(stateManager: AppStateManager) -> some View {
+        PhotoCompressionView(stateManager: stateManager)
     }
     
     @ViewBuilder func makeStart() -> some View {

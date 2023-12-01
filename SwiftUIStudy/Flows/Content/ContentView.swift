@@ -11,49 +11,36 @@ import Stinsen
 struct ContentView: View {
     @State var isSideBarOpened = false
     @ObservedObject var stateManager: AppStateManager
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some View {
         let drag = DragGesture()
             .onEnded { gesture in
                 if gesture.location.x < 170 && gesture.translation.width > 30 {
-                    withAnimation {
                         isSideBarOpened.toggle()
-                    }
                 }
             }
         
         ZStack {
-            NavigationView {
                 ZStack {
-                    //                    NavigationStack {
-                    Text("Hello world!")
-                    
-                    //                    }
-                        .gesture(drag)
-                    
-                    
+                    NavigationView {
+                        Text("Hello world!")
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarLeading, content: { button })
+                            }
+                    }
                 }
-                .navigationBarItems(leading: button)
-            }
-            SidebarView(isSidebarOpened: $isSideBarOpened)
+            SidebarView(isSidebarOpened: $isSideBarOpened, stateManager: stateManager)
             InactiveView()
-                .opacity(stateManager.isActive ? 0 : 100 )
-            
-                
+                .opacity(stateManager.isActive ? 0 : 100)
         }
-//        .toolbar {
-//            ToolbarItem(placement: .navigationBarLeading) {
-//                Button("", systemImage: "line.3.horizontal") {
-//                    isSideBarOpened.toggle()
-//                }
-//            }
-//        }
+        .gesture(drag)
     }
     
     @ViewBuilder var button: some View {
         Button("", systemImage: "line.3.horizontal") {
-                                isSideBarOpened.toggle()
-                            }
+            isSideBarOpened.toggle()
+        }
     }
 }
 

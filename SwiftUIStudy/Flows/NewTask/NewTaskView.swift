@@ -9,8 +9,14 @@ import SwiftUI
 
 struct NewTaskView: View {
     @State var text: String
+    @ObservedObject var stateManager: AppStateManager
+    
     var body: some View {
-        Color.white
-            .navigationTitle(text)
+        ZStack {
+            Color.white
+                .navigationTitle(text)
+            InactiveView()
+                .opacity(stateManager.isActive ? 0 : 100)
+        }
     }
 }

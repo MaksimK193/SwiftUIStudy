@@ -10,9 +10,11 @@ import SwiftUI
 struct InactiveView: View {
     var body: some View {
         ZStack {
-            Color(.white)
+            Color.white
             Text("SwiftUIStudy")
                 .fontWeight(.ultraLight)
+//                .frame(width: .infinity)
+//                .background(.white)
         }
         .ignoresSafeArea()
     }
