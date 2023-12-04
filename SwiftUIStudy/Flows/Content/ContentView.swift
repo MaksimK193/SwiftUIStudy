@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Stinsen
 
 struct ContentView: View {
     @State var isSideBarOpened = false
@@ -15,34 +16,27 @@ struct ContentView: View {
         let drag = DragGesture()
             .onEnded { gesture in
                 if gesture.location.x < 170 && gesture.translation.width > 30 {
-                    withAnimation {
                         isSideBarOpened.toggle()
-                    }
                 }
             }
         
         ZStack {
             NavigationView {
-                ZStack {
-                    NavigationStack {
-                        Text("Hello world!")
-                            .toolbar {
-                                ToolbarItem(placement: .navigationBarLeading) {
-                                    Button {
-                                        isSideBarOpened.toggle()
-                                    } label: {
-                                        Image(systemName: "line.3.horizontal")
-                                    }
-                                }
-                            }
+                Text("Hello world!")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading, content: { button })
                     }
-                    .gesture(drag)
-                    SidebarView(isSidebarOpened: $isSideBarOpened)
-                    
-                }
             }
+            SidebarView(stateManager: stateManager, isSidebarOpened: $isSideBarOpened)
             InactiveView()
-                .opacity(stateManager.isActive ? 0 : 100 )
+                .opacity(stateManager.isActive ? 0 : 100)
+        }
+        .gesture(drag)
+    }
+    
+    @ViewBuilder var button: some View {
+        Button("", systemImage: "line.3.horizontal") {
+            isSideBarOpened.toggle()
         }
     }
 }

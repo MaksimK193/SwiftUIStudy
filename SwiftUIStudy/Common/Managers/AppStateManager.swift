@@ -8,9 +8,9 @@
 import Foundation
 
 class AppStateManager: ObservableObject {
-    @Published var isActive = false
+    @Published var isActive = true
     
     static var shared = AppStateManager()
     
-    private init() {}
+    init() {}
 }

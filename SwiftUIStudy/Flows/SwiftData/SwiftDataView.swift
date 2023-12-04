@@ -11,36 +11,39 @@ struct SwiftDataView: View {
     @State private var viewModel = SwiftDataViewModel()
     @State private var id: String = ""
     @State private var departmentName: String = ""
+    @ObservedObject var stateManager: AppStateManager
     
     var body: some View {
-        VStack {
-            HStack {
-                TextField("id", text: $id)
-                    .textFieldStyle(.roundedBorder)
-                TextField("name", text: $departmentName)
-                    .textFieldStyle(.roundedBorder)
-                Button(action: {
-                    let department = Department(id: Int(id) ?? 1, name: departmentName, employees: [])
-                    viewModel.addObject(department)
-                }) {
-                    Label("Add Item", systemImage: "plus")
-                }
-            }
-            .padding()
-            List {
-                ForEach(viewModel.departments) { department in
-                    NavigationLink {
-                        SwiftDataEmployeesView(department: department, vm: viewModel)
-                    } label: {
-                        Text(department.name)
+        ZStack {
+            VStack {
+                HStack {
+                    TextField("id", text: $id)
+                        .textFieldStyle(.roundedBorder)
+                    TextField("name", text: $departmentName)
+                        .textFieldStyle(.roundedBorder)
+                    Button("Add Item", systemImage: "plus"){
+                        let department = Department(id: Int(id) ?? 1, name: departmentName, employees: [])
+                        viewModel.addObject(department)
                     }
                 }
-                .onDelete(perform: { offsets in
-                    for index in offsets {
-                        viewModel.remove(viewModel.departments[index])
+                .padding()
+                List {
+                    ForEach(viewModel.departments) { department in
+                        NavigationLink {
+                            SwiftDataEmployeesView(department: department, vm: viewModel, stateManager: stateManager)
+                        } label: {
+                            Text(department.name)
+                        }
                     }
-                })
+                    .onDelete(perform: { offsets in
+                        for index in offsets {
+                            viewModel.remove(viewModel.departments[index])
+                        }
+                    })
+                }
             }
+            InactiveView()
+                .opacity(stateManager.isActive ? 0 : 100)
         }
     }
 }
@@ -50,35 +53,38 @@ struct SwiftDataEmployeesView: View {
     @State var vm: SwiftDataViewModel
     @State private var id: String = ""
     @State private var employeeName: String = ""
+    @ObservedObject var stateManager: AppStateManager
     
     var body: some View {
-        HStack {
-            TextField("id", text: $id)
-                .textFieldStyle(.roundedBorder)
-            TextField("name", text: $employeeName)
-                .textFieldStyle(.roundedBorder)
-            Button(action: {
-                let employee = Employee(id: Int(id) ?? 1, name: employeeName)
-                employee.department = department
-                vm.addObject(employee)
-            }) {
-                Label("Add Item", systemImage: "plus")
+        ZStack {
+            HStack {
+                TextField("id", text: $id)
+                    .textFieldStyle(.roundedBorder)
+                TextField("name", text: $employeeName)
+                    .textFieldStyle(.roundedBorder)
+                Button("Add Item", systemImage: "plus") {
+                    let employee = Employee(id: Int(id) ?? 1, name: employeeName)
+                    employee.department = department
+                    vm.addObject(employee)
+                }
             }
-        }
-        .padding()
-        List {
-            ForEach(department.employees) {employee in
-                EmployeeRowView(name: employee.name)
+            .padding()
+            List {
+                ForEach(department.employees) {employee in
+                    EmployeeRowView(name: employee.name)
+                }
+                .onDelete(perform: { indexSet in
+                    guard let index = indexSet.first else { return }
+                    vm.remove(department.employees[index])
+                })
             }
-            .onDelete(perform: { indexSet in
-                guard let index = indexSet.first else { return }
-                vm.remove(department.employees[index])
-            })
+            .navigationTitle(department.name)
+            InactiveView()
+                .opacity(stateManager.isActive ? 0 : 100)
         }
-        .navigationTitle(department.name)
     }
 }
 
 #Preview {
-    SwiftDataView()
+    SwiftDataView(stateManager: AppStateManager.shared)
 }

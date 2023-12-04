@@ -30,11 +30,11 @@ final class NetworkManager: NetworkManagerProtocol {
     }
     
     func request<T>(url: String,
-                             method: HTTPMethod,
-                             parameters: [String: Any],
-                             headers: [String: String],
-                             resultType: T.Type,
-                             result: @escaping (Result<T?, Error>) -> Void) where T: Codable {
+                    method: HTTPMethod,
+                    parameters: [String: Any],
+                    headers: [String: String],
+                    resultType: T.Type,
+                    result: @escaping (Result<T?, Error>) -> Void) where T: Codable {
         self.session
             .request(url,
                      method: method,

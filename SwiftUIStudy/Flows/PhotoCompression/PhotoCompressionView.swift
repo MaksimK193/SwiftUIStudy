@@ -12,19 +12,22 @@ struct PhotoCompressionView: View {
     @State var compressedImage: Data = .init()
     @State var show = true
     @State var imagepicker = false
+    @ObservedObject var stateManager: AppStateManager
     
     var body: some View {
-        VStack() {
-            images
-            NavigationLink {
-                CameraViewController(image: $imageData)
-            } label: {
-                Text("Take photo")
+        ZStack {
+            VStack() {
+                images
+                NavigationLink("Take photo") {
+                    CameraViewController(image: $imageData)
+                }
+                Button("Compress photo \(String(AppStateManager.shared.isActive))") {
+                    compressedImage = imageData.jpegData(compressionQuality: 0.9) ?? .init()
+                }
+                Spacer()
             }
-            Button("Compress photo") {
-                compressedImage = imageData.jpegData(compressionQuality: 0.9) ?? .init()
-            }
-            Spacer()
+            InactiveView()
+                .opacity(stateManager.isActive ? 0 : 100)
         }
     }
     
@@ -78,6 +81,6 @@ struct PhotoCompressionView: View {
 }
 
 #Preview("PhotoCompressionView") {
-    PhotoCompressionView()
+    PhotoCompressionView(stateManager: AppStateManager.shared)
 }
 
