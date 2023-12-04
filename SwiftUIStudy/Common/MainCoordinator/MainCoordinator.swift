@@ -17,14 +17,10 @@ final class MainCoordinator: NavigationCoordinatable {
     @ViewBuilder func sharedView(_ view: AnyView) -> some View {
         view
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
-               print("didBecomeActiveNotification")
                 AppStateManager.shared.isActive = true
-                print(AppStateManager.shared.isActive)
             }
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-              print("willResignActiveNotification")
                 AppStateManager.shared.isActive = false
-                print(AppStateManager.shared.isActive)
             }
             
     }

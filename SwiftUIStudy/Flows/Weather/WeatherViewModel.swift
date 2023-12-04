@@ -64,6 +64,7 @@ extension WeatherViewModel {
                               "lon": coordinate?.longitude]
             let headers = ["X-Yandex-API-Key": token]
             
+            //TODO: добавить передачу метода и хедера через gateway
             self.networkManager.request(url: weatherAPIurl,
                                         method: .get,
                                         parameters: parameters,

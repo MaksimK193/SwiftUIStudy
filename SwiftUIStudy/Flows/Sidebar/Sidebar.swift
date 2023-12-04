@@ -9,11 +9,11 @@ import SwiftUI
 import Stinsen
 
 struct SidebarView: View {
-    @StateObject var vm = SidebarViewModel()
+    @StateObject private var vm = SidebarViewModel()
+    @ObservedObject var stateManager: AppStateManager
+    @EnvironmentObject private var sidebarRouter: ContentCoordinator.Router
     @Binding var isSidebarOpened: Bool
     var sidebarWidth = UIScreen.main.bounds.size.width * 0.8
-    @EnvironmentObject private var sidebarRouter: ContentCoordinator.Router
-    @ObservedObject var stateManager: AppStateManager
     
     var body: some View {
         let drag = DragGesture()

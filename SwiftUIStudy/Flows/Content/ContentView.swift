@@ -27,7 +27,7 @@ struct ContentView: View {
                         ToolbarItem(placement: .navigationBarLeading, content: { button })
                     }
             }
-            SidebarView(isSidebarOpened: $isSideBarOpened, stateManager: stateManager)
+            SidebarView(stateManager: stateManager, isSidebarOpened: $isSideBarOpened)
             InactiveView()
                 .opacity(stateManager.isActive ? 0 : 100)
         }
