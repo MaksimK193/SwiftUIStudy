@@ -11,7 +11,6 @@ import Stinsen
 struct ContentView: View {
     @State var isSideBarOpened = false
     @ObservedObject var stateManager: AppStateManager
-    @Environment(\.scenePhase) var scenePhase
     
     var body: some View {
         let drag = DragGesture()
@@ -22,14 +21,12 @@ struct ContentView: View {
             }
         
         ZStack {
-                ZStack {
-                    NavigationView {
-                        Text("Hello world!")
-                            .toolbar {
-                                ToolbarItem(placement: .navigationBarLeading, content: { button })
-                            }
+            NavigationView {
+                Text("Hello world!")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading, content: { button })
                     }
-                }
+            }
             SidebarView(isSidebarOpened: $isSideBarOpened, stateManager: stateManager)
             InactiveView()
                 .opacity(stateManager.isActive ? 0 : 100)

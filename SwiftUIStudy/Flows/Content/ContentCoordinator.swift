@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-
 import Stinsen
 
 final class ContentCoordinator: NavigationCoordinatable {
@@ -18,11 +17,6 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var coreData = makeCoreData
     @Route(.push) var weather = makeWeather
     @Route(.push) var photoCompression = makePhotoCompression
-    
-    
-    deinit {
-        print("Content Coordinator deinited")
-    }
 }
 
 extension ContentCoordinator {
