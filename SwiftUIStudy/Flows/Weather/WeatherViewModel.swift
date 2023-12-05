@@ -10,17 +10,15 @@ import CoreLocation
 
 class WeatherViewModel: NSObject, ObservableObject {
     let networkManager: NetworkManagerProtocol
-    let tokenStorage: TokenStorage
     private let weatherAPIurl = "https://api.weather.yandex.ru/v2/forecast?"
     
+    private let gateway = WeatherNetworkGateway()
     @Published var temperature: Int?
     var locationManager: CLLocationManager?
     var coordinate: CLLocationCoordinate2D?
     
-    init(networkManager: NetworkManagerProtocol = NetworkManager.shared,
-         tokenStorage: TokenStorage = TokenStorageImpl()) {
+    init(networkManager: NetworkManagerProtocol = NetworkManager.shared) {
         self.networkManager = networkManager
-        self.tokenStorage = tokenStorage
     }
 }
 
@@ -59,25 +57,21 @@ extension WeatherViewModel: CLLocationManagerDelegate {
 extension WeatherViewModel {
     func getCurrentWeather() {
         checkLocationIsEnabled()
-        if let token = self.tokenStorage.get(tokenBy: .tokenWeather) {
-            let parameters = ["lat": coordinate?.latitude,
-                              "lon": coordinate?.longitude]
-            let headers = ["X-Yandex-API-Key": token]
-            
-            //TODO: добавить передачу метода и хедера через gateway
-            self.networkManager.request(url: weatherAPIurl,
-                                        method: .get,
-                                        parameters: parameters,
-                                        headers: headers,
-                                        resultType: Weather.self,
-                                        result: { result in
-                switch result {
-                case .success(let data):
-                    self.temperature = data?.fact.temp
-                case .failure(let error):
-                    print(error)
-                }
-            })
-        }
+        let parameters = ["lat": coordinate?.latitude,
+                          "lon": coordinate?.longitude]
+        
+        //TODO: добавить передачу метода и хедера через gateway
+        self.networkManager.request(gateway: gateway,
+                                    parameters: parameters,
+                                    resultType: Weather.self,
+                                    result: { result in
+            switch result {
+            case .success(let data):
+                self.temperature = data?.fact.temp
+            case .failure(let error):
+                print(error)
+            }
+        })
+        
     }
 }
