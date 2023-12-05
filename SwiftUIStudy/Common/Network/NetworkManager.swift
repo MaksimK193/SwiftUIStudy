@@ -9,16 +9,15 @@ import Foundation
 import Alamofire
 
 protocol NetworkManagerProtocol {
-    func request<T>(url: String,
-                    method: HTTPMethod,
+    func request<T>(gateway: NetworkGatewayProtocol,
                     parameters: [String: Any],
-                    headers: [String: String],
                     resultType: T.Type,
                     result: @escaping (Result<T?, Error>) -> Void) where T: Codable
 }
 
 final class NetworkManager: NetworkManagerProtocol {
     private let session: Session
+    private let apiBaseURL: String
     
     public static var shared: NetworkManagerProtocol = NetworkManager()
     
@@ -27,19 +26,18 @@ final class NetworkManager: NetworkManagerProtocol {
         configuration.timeoutIntervalForRequest = 30
         configuration.timeoutIntervalForResource = 30
         self.session = Session(configuration: configuration)
+        self.apiBaseURL = "https://api.weather.yandex.ru/"
     }
     
-    func request<T>(url: String,
-                    method: HTTPMethod,
+    func request<T>(gateway: NetworkGatewayProtocol,
                     parameters: [String: Any],
-                    headers: [String: String],
                     resultType: T.Type,
                     result: @escaping (Result<T?, Error>) -> Void) where T: Codable {
         self.session
-            .request(url,
-                     method: method,
+            .request(apiBaseURL + gateway.path,
+                     method: gateway.method,
                      parameters: parameters,
-                     headers: headers.toHeader())
+                     headers: gateway.headers)
             .responseDecodable(of: T.self) { response in
                 switch response.result {
                 case .success(let data):
