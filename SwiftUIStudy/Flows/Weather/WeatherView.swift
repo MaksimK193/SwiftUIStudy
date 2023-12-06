@@ -20,6 +20,7 @@ struct WeatherView: View {
                 Button("Обновить") {
                     viewModel.getCurrentWeather()
                 }
+                .accessibilityIdentifier("weatherUpdateButton")
             }
             .onAppear {
                 viewModel.checkLocationIsEnabled()

@@ -38,6 +38,7 @@ struct ContentView: View {
         Button("", systemImage: "line.3.horizontal") {
             isSideBarOpened.toggle()
         }
+        .accessibilityIdentifier("menuButton")
     }
 }
 

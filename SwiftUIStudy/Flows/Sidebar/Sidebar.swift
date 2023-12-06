@@ -57,6 +57,7 @@ struct SidebarView: View {
                             sidebarRouter.route(to: \.photoCompression, stateManager)
                         }
                     }
+                    .accessibilityIdentifier("\(item.screen.rawValue)")
                 }
             }
             .listStyle(.plain)
