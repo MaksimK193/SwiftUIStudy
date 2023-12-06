@@ -9,7 +9,7 @@ import XCTest
 
 final class SwiftUIStudyTests: XCTestCase {
 
-    func testByteConvertion() {
+    func test_byteConvertion_with1048576_should1MB() {
         let comprView = PhotoCompressionView(stateManager: AppStateManager.shared)
         
         let actual = comprView.convertFromBToMB(1_048_576)

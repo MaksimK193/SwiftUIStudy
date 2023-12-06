@@ -17,7 +17,7 @@ final class SwiftUIStudyUITests: XCTestCase {
         app.buttons["menuButton"].tap()
     }
 
-    func testNavigation() {
+    func test_navigation_shouldCorrectOpenView() {
         let backButton = app.navigationBars.buttons.element(boundBy: 0)
         
         app.otherElements.buttons["Core Data"].tap()
