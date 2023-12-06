@@ -24,6 +24,7 @@ struct PhotoCompressionView: View {
                 Button("Compress photo \(String(AppStateManager.shared.isActive))") {
                     compressedImage = imageData.jpegData(compressionQuality: 0.9) ?? .init()
                 }
+                .accessibilityIdentifier("compressPhotoButton")
                 Spacer()
             }
             InactiveView()

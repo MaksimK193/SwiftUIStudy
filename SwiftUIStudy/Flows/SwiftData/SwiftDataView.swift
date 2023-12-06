@@ -25,6 +25,7 @@ struct SwiftDataView: View {
                         let department = Department(id: Int(id) ?? 1, name: departmentName, employees: [])
                         viewModel.addObject(department)
                     }
+                    .accessibilityIdentifier("swiftDataAddButton")
                 }
                 .padding()
                 List {

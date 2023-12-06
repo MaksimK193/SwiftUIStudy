@@ -28,6 +28,7 @@ struct CoreDataView: View {
                 vm.addDepartment(name: "QA")
                 vm.addDepartment(name: "Design")
             }
+            .accessibilityIdentifier("coreDataAddButton")
             InactiveView()
                 .opacity(stateManager.isActive ? 0 : 100)
         }

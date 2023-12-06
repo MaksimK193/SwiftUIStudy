@@ -37,6 +37,11 @@
 		CE7BCAE42B04EABA0015230C /* SwiftUIStudyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAE32B04EABA0015230C /* SwiftUIStudyUITestsLaunchTests.swift */; };
 		CE7BCAF12B04F2AC0015230C /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAF02B04F2AC0015230C /* Sidebar.swift */; };
 		CE7BCAF32B0512EE0015230C /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAF22B0512EE0015230C /* NewTaskView.swift */; };
+		CEACB7772B205E7D004144B7 /* PhotoCompressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */; };
+		CEACB7782B205F73004144B7 /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5962612B15F101005BDEEB /* AppStateManager.swift */; };
+		CEACB7792B205F8D004144B7 /* CamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59627E2B172926005BDEEB /* CamViewController.swift */; };
+		CEACB77A2B205F98004144B7 /* InactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329922B15C77C0020D37F /* InactiveView.swift */; };
+		CEACB77B2B205FA9004144B7 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5962642B17209E005BDEEB /* CameraService.swift */; };
 		CEBC55792B05FCBF007F9B19 /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55782B05FCBF007F9B19 /* SidebarViewModel.swift */; };
 		CEBC557D2B05FDB6007F9B19 /* SidebarListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC557C2B05FDB6007F9B19 /* SidebarListModel.swift */; };
 		CEBC55822B0617BD007F9B19 /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55812B0617BD007F9B19 /* CoreDataView.swift */; };
@@ -510,6 +515,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEACB7772B205E7D004144B7 /* PhotoCompressionView.swift in Sources */,
+				CEACB7782B205F73004144B7 /* AppStateManager.swift in Sources */,
+				CEACB77B2B205FA9004144B7 /* CameraService.swift in Sources */,
+				CEACB77A2B205F98004144B7 /* InactiveView.swift in Sources */,
+				CEACB7792B205F8D004144B7 /* CamViewController.swift in Sources */,
 				CE7BCAD82B04EABA0015230C /* SwiftUIStudyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
