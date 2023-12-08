@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Stinsen
+import ActivityKit
 
 struct ContentView: View {
     @State var isSideBarOpened = false
@@ -37,6 +38,18 @@ struct ContentView: View {
     @ViewBuilder var button: some View {
         Button("", systemImage: "line.3.horizontal") {
             isSideBarOpened.toggle()
+            if ActivityAuthorizationInfo().areActivitiesEnabled {
+                do {
+                    let attributes = TestAttributes(name: "World")
+                    let initialState = TestAttributes.ContentState(emoji: "😀")
+                    let activity = try Activity.request(
+                        attributes: attributes,
+                        content: .init(state: initialState, staleDate: nil)
+                    )
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
         }
         .accessibilityIdentifier("menuButton")
     }
