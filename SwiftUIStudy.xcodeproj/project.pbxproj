@@ -34,6 +34,7 @@
 		CE5F58DC2B22FDCC008D91A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5F58DB2B22FDCC008D91A1 /* Assets.xcassets */; };
 		CE5F58E02B22FDCC008D91A1 /* TestExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CE5F58CE2B22FDCB008D91A1 /* TestExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE5F58E52B22FDD0008D91A1 /* TestLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F58D72B22FDCB008D91A1 /* TestLiveActivity.swift */; };
+		CE5F58E82B22FEB0008D91A1 /* LiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F58E72B22FEB0008D91A1 /* LiveActivityView.swift */; };
 		CE6329932B15C77C0020D37F /* InactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329922B15C77C0020D37F /* InactiveView.swift */; };
 		CE6329962B15CFAB0020D37F /* PhotoCompressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */; };
 		CE7BCAC62B04EAB90015230C /* SwiftUIStudyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAC52B04EAB90015230C /* SwiftUIStudyApp.swift */; };
@@ -122,6 +123,7 @@
 		CE5F58D92B22FDCB008D91A1 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		CE5F58DB2B22FDCC008D91A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5F58DD2B22FDCC008D91A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE5F58E72B22FEB0008D91A1 /* LiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityView.swift; sourceTree = "<group>"; };
 		CE6329922B15C77C0020D37F /* InactiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveView.swift; sourceTree = "<group>"; };
 		CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCompressionView.swift; sourceTree = "<group>"; };
 		CE7BCAC22B04EAB90015230C /* SwiftUIStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,6 +259,14 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		CE5F58E62B22FE78008D91A1 /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F58E72B22FEB0008D91A1 /* LiveActivityView.swift */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
 		CE6329912B15C7620020D37F /* Inactive */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +349,7 @@
 		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CE5F58E62B22FE78008D91A1 /* LiveActivity */,
 				CE6329942B15CDD90020D37F /* PhotoCompression */,
 				CE6329912B15C7620020D37F /* Inactive */,
 				CE0647A02B0F926300FDEE12 /* Weather */,
@@ -618,6 +629,7 @@
 				CE0647BC2B10A1AB00FDEE12 /* WeatherModel.swift in Sources */,
 				CE0D618B2B18AD0B00E93536 /* ContentCoordinator.swift in Sources */,
 				CE2A27D02B0C9979003F9601 /* SwiftDataViewModel.swift in Sources */,
+				CE5F58E82B22FEB0008D91A1 /* LiveActivityView.swift in Sources */,
 				CEBC55852B06424B007F9B19 /* CoreDataStudy.xcdatamodeld in Sources */,
 				CE2A27D22B0C9983003F9601 /* SwiftDataManager.swift in Sources */,
 			);

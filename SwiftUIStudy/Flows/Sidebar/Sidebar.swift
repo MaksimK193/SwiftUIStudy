@@ -55,6 +55,8 @@ struct SidebarView: View {
                             sidebarRouter.route(to: \.weather, stateManager)
                         case .photoCompression:
                             sidebarRouter.route(to: \.photoCompression, stateManager)
+                        case .liveActivity:
+                            sidebarRouter.route(to: \.liveActivity)
                         }
                     }
                     .accessibilityIdentifier("\(item.screen.rawValue)")
