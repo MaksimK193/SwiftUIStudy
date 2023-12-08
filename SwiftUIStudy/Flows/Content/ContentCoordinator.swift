@@ -17,6 +17,7 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var coreData = makeCoreData
     @Route(.push) var weather = makeWeather
     @Route(.push) var photoCompression = makePhotoCompression
+    @Route(.push) var liveActivity = makeLiveActivity
 }
 
 extension ContentCoordinator {
@@ -34,6 +35,10 @@ extension ContentCoordinator {
     
     @ViewBuilder func makePhotoCompression(stateManager: AppStateManager) -> some View {
         PhotoCompressionView(stateManager: stateManager)
+    }
+    
+    @ViewBuilder func makeLiveActivity() -> some View {
+        LiveActivityView()
     }
     
     @ViewBuilder func makeStart() -> some View {
