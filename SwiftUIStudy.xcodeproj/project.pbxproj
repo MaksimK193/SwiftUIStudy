@@ -30,7 +30,6 @@
 		CE5F58D32B22FDCB008D91A1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5F58D22B22FDCB008D91A1 /* SwiftUI.framework */; };
 		CE5F58D62B22FDCB008D91A1 /* TestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F58D52B22FDCB008D91A1 /* TestBundle.swift */; };
 		CE5F58D82B22FDCB008D91A1 /* TestLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F58D72B22FDCB008D91A1 /* TestLiveActivity.swift */; };
-		CE5F58DA2B22FDCB008D91A1 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F58D92B22FDCB008D91A1 /* Test.swift */; };
 		CE5F58DC2B22FDCC008D91A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5F58DB2B22FDCC008D91A1 /* Assets.xcassets */; };
 		CE5F58E02B22FDCC008D91A1 /* TestExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CE5F58CE2B22FDCB008D91A1 /* TestExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE5F58E52B22FDD0008D91A1 /* TestLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F58D72B22FDCB008D91A1 /* TestLiveActivity.swift */; };
@@ -120,7 +119,6 @@
 		CE5F58D22B22FDCB008D91A1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CE5F58D52B22FDCB008D91A1 /* TestBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBundle.swift; sourceTree = "<group>"; };
 		CE5F58D72B22FDCB008D91A1 /* TestLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLiveActivity.swift; sourceTree = "<group>"; };
-		CE5F58D92B22FDCB008D91A1 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		CE5F58DB2B22FDCC008D91A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5F58DD2B22FDCC008D91A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE5F58E72B22FEB0008D91A1 /* LiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityView.swift; sourceTree = "<group>"; };
@@ -252,7 +250,6 @@
 			children = (
 				CE5F58D52B22FDCB008D91A1 /* TestBundle.swift */,
 				CE5F58D72B22FDCB008D91A1 /* TestLiveActivity.swift */,
-				CE5F58D92B22FDCB008D91A1 /* Test.swift */,
 				CE5F58DB2B22FDCC008D91A1 /* Assets.xcassets */,
 				CE5F58DD2B22FDCC008D91A1 /* Info.plist */,
 			);
@@ -594,7 +591,6 @@
 			files = (
 				CE5F58D82B22FDCB008D91A1 /* TestLiveActivity.swift in Sources */,
 				CE5F58D62B22FDCB008D91A1 /* TestBundle.swift in Sources */,
-				CE5F58DA2B22FDCB008D91A1 /* Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

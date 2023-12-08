@@ -12,11 +12,8 @@ import SwiftUI
 struct TestAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
-        var emoji: String
+        var status: String
     }
-
-    // Fixed non-changing properties about your activity go here!
-    var name: String
 }
 
 struct TestLiveActivity: Widget {
@@ -24,10 +21,8 @@ struct TestLiveActivity: Widget {
         ActivityConfiguration(for: TestAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
-                Text("Hello \(context.state.emoji)")
+                Text(context.state.status)
             }
-            .activityBackgroundTint(Color.cyan)
-            .activitySystemActionForegroundColor(Color.black)
 
         } dynamicIsland: { context in
             DynamicIsland {
@@ -40,41 +35,18 @@ struct TestLiveActivity: Widget {
                     Text("Trailing")
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom \(context.state.emoji)")
+                    Text("Bottom \(context.state.status)")
                     // more content
                 }
             } compactLeading: {
                 Text("L")
             } compactTrailing: {
-                Text("T \(context.state.emoji)")
+                Text("T \(context.state.status)")
             } minimal: {
-                Text(context.state.emoji)
+                Text(context.state.status)
             }
             .widgetURL(URL(string: "http://www.apple.com"))
             .keylineTint(Color.red)
         }
     }
-}
-
-extension TestAttributes {
-    fileprivate static var preview: TestAttributes {
-        TestAttributes(name: "World")
-    }
-}
-
-extension TestAttributes.ContentState {
-    fileprivate static var smiley: TestAttributes.ContentState {
-        TestAttributes.ContentState(emoji: "😀")
-     }
-     
-     fileprivate static var starEyes: TestAttributes.ContentState {
-         TestAttributes.ContentState(emoji: "🤩")
-     }
-}
-
-#Preview("Notification", as: .content, using: TestAttributes.preview) {
-   TestLiveActivity()
-} contentStates: {
-    TestAttributes.ContentState.smiley
-    TestAttributes.ContentState.starEyes
 }
