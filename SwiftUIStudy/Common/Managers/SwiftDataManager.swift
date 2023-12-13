@@ -7,6 +7,7 @@
 
 import SwiftData
 
+@available(iOS 17, *)
 final class SwiftDataManager {
     @MainActor
     static let shared = SwiftDataManager()

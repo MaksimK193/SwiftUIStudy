@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 17, *)
 struct SwiftDataView: View {
     @State private var viewModel = SwiftDataViewModel()
     @State private var id: String = ""
@@ -49,6 +50,7 @@ struct SwiftDataView: View {
     }
 }
 
+@available(iOS 17, *)
 struct SwiftDataEmployeesView: View {
     @State var department: Department
     @State var vm: SwiftDataViewModel
@@ -87,5 +89,9 @@ struct SwiftDataEmployeesView: View {
 }
 
 #Preview {
-    SwiftDataView(stateManager: AppStateManager.shared)
+    if #available(iOS 17, *) {
+        SwiftDataView(stateManager: AppStateManager.shared)
+    } else {
+        EmptyView()
+    }
 }

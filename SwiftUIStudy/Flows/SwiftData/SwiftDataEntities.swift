@@ -8,6 +8,7 @@
 import Foundation
 import SwiftData
 
+@available(iOS 17, *)
 @Model
 final class Department {
     @Attribute (.unique) var ident: Int
@@ -20,7 +21,7 @@ final class Department {
         self.employees = employees
     }
 }
-
+@available(iOS 17, *)
 @Model
 final class Employee {
     @Attribute (.unique) var id: Int

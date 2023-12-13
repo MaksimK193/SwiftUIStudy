@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 17, *)
 @Observable
 final class SwiftDataViewModel {
     private let swiftDataManager: SwiftDataManager

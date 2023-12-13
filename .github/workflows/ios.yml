@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   iOSTests:
-    runs-on: macos-13
+    runs-on: macos-latest
     timeout-minutes: 30
 
     steps:
@@ -12,12 +12,12 @@ jobs:
       
       - uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '15.0.1'
+          xcode-version: '14.2.0'
       
       - name: Tests
         run: |
           xcodebuild test \
           -project SwiftUIStudy.xcodeproj \
           -scheme SwiftUIStudy \
-          -destination 'platform=iOS Simulator,name=iPhone 15' \
+          -destination 'platform=iOS Simulator,name=iPhone 13' \
           CODE_SIGNING_REQUIRED=NO

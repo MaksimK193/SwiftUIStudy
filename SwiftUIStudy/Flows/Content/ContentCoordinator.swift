@@ -26,7 +26,11 @@ extension ContentCoordinator {
     }
     
     @ViewBuilder func makeSwiftData(stateManager: AppStateManager) -> some View {
-        SwiftDataView(stateManager: stateManager)
+        if #available(iOS 17, *) {
+            SwiftDataView(stateManager: stateManager)
+        } else {
+            EmptyView()
+        }
     }
     
     @ViewBuilder func makeWeather(stateManager: AppStateManager) -> some View {
