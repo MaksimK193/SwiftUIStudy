@@ -16,6 +16,7 @@ struct TestAttributes: ActivityAttributes {
     }
 }
 
+@available(iOS 17, *)
 struct TestLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: TestAttributes.self) { context in

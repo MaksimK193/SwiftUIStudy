@@ -8,6 +8,7 @@
 import SwiftUI
 import ActivityKit
 
+@available(iOS 16.2, *)
 struct LiveActivityView: View {
     @State private var activity: Activity<TestAttributes>? = nil
     @State private var isButtonsShown = false
@@ -68,5 +69,9 @@ struct LiveActivityView: View {
 }
 
 #Preview {
-    LiveActivityView()
+    if #available(iOS 16.2, *) {
+        LiveActivityView()
+    } else {
+        EmptyView()
+    }
 }

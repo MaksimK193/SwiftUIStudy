@@ -31,12 +31,22 @@ final class CameraService: NSObject, ObservableObject {
     }
     
     private func getCurrentDevice() -> AVCaptureDevice? {
-        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInDualWideCamera,
-                                                                              .builtInLiDARDepthCamera, .builtInTelephotoCamera,
-                                                                              .builtInTripleCamera, .builtInTrueDepthCamera,
-                                                                              .builtInUltraWideCamera, .builtInWideAngleCamera],
-                                                                mediaType: .video,
-                                                                position: .back)
+        var discoverySession: AVCaptureDevice.DiscoverySession
+        if #available(iOS 15.4, *) {
+            discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInDualWideCamera,
+                                                                                  .builtInLiDARDepthCamera, .builtInTelephotoCamera,
+                                                                                  .builtInTripleCamera, .builtInTrueDepthCamera,
+                                                                                  .builtInUltraWideCamera, .builtInWideAngleCamera],
+                                                                    mediaType: .video,
+                                                                    position: .back)
+        } else {
+            discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInDualWideCamera,
+                                                                                 .builtInTelephotoCamera,
+                                                                                  .builtInTripleCamera, .builtInTrueDepthCamera,
+                                                                                  .builtInUltraWideCamera, .builtInWideAngleCamera],
+                                                                    mediaType: .video,
+                                                                    position: .back)
+        }
         guard let device = discoverySession.devices.first else { return nil }
         
         return device

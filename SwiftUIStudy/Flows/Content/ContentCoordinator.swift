@@ -42,7 +42,11 @@ extension ContentCoordinator {
     }
     
     @ViewBuilder func makeLiveActivity() -> some View {
-        LiveActivityView()
+        if #available(iOS 16.2, *) {
+            LiveActivityView()
+        } else {
+            EmptyView()
+        }
     }
     
     @ViewBuilder func makeStart() -> some View {
