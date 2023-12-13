@@ -53,7 +53,7 @@ class CoreDataViewModel: ObservableObject {
             try coreDataManager.context.execute(deleteRequest)
             try coreDataManager.context.save()
         } catch {
-            print ("There was an error")
+            print ("There was an error "  )
         }
     }
     
