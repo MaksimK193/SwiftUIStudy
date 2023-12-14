@@ -10,6 +10,8 @@ import SwiftUI
 import Stinsen
 
 final class MainCoordinator: NavigationCoordinatable {
+    private let localNotificationManager = LocalNotificationManager()
+    
     var stack: Stinsen.NavigationStack<MainCoordinator>
     
     @Root var content = makeContent
@@ -34,6 +36,6 @@ final class MainCoordinator: NavigationCoordinatable {
     }
     
     func makeContent() -> NavigationViewCoordinator<ContentCoordinator> {
-        return NavigationViewCoordinator(ContentCoordinator())
+        return NavigationViewCoordinator(ContentCoordinator(localNotificationManager: localNotificationManager))
     }
 }

@@ -57,6 +57,8 @@ struct SidebarView: View {
                             sidebarRouter.route(to: \.photoCompression, stateManager)
                         case .liveActivity:
                             sidebarRouter.route(to: \.liveActivity)
+                        case .scheduleNotification:
+                            sidebarRouter.route(to: \.scheduleNotification)
                         }
                     }
                     .accessibilityIdentifier("\(item.screen.rawValue)")
