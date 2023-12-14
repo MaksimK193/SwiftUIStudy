@@ -57,6 +57,7 @@
 		CEBC55892B0B3808007F9B19 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55882B0B3808007F9B19 /* CoreDataViewModel.swift */; };
 		CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */; };
 		CEC327302B29E4240078C5B2 /* ScheduleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3272F2B29E4240078C5B2 /* ScheduleNotification.swift */; };
+		CEC3274C2B2AF4E80078C5B2 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3274B2B2AF4E80078C5B2 /* LocalNotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		CEBC55882B0B3808007F9B19 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
 		CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CEC3272F2B29E4240078C5B2 /* ScheduleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotification.swift; sourceTree = "<group>"; };
+		CEC3274B2B2AF4E80078C5B2 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,6 +419,7 @@
 				CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */,
 				CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */,
 				CE5962612B15F101005BDEEB /* AppStateManager.swift */,
+				CEC3274B2B2AF4E80078C5B2 /* LocalNotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				CE2A27D52B0C9996003F9601 /* SwiftDataEntities.swift in Sources */,
 				CE7BCAF32B0512EE0015230C /* NewTaskView.swift in Sources */,
 				CEBC55822B0617BD007F9B19 /* CoreDataView.swift in Sources */,
+				CEC3274C2B2AF4E80078C5B2 /* LocalNotificationManager.swift in Sources */,
 				CE23A5582B1EFC0100DED654 /* WeatherNetworkGateway.swift in Sources */,
 				CE5962622B15F101005BDEEB /* AppStateManager.swift in Sources */,
 				CE0647AB2B107AA200FDEE12 /* NetworkManager.swift in Sources */,

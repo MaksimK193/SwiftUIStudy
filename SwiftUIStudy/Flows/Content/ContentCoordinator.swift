@@ -10,6 +10,7 @@ import SwiftUI
 import Stinsen
 
 final class ContentCoordinator: NavigationCoordinatable {
+    let localNotificationManager: LocalNotificationManager
     let stack = NavigationStack(initial: \ContentCoordinator.start)
     
     @Root var start = makeStart
@@ -19,6 +20,10 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var photoCompression = makePhotoCompression
     @Route(.push) var liveActivity = makeLiveActivity
     @Route(.push) var scheduleNotification = makeScheduleNotification
+    
+    init(localNotificationManager: LocalNotificationManager) {
+        self.localNotificationManager = localNotificationManager
+    }
 }
 
 extension ContentCoordinator {
@@ -47,6 +52,6 @@ extension ContentCoordinator {
     }
     
     @ViewBuilder func makeScheduleNotification() -> some View {
-        ScheduleNotification()
+        ScheduleNotification(localNotificationManager: localNotificationManager)
     }
 }
