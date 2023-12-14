@@ -56,6 +56,7 @@
 		CEBC55852B06424B007F9B19 /* CoreDataStudy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55832B06424B007F9B19 /* CoreDataStudy.xcdatamodeld */; };
 		CEBC55892B0B3808007F9B19 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55882B0B3808007F9B19 /* CoreDataViewModel.swift */; };
 		CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */; };
+		CEC327302B29E4240078C5B2 /* ScheduleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3272F2B29E4240078C5B2 /* ScheduleNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		CEBC55842B06424B007F9B19 /* Departments.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Departments.xcdatamodel; sourceTree = "<group>"; };
 		CEBC55882B0B3808007F9B19 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
 		CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CEC3272F2B29E4240078C5B2 /* ScheduleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +348,7 @@
 		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3272E2B29E3F40078C5B2 /* ScheduleNotification */,
 				CE5F58E62B22FE78008D91A1 /* LiveActivity */,
 				CE6329942B15CDD90020D37F /* PhotoCompression */,
 				CE6329912B15C7620020D37F /* Inactive */,
@@ -416,6 +419,14 @@
 				CE5962612B15F101005BDEEB /* AppStateManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		CEC3272E2B29E3F40078C5B2 /* ScheduleNotification */ = {
+			isa = PBXGroup;
+			children = (
+				CEC3272F2B29E4240078C5B2 /* ScheduleNotification.swift */,
+			);
+			path = ScheduleNotification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -609,6 +620,7 @@
 				CE0647AB2B107AA200FDEE12 /* NetworkManager.swift in Sources */,
 				CE5962652B17209E005BDEEB /* CameraService.swift in Sources */,
 				CEBC55792B05FCBF007F9B19 /* SidebarViewModel.swift in Sources */,
+				CEC327302B29E4240078C5B2 /* ScheduleNotification.swift in Sources */,
 				CE7BCAC82B04EAB90015230C /* ContentView.swift in Sources */,
 				CE6329932B15C77C0020D37F /* InactiveView.swift in Sources */,
 				CEBC55892B0B3808007F9B19 /* CoreDataViewModel.swift in Sources */,
