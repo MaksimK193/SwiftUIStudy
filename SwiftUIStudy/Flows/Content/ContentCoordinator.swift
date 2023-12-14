@@ -20,6 +20,7 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var photoCompression = makePhotoCompression
     @Route(.push) var liveActivity = makeLiveActivity
     @Route(.push) var scheduleNotification = makeScheduleNotification
+    @Route(.push) var getStreamChat = makeGetStreamChat
     
     init(localNotificationManager: LocalNotificationManager) {
         self.localNotificationManager = localNotificationManager
@@ -53,5 +54,9 @@ extension ContentCoordinator {
     
     @ViewBuilder func makeScheduleNotification() -> some View {
         ScheduleNotification(localNotificationManager: localNotificationManager)
+    }
+    
+    @ViewBuilder func makeGetStreamChat() -> some View {
+        GetStreamChatView()
     }
 }

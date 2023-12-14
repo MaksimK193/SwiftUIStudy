@@ -58,6 +58,7 @@
 		CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */; };
 		CEC327302B29E4240078C5B2 /* ScheduleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3272F2B29E4240078C5B2 /* ScheduleNotification.swift */; };
 		CEC3274C2B2AF4E80078C5B2 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3274B2B2AF4E80078C5B2 /* LocalNotificationManager.swift */; };
+		CEC3275A2B2B30ED0078C5B2 /* GetStreamChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC327592B2B30ED0078C5B2 /* GetStreamChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CEC3272F2B29E4240078C5B2 /* ScheduleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotification.swift; sourceTree = "<group>"; };
 		CEC3274B2B2AF4E80078C5B2 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		CEC327592B2B30ED0078C5B2 /* GetStreamChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStreamChatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CEC327582B2B30DE0078C5B2 /* GetStreamChat */,
 				CEC3272E2B29E3F40078C5B2 /* ScheduleNotification */,
 				CE5F58E62B22FE78008D91A1 /* LiveActivity */,
 				CE6329942B15CDD90020D37F /* PhotoCompression */,
@@ -430,6 +433,14 @@
 				CEC3272F2B29E4240078C5B2 /* ScheduleNotification.swift */,
 			);
 			path = ScheduleNotification;
+			sourceTree = "<group>";
+		};
+		CEC327582B2B30DE0078C5B2 /* GetStreamChat */ = {
+			isa = PBXGroup;
+			children = (
+				CEC327592B2B30ED0078C5B2 /* GetStreamChatView.swift */,
+			);
+			path = GetStreamChat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -627,6 +638,7 @@
 				CEC327302B29E4240078C5B2 /* ScheduleNotification.swift in Sources */,
 				CE7BCAC82B04EAB90015230C /* ContentView.swift in Sources */,
 				CE6329932B15C77C0020D37F /* InactiveView.swift in Sources */,
+				CEC3275A2B2B30ED0078C5B2 /* GetStreamChatView.swift in Sources */,
 				CEBC55892B0B3808007F9B19 /* CoreDataViewModel.swift in Sources */,
 				CE5962842B172926005BDEEB /* CamViewController.swift in Sources */,
 				CE0647B82B109D4A00FDEE12 /* WeatherViewModel.swift in Sources */,
