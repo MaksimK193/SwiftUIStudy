@@ -10,6 +10,7 @@ import SwiftUI
 struct ScheduleNotification: View {
     @State private var notificationDate = Date.now
     @State private var notificationText = ""
+    private let center = UNUserNotificationCenter.current()
     
     var body: some View {
         VStack {
@@ -18,10 +19,8 @@ struct ScheduleNotification: View {
             TextField("Notification text", text: $notificationText)
                 .textFieldStyle(.roundedBorder)
             Button("Schedule notification") {
-                let center = UNUserNotificationCenter.current()
                 center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                     if success {
-                        print("All set!")
                         let content = UNMutableNotificationContent()
                         content.title = "Schedule notification"
                         content.subtitle = notificationText
