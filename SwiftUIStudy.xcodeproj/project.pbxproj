@@ -59,6 +59,8 @@
 		CEC327302B29E4240078C5B2 /* ScheduleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3272F2B29E4240078C5B2 /* ScheduleNotification.swift */; };
 		CEC3274C2B2AF4E80078C5B2 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3274B2B2AF4E80078C5B2 /* LocalNotificationManager.swift */; };
 		CEC3275A2B2B30ED0078C5B2 /* GetStreamChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC327592B2B30ED0078C5B2 /* GetStreamChatView.swift */; };
+		CEC3275D2B2B34C50078C5B2 /* StreamChatSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = CEC3275C2B2B34C50078C5B2 /* StreamChatSwiftUI */; };
+		CEC327802B2C84C30078C5B2 /* GetStreamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3277F2B2C84C30078C5B2 /* GetStreamManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +151,7 @@
 		CEC3272F2B29E4240078C5B2 /* ScheduleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotification.swift; sourceTree = "<group>"; };
 		CEC3274B2B2AF4E80078C5B2 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		CEC327592B2B30ED0078C5B2 /* GetStreamChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStreamChatView.swift; sourceTree = "<group>"; };
+		CEC3277F2B2C84C30078C5B2 /* GetStreamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStreamManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC3275D2B2B34C50078C5B2 /* StreamChatSwiftUI in Frameworks */,
 				CE0D61842B188FCD00E93536 /* Stinsen in Frameworks */,
 				CE0D61812B186B1200E93536 /* KeychainSwift in Frameworks */,
 				CE0647A52B0F959500FDEE12 /* Alamofire in Frameworks */,
@@ -423,6 +427,7 @@
 				CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */,
 				CE5962612B15F101005BDEEB /* AppStateManager.swift */,
 				CEC3274B2B2AF4E80078C5B2 /* LocalNotificationManager.swift */,
+				CEC3277F2B2C84C30078C5B2 /* GetStreamManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				CE0647A42B0F959500FDEE12 /* Alamofire */,
 				CE0D61802B186B1200E93536 /* KeychainSwift */,
 				CE0D61832B188FCD00E93536 /* Stinsen */,
+				CEC3275C2B2B34C50078C5B2 /* StreamChatSwiftUI */,
 			);
 			productName = SwiftUIStudy;
 			productReference = CE7BCAC22B04EAB90015230C /* SwiftUIStudy.app */;
@@ -562,6 +568,7 @@
 				CE0647A32B0F959500FDEE12 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CE0D617F2B186B1200E93536 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				CE0D61822B188FCD00E93536 /* XCRemoteSwiftPackageReference "stinsen" */,
+				CEC3275B2B2B34C40078C5B2 /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */,
 			);
 			productRefGroup = CE7BCAC32B04EAB90015230C /* Products */;
 			projectDirPath = "";
@@ -641,6 +648,7 @@
 				CEC3275A2B2B30ED0078C5B2 /* GetStreamChatView.swift in Sources */,
 				CEBC55892B0B3808007F9B19 /* CoreDataViewModel.swift in Sources */,
 				CE5962842B172926005BDEEB /* CamViewController.swift in Sources */,
+				CEC327802B2C84C30078C5B2 /* GetStreamManager.swift in Sources */,
 				CE0647B82B109D4A00FDEE12 /* WeatherViewModel.swift in Sources */,
 				CE0D61892B189B5600E93536 /* MainCoordinator.swift in Sources */,
 				CE7BCAF12B04F2AC0015230C /* Sidebar.swift in Sources */,
@@ -1130,6 +1138,14 @@
 				minimumVersion = 2.0.13;
 			};
 		};
+		CEC3275B2B2B34C40078C5B2 /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getstream/stream-chat-swiftui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.45.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1147,6 +1163,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE0D61822B188FCD00E93536 /* XCRemoteSwiftPackageReference "stinsen" */;
 			productName = Stinsen;
+		};
+		CEC3275C2B2B34C50078C5B2 /* StreamChatSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEC3275B2B2B34C40078C5B2 /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */;
+			productName = StreamChatSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 
