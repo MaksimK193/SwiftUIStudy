@@ -11,6 +11,7 @@ import Stinsen
 
 final class MainCoordinator: NavigationCoordinatable {
     private let localNotificationManager = LocalNotificationManager()
+    private let getStreamManager = GetStreamManager()
     
     var stack: Stinsen.NavigationStack<MainCoordinator>
     
@@ -36,6 +37,7 @@ final class MainCoordinator: NavigationCoordinatable {
     }
     
     func makeContent() -> NavigationViewCoordinator<ContentCoordinator> {
-        return NavigationViewCoordinator(ContentCoordinator(localNotificationManager: localNotificationManager))
+        return NavigationViewCoordinator(ContentCoordinator(localNotificationManager: localNotificationManager,
+                                                            getStreamManager: getStreamManager))
     }
 }

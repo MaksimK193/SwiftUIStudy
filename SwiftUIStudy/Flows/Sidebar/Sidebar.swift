@@ -59,6 +59,8 @@ struct SidebarView: View {
                             sidebarRouter.route(to: \.liveActivity)
                         case .scheduleNotification:
                             sidebarRouter.route(to: \.scheduleNotification)
+                        case .getStreamChat:
+                            sidebarRouter.route(to: \.getStreamChat)
                         }
                     }
                     .accessibilityIdentifier("\(item.screen.rawValue)")

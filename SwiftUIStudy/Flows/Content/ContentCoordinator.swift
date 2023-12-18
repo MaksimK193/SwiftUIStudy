@@ -11,6 +11,7 @@ import Stinsen
 
 final class ContentCoordinator: NavigationCoordinatable {
     let localNotificationManager: LocalNotificationManager
+    let getStreamManager: GetStreamManager
     let stack = NavigationStack(initial: \ContentCoordinator.start)
     
     @Root var start = makeStart
@@ -20,9 +21,12 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var photoCompression = makePhotoCompression
     @Route(.push) var liveActivity = makeLiveActivity
     @Route(.push) var scheduleNotification = makeScheduleNotification
+    @Route(.push) var getStreamChat = makeGetStreamChat
     
-    init(localNotificationManager: LocalNotificationManager) {
+    init(localNotificationManager: LocalNotificationManager,
+         getStreamManager: GetStreamManager) {
         self.localNotificationManager = localNotificationManager
+        self.getStreamManager = getStreamManager
     }
 }
 
@@ -53,5 +57,9 @@ extension ContentCoordinator {
     
     @ViewBuilder func makeScheduleNotification() -> some View {
         ScheduleNotification(localNotificationManager: localNotificationManager)
+    }
+    
+    @ViewBuilder func makeGetStreamChat() -> some View {
+        GetStreamChatView(getStreamManager: getStreamManager)
     }
 }
