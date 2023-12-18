@@ -27,8 +27,7 @@ class GetStreamManager {
     
     private func connectUser() {
         let token = try! Token(rawValue: token)
-        chatClient.connectUser(userInfo: .init(id: "testuser2"),
-                               token: token) { error in
+        chatClient.connectUser(userInfo: .init(id: "testuser2"), token: token) { error in
             if let error = error {
                 print("Connecting the user failed \(error)")
             }

@@ -13,8 +13,7 @@ struct GetStreamChatView: View {
     let getStreamManager: GetStreamManager?
     @StateObject private var viewModel: ChatChannelListViewModel
     
-    public init(channelListController: ChatChannelListController? = nil,
-                getStreamManager: GetStreamManager) {
+    public init(channelListController: ChatChannelListController? = nil, getStreamManager: GetStreamManager) {
         let channelListVM = ViewModelsFactory.makeChannelListViewModel(channelListController: channelListController,
                                                                        selectedChannelId: nil)
         _viewModel = StateObject(wrappedValue: channelListVM)
