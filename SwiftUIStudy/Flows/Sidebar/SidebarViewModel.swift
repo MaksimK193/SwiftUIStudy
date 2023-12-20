@@ -15,6 +15,7 @@ enum TaskScreens: String {
     case liveActivity = "Live Activity"
     case scheduleNotification = "Schedule Notification"
     case getStreamChat = "Get Stream Chat"
+    case geoTrack = "Geo Track"
 }
 
 class SidebarViewModel: ObservableObject {
@@ -24,5 +25,6 @@ class SidebarViewModel: ObservableObject {
                                                   SidebarListModel(id: 3, screen: .photoCompression),
                                                   SidebarListModel(id: 4, screen: .liveActivity),
                                                   SidebarListModel(id: 5, screen: .scheduleNotification),
-                                                  SidebarListModel(id: 6, screen: .getStreamChat)]
+                                                  SidebarListModel(id: 6, screen: .getStreamChat),
+                                                  SidebarListModel(id: 7, screen: .geoTrack)]
 }

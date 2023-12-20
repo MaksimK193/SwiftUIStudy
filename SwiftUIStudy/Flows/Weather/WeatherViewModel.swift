@@ -29,12 +29,17 @@ extension WeatherViewModel: CLLocationManagerDelegate {
                 self.locationManager = CLLocationManager()
                 self.locationManager?.delegate = self
                 self.checkLocationAuth()
+                self.locationManager?.requestAlwaysAuthorization()
             }
         }
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkLocationAuth()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations)
     }
     
     private func checkLocationAuth() {
@@ -47,6 +52,7 @@ extension WeatherViewModel: CLLocationManagerDelegate {
         case .denied:
             print("Отключены")
         case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
             coordinate = locationManager.location?.coordinate
         @unknown default:
             break
