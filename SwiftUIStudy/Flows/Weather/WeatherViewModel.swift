@@ -38,10 +38,6 @@ extension WeatherViewModel: CLLocationManagerDelegate {
         checkLocationAuth()
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations)
-    }
-    
     private func checkLocationAuth() {
         guard let locationManager = locationManager else { return }
         switch locationManager.authorizationStatus {
