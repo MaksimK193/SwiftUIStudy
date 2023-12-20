@@ -28,6 +28,7 @@ class CoreDataViewModel: ObservableObject {
     @Published var employees: [EmployeeEntity] = []
     
     init() {
+        coreDataManager.setupDataModel(name: .CoreDataStudy)
         getEntity(entity: .department)
         getEntity(entity: .employee)
     }

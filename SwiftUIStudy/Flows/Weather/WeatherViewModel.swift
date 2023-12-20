@@ -29,6 +29,7 @@ extension WeatherViewModel: CLLocationManagerDelegate {
                 self.locationManager = CLLocationManager()
                 self.locationManager?.delegate = self
                 self.checkLocationAuth()
+                self.locationManager?.requestAlwaysAuthorization()
             }
         }
     }
@@ -47,6 +48,7 @@ extension WeatherViewModel: CLLocationManagerDelegate {
         case .denied:
             print("Отключены")
         case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
             coordinate = locationManager.location?.coordinate
         @unknown default:
             break

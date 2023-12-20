@@ -22,6 +22,7 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var liveActivity = makeLiveActivity
     @Route(.push) var scheduleNotification = makeScheduleNotification
     @Route(.push) var getStreamChat = makeGetStreamChat
+    @Route(.push) var geoTrack = makeGeoTrack
     
     init(localNotificationManager: LocalNotificationManager,
          getStreamManager: GetStreamManager) {
@@ -61,5 +62,9 @@ extension ContentCoordinator {
     
     @ViewBuilder func makeGetStreamChat() -> some View {
         GetStreamChatView(getStreamManager: getStreamManager)
+    }
+    
+    @ViewBuilder func makeGeoTrack() -> some View {
+        GeoTrackView()
     }
 }
