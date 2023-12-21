@@ -1,0 +1,11 @@
+#input_dir: SwiftUIStudy/Sources/
+#output_dir: SwiftUIStudy/Generated/
+
+## Strings
+strings:
+    inputs:
+         - SwiftUIStudy/Common/Localization/en.lproj
+    outputs:
+         - templateName: structured-swift5
+           output: SwiftUIStudy/Common/Localization/Strings+Generated.swift
+        

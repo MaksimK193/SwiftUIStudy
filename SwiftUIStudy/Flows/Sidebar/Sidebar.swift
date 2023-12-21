@@ -45,7 +45,7 @@ struct SidebarView: View {
         HStack {
             List() {
                 ForEach(vm.screens) { item in
-                    Button("\(item.screen.rawValue)") {
+                    Button(item.screen.screenTitle()) {
                         switch item.screen {
                         case .coreData:
                             sidebarRouter.route(to: \.coreData, stateManager)

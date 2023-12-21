@@ -18,10 +18,10 @@ struct PhotoCompressionView: View {
         ZStack {
             VStack() {
                 images
-                NavigationLink("Take photo") {
+                NavigationLink(L10n.PhotoCompression.Button.takePhoto) {
                     CameraViewController(image: $imageData)
                 }
-                Button("Compress photo \(String(AppStateManager.shared.isActive))") {
+                Button(L10n.PhotoCompression.Button.compressPhoto) {
                     compressedImage = imageData.jpegData(compressionQuality: 0.9) ?? .init()
                 }
                 .accessibilityIdentifier("compressPhotoButton")

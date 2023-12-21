@@ -11,7 +11,7 @@ struct InactiveView: View {
     var body: some View {
         ZStack {
             Color.white
-            Text("SwiftUIStudy")
+            Text(L10n.Inactive.Label.appName)
                 .fontWeight(.ultraLight)
         }
         .ignoresSafeArea()

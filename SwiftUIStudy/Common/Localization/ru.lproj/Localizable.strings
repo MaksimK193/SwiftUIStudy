@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  SwiftUIStudy
+
+  Created by USER on 21.12.2023.
+  
+*/
+
+"inactive.label.appName" = "SwiftUIStudy";
+
+"content.label.helloWolrd" = "Hello world";
+
+"sidebar.navigationRow.coreData" = "Core Data";
+"sidebar.navigationRow.swiftData" = "Swift Data";
+"sidebar.navigationRow.weather" = "Погода";
+"sidebar.navigationRow.photoCompression" = "Сжатие фото";
+"sidebar.navigationRow.liveActivity" = "Эфир активности";
+"sidebar.navigationRow.scheduleNotification" = "Запланированное уведомление";
+"sidebar.navigationRow.getStreamChat" = "Get Stream чат";
+"sidebar.navigationRow.geoTrack" = "Трекер геолокации";
+
+"coreData.button.addDepartments" = "Добавить отдел";
+"coreData.button.addEmployee" = "Добавить сотрудника";
+
+"swiftData.button.addItem" = "Добавить сущность";
+"swiftData.textField.id" = "id";
+"swiftData.textField.name" = "имя";
+
+"weather.label.temperature" = "Температура %@ градусов";
+"weather.button.update" = "Обновить";
+
+"photoCompression.button.takePhoto" = "Сделать фото";
+"photoCompression.button.compressPhoto" = "Сжать фото";
+
+"liveActivity.label.liveActivity" = "Эфир активности";
+"liveActivity.button.startActivity" = "Начать активность";
+"liveActivity.button.cook" = "Готовим";
+"liveActivity.button.deliver" = "Доставляем";
+"liveActivity.button.finished" = "Завершен";
+"liveActivity.activityStatus.cook" = "Готовим";
+"liveActivity.activityStatus.deliver" = "Доставляем";
+"liveActivity.activityStatus.finished" = "Завершен";
+"liveActivity.activityStatus.accepted" = "Приняли";
+
+"scheduleNotification.textField.notificationText" = "Текст уведомления";
+"scheduleNotification.button.scheduleNotification" = "Запланировать уведомление";
+
+"geoTrack.label.geoTracker" = "Трекер геолокации";
+"geoTrack.button.allowTracking" = "Разрешить трекинг";
+"geoTrack.alert.title" = "Разрешить трекинг";
+"geoTrack.alert.settingsButton" = "Перейти в настройки";
+"geoTrack.alert.cancelButton" = "Отмена";

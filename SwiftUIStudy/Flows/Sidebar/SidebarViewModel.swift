@@ -8,14 +8,35 @@
 import Foundation
 
 enum TaskScreens: String {
-    case coreData = "Core Data"
-    case swiftData = "Swift Data"
-    case weather = "Weather"
-    case photoCompression = "Photo Compression"
-    case liveActivity = "Live Activity"
-    case scheduleNotification = "Schedule Notification"
-    case getStreamChat = "Get Stream Chat"
-    case geoTrack = "Geo Track"
+    case coreData
+    case swiftData
+    case weather
+    case photoCompression
+    case liveActivity
+    case scheduleNotification
+    case getStreamChat
+    case geoTrack
+    
+    func screenTitle() -> String {
+        switch self {
+        case .coreData:
+            return L10n.Sidebar.NavigationRow.coreData
+        case .swiftData:
+            return L10n.Sidebar.NavigationRow.swiftData
+        case .weather:
+            return L10n.Sidebar.NavigationRow.weather
+        case .photoCompression:
+            return L10n.Sidebar.NavigationRow.photoCompression
+        case .liveActivity:
+            return L10n.Sidebar.NavigationRow.liveActivity
+        case .scheduleNotification:
+            return L10n.Sidebar.NavigationRow.scheduleNotification
+        case .getStreamChat:
+            return L10n.Sidebar.NavigationRow.getStreamChat
+        case .geoTrack:
+            return  L10n.Sidebar.NavigationRow.geoTrack
+        }
+    }
 }
 
 class SidebarViewModel: ObservableObject {

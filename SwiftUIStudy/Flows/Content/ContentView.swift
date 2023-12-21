@@ -22,7 +22,7 @@ struct ContentView: View {
         
         ZStack {
             NavigationView {
-                Text("Hello world!")
+                Text(L10n.Content.Label.helloWolrd)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading, content: { button })
                     }

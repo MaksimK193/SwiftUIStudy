@@ -16,9 +16,9 @@ struct ScheduleNotification: View {
         VStack {
             DatePicker("", selection: $notificationDate, in: Date.now...)
                 .labelsHidden()
-            TextField("Notification text", text: $notificationText)
+            TextField(L10n.ScheduleNotification.TextField.notificationText, text: $notificationText)
                 .textFieldStyle(.roundedBorder)
-            Button("Schedule notification") {
+            Button(L10n.ScheduleNotification.Button.scheduleNotification) {
                 scheduleNotification()
             }
             .buttonStyle(.bordered)
