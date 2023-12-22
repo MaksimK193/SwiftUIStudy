@@ -14,6 +14,7 @@
 		CE0647AB2B107AA200FDEE12 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647AA2B107AA200FDEE12 /* NetworkManager.swift */; };
 		CE0647B82B109D4A00FDEE12 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647B72B109D4A00FDEE12 /* WeatherViewModel.swift */; };
 		CE0647BC2B10A1AB00FDEE12 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647BB2B10A1AB00FDEE12 /* WeatherModel.swift */; };
+		CE0CF7F52B359E5900FEEA84 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CF7F42B359E5900FEEA84 /* LanguageManager.swift */; };
 		CE0D617E2B186A6000E93536 /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D617D2B186A6000E93536 /* TokenStorage.swift */; };
 		CE0D61812B186B1200E93536 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE0D61802B186B1200E93536 /* KeychainSwift */; };
 		CE0D61842B188FCD00E93536 /* Stinsen in Frameworks */ = {isa = PBXBuildFile; productRef = CE0D61832B188FCD00E93536 /* Stinsen */; };
@@ -118,6 +119,7 @@
 		CE0647B72B109D4A00FDEE12 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		CE0647BB2B10A1AB00FDEE12 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		CE0647BF2B14BF5600FDEE12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CE0CF7F42B359E5900FEEA84 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		CE0D617D2B186A6000E93536 /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
 		CE0D61882B189B5600E93536 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		CE0D618A2B18AD0B00E93536 /* ContentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCoordinator.swift; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 				CE5962612B15F101005BDEEB /* AppStateManager.swift */,
 				CEC3274B2B2AF4E80078C5B2 /* LocalNotificationManager.swift */,
 				CEC3277F2B2C84C30078C5B2 /* GetStreamManager.swift */,
+				CE0CF7F42B359E5900FEEA84 /* LanguageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -757,6 +760,7 @@
 				CE5F58E82B22FEB0008D91A1 /* LiveActivityView.swift in Sources */,
 				CEBC55852B06424B007F9B19 /* CoreDataStudy.xcdatamodeld in Sources */,
 				CE2A27D22B0C9983003F9601 /* SwiftDataManager.swift in Sources */,
+				CE0CF7F52B359E5900FEEA84 /* LanguageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

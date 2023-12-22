@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct ChangeLanguageView: View {
-    @State private var language = UserDefaults.standard.value(forKey: "language") as? String ?? "Ru"
-    private var languages = ["Ru", "En"]
+    @State private var language: LocalizationLanguage
+    private var languages = [LocalizationLanguage.ru, LocalizationLanguage.en]
+    var languageManager: LanguageManager
+    
+    init(languageManager: LanguageManager) {
+        self.languageManager = languageManager
+        language = LocalizationLanguage(rawValue: UserDefaults.standard.value(forKey: "language") as? String ?? "ru") ?? .ru
+    }
     
     var body: some View {
         Picker("Lang", selection: $language) {
             ForEach(languages, id: \.self) { language in
-                Text(language)
+                Text(language.name)
             }
         }
         .onChange(of: language) { lang in
-            if lang == "En" {
-                UserDefaults.standard.setValue("En", forKeyPath: "language")
-                L10n.bundle = Bundle(path: Bundle.main.path(forResource: "en", ofType: "lproj")!)
-            } else {
-                UserDefaults.standard.setValue("Ru", forKeyPath: "language")
-                L10n.bundle = Bundle(path: Bundle.main.path(forResource: "ru", ofType: "lproj")!)
-            }
+            languageManager.changeAppLanguage(lang)
         }
         .pickerStyle(.segmented)
         .frame(maxWidth: 200)
@@ -32,5 +32,5 @@ struct ChangeLanguageView: View {
 }
 
 #Preview {
-    ChangeLanguageView()
+    ChangeLanguageView(languageManager: LanguageManager())
 }

@@ -12,6 +12,7 @@ import Stinsen
 final class MainCoordinator: NavigationCoordinatable {
     private let localNotificationManager = LocalNotificationManager()
     private let getStreamManager = GetStreamManager()
+    private let languageManager = LanguageManager()
     
     var stack: Stinsen.NavigationStack<MainCoordinator>
     
@@ -34,10 +35,12 @@ final class MainCoordinator: NavigationCoordinatable {
     
     init() {
         stack = NavigationStack(initial: \MainCoordinator.content)
+        languageManager.setDefaultLanguage()
     }
     
     func makeContent() -> NavigationViewCoordinator<ContentCoordinator> {
         return NavigationViewCoordinator(ContentCoordinator(localNotificationManager: localNotificationManager,
-                                                            getStreamManager: getStreamManager))
+                                                            getStreamManager: getStreamManager,
+                                                            languageManager: languageManager))
     }
 }

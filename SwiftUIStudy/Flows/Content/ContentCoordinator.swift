@@ -12,6 +12,7 @@ import Stinsen
 final class ContentCoordinator: NavigationCoordinatable {
     let localNotificationManager: LocalNotificationManager
     let getStreamManager: GetStreamManager
+    let languageManager: LanguageManager
     let stack = NavigationStack(initial: \ContentCoordinator.start)
     
     @Root var start = makeStart
@@ -26,9 +27,11 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var changeLanguage = makeChangeLanguage
     
     init(localNotificationManager: LocalNotificationManager,
-         getStreamManager: GetStreamManager) {
+         getStreamManager: GetStreamManager,
+         languageManager: LanguageManager) {
         self.localNotificationManager = localNotificationManager
         self.getStreamManager = getStreamManager
+        self.languageManager = languageManager
     }
 }
 
@@ -70,6 +73,6 @@ extension ContentCoordinator {
     }
     
     @ViewBuilder func makeChangeLanguage() -> some View {
-        ChangeLanguageView()
+        ChangeLanguageView(languageManager: languageManager)
     }
 }
