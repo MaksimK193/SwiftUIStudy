@@ -63,6 +63,8 @@ struct SidebarView: View {
                             sidebarRouter.route(to: \.getStreamChat)
                         case .geoTrack:
                             sidebarRouter.route(to: \.geoTrack)
+                        case .changeLanguage:
+                            sidebarRouter.route(to: \.changeLanguage)
                         }
                     }
                     .accessibilityIdentifier("\(item.screen.rawValue)")

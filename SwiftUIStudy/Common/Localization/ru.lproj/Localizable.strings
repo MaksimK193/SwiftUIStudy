@@ -18,6 +18,7 @@
 "sidebar.navigationRow.scheduleNotification" = "Запланированное уведомление";
 "sidebar.navigationRow.getStreamChat" = "Get Stream чат";
 "sidebar.navigationRow.geoTrack" = "Трекер геолокации";
+"sidebar.navigationRow.changeLanguage" = "Сменить язык";
 
 "coreData.button.addDepartments" = "Добавить отдел";
 "coreData.button.addEmployee" = "Добавить сотрудника";

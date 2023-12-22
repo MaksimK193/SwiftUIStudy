@@ -18,6 +18,7 @@
 "sidebar.navigationRow.scheduleNotification" = "Schedule Notification";
 "sidebar.navigationRow.getStreamChat" = "Get Stream Chat";
 "sidebar.navigationRow.geoTrack" = "Geo Track";
+"sidebar.navigationRow.changeLanguage" = "Change language";
 
 "coreData.button.addDepartments" = "Add departments";
 "coreData.button.addEmployee" = "Add employee";

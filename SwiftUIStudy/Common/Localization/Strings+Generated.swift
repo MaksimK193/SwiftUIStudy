@@ -1,165 +1,249 @@
-// swiftlint:disable all
-// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+// Generated using SwiftGen, by O.Halligon — https://github.com/SwiftGen/SwiftGen
 
 import Foundation
 
-// swiftlint:disable superfluous_disable_command file_length implicit_return prefer_self_in_static_references
+// swiftlint:disable superfluous_disable_command
+// swiftlint:disable file_length
 
-// MARK: - Strings
-
-// swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
-// swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
-internal enum L10n {
-  internal enum Content {
-    internal enum Label {
-      /// Hello world
-      internal static let helloWolrd = L10n.tr("Localizable", "content.label.helloWolrd", fallback: "Hello world")
+// swiftlint:disable explicit_type_interface identifier_name line_length nesting type_body_length type_name
+enum L10n {
+    
+    /// Update bundle if you need to change app language
+    static var bundle: Bundle?
+    
+    
+    enum Content {
+        
+        enum Label {
+            /// Hello world
+            static var helloWolrd: String {
+                return L10n.tr("Localizable", "content.label.helloWolrd")
+            }
+        }
     }
-  }
-  internal enum CoreData {
-    internal enum Button {
-      /// Add departments
-      internal static let addDepartments = L10n.tr("Localizable", "coreData.button.addDepartments", fallback: "Add departments")
-      /// Add employee
-      internal static let addEmployee = L10n.tr("Localizable", "coreData.button.addEmployee", fallback: "Add employee")
+    
+    enum CoreData {
+        
+        enum Button {
+            /// Add departments
+            static var addDepartments: String {
+                return L10n.tr("Localizable", "coreData.button.addDepartments")
+            }
+            /// Add employee
+            static var addEmployee: String {
+                return L10n.tr("Localizable", "coreData.button.addEmployee")
+            }
+        }
     }
-  }
-  internal enum GeoTrack {
-    internal enum Alert {
-      /// Cancel
-      internal static let cancelButton = L10n.tr("Localizable", "geoTrack.alert.cancelButton", fallback: "Cancel")
-      /// Go to settings
-      internal static let settingsButton = L10n.tr("Localizable", "geoTrack.alert.settingsButton", fallback: "Go to settings")
-      /// Allow tracking
-      internal static let title = L10n.tr("Localizable", "geoTrack.alert.title", fallback: "Allow tracking")
+    
+    enum GeoTrack {
+        
+        enum Alert {
+            /// Cancel
+            static var cancelButton: String {
+                return L10n.tr("Localizable", "geoTrack.alert.cancelButton")
+            }
+            /// Go to settings
+            static var settingsButton: String {
+                return L10n.tr("Localizable", "geoTrack.alert.settingsButton")
+            }
+            /// Allow tracking
+            static var title: String {
+                return L10n.tr("Localizable", "geoTrack.alert.title")
+            }
+        }
+        
+        enum Button {
+            /// Allow tracking
+            static var allowTracking: String {
+                return L10n.tr("Localizable", "geoTrack.button.allowTracking")
+            }
+        }
+        
+        enum Label {
+            /// Geo tracker
+            static var geoTracker: String {
+                return L10n.tr("Localizable", "geoTrack.label.geoTracker")
+            }
+        }
     }
-    internal enum Button {
-      /// Allow tracking
-      internal static let allowTracking = L10n.tr("Localizable", "geoTrack.button.allowTracking", fallback: "Allow tracking")
+    
+    enum Inactive {
+        
+        enum Label {
+            /// SwiftUIStudy
+            static var appName: String {
+                return L10n.tr("Localizable", "inactive.label.appName")
+            }
+        }
     }
-    internal enum Label {
-      /// Geo tracker
-      internal static let geoTracker = L10n.tr("Localizable", "geoTrack.label.geoTracker", fallback: "Geo tracker")
+    
+    enum LiveActivity {
+        
+        enum ActivityStatus {
+            /// Accepted
+            static var accepted: String {
+                return L10n.tr("Localizable", "liveActivity.activityStatus.accepted")
+            }
+            /// Cook
+            static var cook: String {
+                return L10n.tr("Localizable", "liveActivity.activityStatus.cook")
+            }
+            /// Deliver
+            static var deliver: String {
+                return L10n.tr("Localizable", "liveActivity.activityStatus.deliver")
+            }
+            /// Finished
+            static var finished: String {
+                return L10n.tr("Localizable", "liveActivity.activityStatus.finished")
+            }
+        }
+        
+        enum Button {
+            /// Cook
+            static var cook: String {
+                return L10n.tr("Localizable", "liveActivity.button.cook")
+            }
+            /// Deliver
+            static var deliver: String {
+                return L10n.tr("Localizable", "liveActivity.button.deliver")
+            }
+            /// Finished
+            static var finished: String {
+                return L10n.tr("Localizable", "liveActivity.button.finished")
+            }
+            /// Start activity
+            static var startActivity: String {
+                return L10n.tr("Localizable", "liveActivity.button.startActivity")
+            }
+        }
+        
+        enum Label {
+            /// Live activity
+            static var liveActivity: String {
+                return L10n.tr("Localizable", "liveActivity.label.liveActivity")
+            }
+        }
     }
-  }
-  internal enum Inactive {
-    internal enum Label {
-      /// Localizable.strings
-      ///   SwiftUIStudy
-      /// 
-      ///   Created by USER on 21.12.2023.
-      internal static let appName = L10n.tr("Localizable", "inactive.label.appName", fallback: "SwiftUIStudy")
+    
+    enum PhotoCompression {
+        
+        enum Button {
+            /// Compress photo
+            static var compressPhoto: String {
+                return L10n.tr("Localizable", "photoCompression.button.compressPhoto")
+            }
+            /// Take photo
+            static var takePhoto: String {
+                return L10n.tr("Localizable", "photoCompression.button.takePhoto")
+            }
+        }
     }
-  }
-  internal enum LiveActivity {
-    internal enum ActivityStatus {
-      /// Accepted
-      internal static let accepted = L10n.tr("Localizable", "liveActivity.activityStatus.accepted", fallback: "Accepted")
-      /// Cook
-      internal static let cook = L10n.tr("Localizable", "liveActivity.activityStatus.cook", fallback: "Cook")
-      /// Deliver
-      internal static let deliver = L10n.tr("Localizable", "liveActivity.activityStatus.deliver", fallback: "Deliver")
-      /// Finished
-      internal static let finished = L10n.tr("Localizable", "liveActivity.activityStatus.finished", fallback: "Finished")
+    
+    enum ScheduleNotification {
+        
+        enum Button {
+            /// Schedule notification
+            static var scheduleNotification: String {
+                return L10n.tr("Localizable", "scheduleNotification.button.scheduleNotification")
+            }
+        }
+        
+        enum TextField {
+            /// Notification text
+            static var notificationText: String {
+                return L10n.tr("Localizable", "scheduleNotification.textField.notificationText")
+            }
+        }
     }
-    internal enum Button {
-      /// Cook
-      internal static let cook = L10n.tr("Localizable", "liveActivity.button.cook", fallback: "Cook")
-      /// Deliver
-      internal static let deliver = L10n.tr("Localizable", "liveActivity.button.deliver", fallback: "Deliver")
-      /// Finished
-      internal static let finished = L10n.tr("Localizable", "liveActivity.button.finished", fallback: "Finished")
-      /// Start activity
-      internal static let startActivity = L10n.tr("Localizable", "liveActivity.button.startActivity", fallback: "Start activity")
+    
+    enum Sidebar {
+        
+        enum NavigationRow {
+            /// Change language
+            static var changeLanguage: String {
+                return L10n.tr("Localizable", "sidebar.navigationRow.changeLanguage")
+            }
+            /// Core Data
+            static var coreData: String {
+                return L10n.tr("Localizable", "sidebar.navigationRow.coreData")
+            }
+            /// Geo Track
+            static var geoTrack: String {
+                return L10n.tr("Localizable", "sidebar.navigationRow.geoTrack")
+            }
+            /// Get Stream Chat
+            static var getStreamChat: String {
+                return L10n.tr("Localizable", "sidebar.navigationRow.getStreamChat")
+            }
+            /// Live Activity
+            static var liveActivity: String {
+                return L10n.tr("Localizable", "sidebar.navigationRow.liveActivity")
+            }
+            /// Photo Compression
+            static var photoCompression: String {
+                return L10n.tr("Localizable", "sidebar.navigationRow.photoCompression")
+            }
+            /// Schedule Notification
+            static var scheduleNotification: String {
+                return L10n.tr("Localizable", "sidebar.navigationRow.scheduleNotification")
+            }
+            /// Swift Data
+            static var swiftData: String {
+                return L10n.tr("Localizable", "sidebar.navigationRow.swiftData")
+            }
+            /// Weather
+            static var weather: String {
+                return L10n.tr("Localizable", "sidebar.navigationRow.weather")
+            }
+        }
     }
-    internal enum Label {
-      /// Live activity
-      internal static let liveActivity = L10n.tr("Localizable", "liveActivity.label.liveActivity", fallback: "Live activity")
+    
+    enum SwiftData {
+        
+        enum Button {
+            /// Add item
+            static var addItem: String {
+                return L10n.tr("Localizable", "swiftData.button.addItem")
+            }
+        }
+        
+        enum TextField {
+            /// id
+            static var id: String {
+                return L10n.tr("Localizable", "swiftData.textField.id")
+            }
+            /// name
+            static var name: String {
+                return L10n.tr("Localizable", "swiftData.textField.name")
+            }
+        }
     }
-  }
-  internal enum PhotoCompression {
-    internal enum Button {
-      /// Compress photo
-      internal static let compressPhoto = L10n.tr("Localizable", "photoCompression.button.compressPhoto", fallback: "Compress photo")
-      /// Take photo
-      internal static let takePhoto = L10n.tr("Localizable", "photoCompression.button.takePhoto", fallback: "Take photo")
+    
+    enum Weather {
+        
+        enum Button {
+            /// Update
+            static var update: String {
+                return L10n.tr("Localizable", "weather.button.update")
+            }
+        }
+        
+        enum Label {
+            /// Temperature %@ degrees
+            static func temperature(_ p1: String) -> String {
+                return L10n.tr("Localizable", "weather.label.temperature",p1)
+            }
+        }
     }
-  }
-  internal enum ScheduleNotification {
-    internal enum Button {
-      /// Schedule notification
-      internal static let scheduleNotification = L10n.tr("Localizable", "scheduleNotification.button.scheduleNotification", fallback: "Schedule notification")
-    }
-    internal enum TextField {
-      /// Notification text
-      internal static let notificationText = L10n.tr("Localizable", "scheduleNotification.textField.notificationText", fallback: "Notification text")
-    }
-  }
-  internal enum Sidebar {
-    internal enum NavigationRow {
-      /// Core Data
-      internal static let coreData = L10n.tr("Localizable", "sidebar.navigationRow.coreData", fallback: "Core Data")
-      /// Geo Track
-      internal static let geoTrack = L10n.tr("Localizable", "sidebar.navigationRow.geoTrack", fallback: "Geo Track")
-      /// Get Stream Chat
-      internal static let getStreamChat = L10n.tr("Localizable", "sidebar.navigationRow.getStreamChat", fallback: "Get Stream Chat")
-      /// Live Activity
-      internal static let liveActivity = L10n.tr("Localizable", "sidebar.navigationRow.liveActivity", fallback: "Live Activity")
-      /// Photo Compression
-      internal static let photoCompression = L10n.tr("Localizable", "sidebar.navigationRow.photoCompression", fallback: "Photo Compression")
-      /// Schedule Notification
-      internal static let scheduleNotification = L10n.tr("Localizable", "sidebar.navigationRow.scheduleNotification", fallback: "Schedule Notification")
-      /// Swift Data
-      internal static let swiftData = L10n.tr("Localizable", "sidebar.navigationRow.swiftData", fallback: "Swift Data")
-      /// Weather
-      internal static let weather = L10n.tr("Localizable", "sidebar.navigationRow.weather", fallback: "Weather")
-    }
-  }
-  internal enum SwiftData {
-    internal enum Button {
-      /// Add item
-      internal static let addItem = L10n.tr("Localizable", "swiftData.button.addItem", fallback: "Add item")
-    }
-    internal enum TextField {
-      /// id
-      internal static let id = L10n.tr("Localizable", "swiftData.textField.id", fallback: "id")
-      /// name
-      internal static let name = L10n.tr("Localizable", "swiftData.textField.name", fallback: "name")
-    }
-  }
-  internal enum Weather {
-    internal enum Button {
-      /// Update
-      internal static let update = L10n.tr("Localizable", "weather.button.update", fallback: "Update")
-    }
-    internal enum Label {
-      /// Temperature %@ degrees
-      internal static func temperature(_ p1: Any) -> String {
-        return L10n.tr("Localizable", "weather.label.temperature", String(describing: p1), fallback: "Temperature %@ degrees")
-      }
-    }
-  }
 }
-// swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
-// swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
-
-// MARK: - Implementation Details
+// swiftlint:enable explicit_type_interface identifier_name line_length nesting type_body_length type_name
 
 extension L10n {
-  private static func tr(_ table: String, _ key: String, _ args: CVarArg..., fallback value: String) -> String {
-    let format = BundleToken.bundle.localizedString(forKey: key, value: value, table: table)
-    return String(format: format, locale: Locale.current, arguments: args)
-  }
+    private static func tr(_ table: String, _ key: String, _ args: CVarArg...) -> String {
+        let format = NSLocalizedString(key, tableName: table, bundle: bundle ?? Bundle(for: BundleToken.self), comment: "")
+        return String(format: format, locale: Locale.current, arguments: args)
+    }
 }
 
-// swiftlint:disable convenience_type
-private final class BundleToken {
-  static let bundle: Bundle = {
-    #if SWIFT_PACKAGE
-    return Bundle.module
-    #else
-    return Bundle(for: BundleToken.self)
-    #endif
-  }()
-}
-// swiftlint:enable convenience_type
+private final class BundleToken {}

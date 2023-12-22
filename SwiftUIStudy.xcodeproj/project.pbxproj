@@ -40,6 +40,7 @@
 		CE6329962B15CFAB0020D37F /* PhotoCompressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */; };
 		CE76E21A2B343D06006859E9 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76E2192B343D06006859E9 /* Strings+Generated.swift */; };
 		CE76E21B2B343E10006859E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE76E21D2B343E10006859E9 /* Localizable.strings */; };
+		CE76E2212B3466F0006859E9 /* ChangeLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76E2202B3466F0006859E9 /* ChangeLanguageView.swift */; };
 		CE7BCAC62B04EAB90015230C /* SwiftUIStudyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAC52B04EAB90015230C /* SwiftUIStudyApp.swift */; };
 		CE7BCAC82B04EAB90015230C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAC72B04EAB90015230C /* ContentView.swift */; };
 		CE7BCACA2B04EABA0015230C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7BCAC92B04EABA0015230C /* Assets.xcassets */; };
@@ -142,6 +143,7 @@
 		CE76E2192B343D06006859E9 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		CE76E21C2B343E10006859E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE76E21E2B343E45006859E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE76E2202B3466F0006859E9 /* ChangeLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageView.swift; sourceTree = "<group>"; };
 		CE7BCAC22B04EAB90015230C /* SwiftUIStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BCAC52B04EAB90015230C /* SwiftUIStudyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIStudyApp.swift; sourceTree = "<group>"; };
 		CE7BCAC72B04EAB90015230C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -326,6 +328,14 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		CE76E21F2B3466E2006859E9 /* ChangeLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				CE76E2202B3466F0006859E9 /* ChangeLanguageView.swift */,
+			);
+			path = ChangeLanguage;
+			sourceTree = "<group>";
+		};
 		CE7BCAB92B04EAB90015230C = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +402,7 @@
 		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CE76E21F2B3466E2006859E9 /* ChangeLanguage */,
 				CEC327812B307A4E0078C5B2 /* GeoTrack */,
 				CEC327582B2B30DE0078C5B2 /* GetStreamChat */,
 				CEC3272E2B29E3F40078C5B2 /* ScheduleNotification */,
@@ -593,6 +604,7 @@
 					};
 					CE7BCAC12B04EAB90015230C = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1500;
 					};
 					CE7BCAD22B04EABA0015230C = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -739,6 +751,7 @@
 				CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */,
 				CE0D617E2B186A6000E93536 /* TokenStorage.swift in Sources */,
 				CE0647BC2B10A1AB00FDEE12 /* WeatherModel.swift in Sources */,
+				CE76E2212B3466F0006859E9 /* ChangeLanguageView.swift in Sources */,
 				CE0D618B2B18AD0B00E93536 /* ContentCoordinator.swift in Sources */,
 				CE2A27D02B0C9979003F9601 /* SwiftDataViewModel.swift in Sources */,
 				CE5F58E82B22FEB0008D91A1 /* LiveActivityView.swift in Sources */,
@@ -988,6 +1001,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SwiftUIStudy/SwiftUIStudy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1016,6 +1030,11 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-fprofile-instr-generate",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = fojin.SwiftUIStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -1033,6 +1052,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SwiftUIStudy/SwiftUIStudy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

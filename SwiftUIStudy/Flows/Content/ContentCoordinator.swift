@@ -23,6 +23,7 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var scheduleNotification = makeScheduleNotification
     @Route(.push) var getStreamChat = makeGetStreamChat
     @Route(.push) var geoTrack = makeGeoTrack
+    @Route(.push) var changeLanguage = makeChangeLanguage
     
     init(localNotificationManager: LocalNotificationManager,
          getStreamManager: GetStreamManager) {
@@ -66,5 +67,9 @@ extension ContentCoordinator {
     
     @ViewBuilder func makeGeoTrack() -> some View {
         GeoTrackView()
+    }
+    
+    @ViewBuilder func makeChangeLanguage() -> some View {
+        ChangeLanguageView()
     }
 }

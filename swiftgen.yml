@@ -6,6 +6,6 @@ strings:
     inputs:
          - SwiftUIStudy/Common/Localization/en.lproj
     outputs:
-         - templateName: structured-swift5
+         - templateName: /Users/user/Desktop/SwiftUIStudy/languageTemplate
            output: SwiftUIStudy/Common/Localization/Strings+Generated.swift
         
