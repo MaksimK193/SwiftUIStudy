@@ -12,6 +12,7 @@ import Stinsen
 final class ContentCoordinator: NavigationCoordinatable {
     let localNotificationManager: LocalNotificationManager
     let getStreamManager: GetStreamManager
+    let languageManager: LanguageManager
     let stack = NavigationStack(initial: \ContentCoordinator.start)
     
     @Root var start = makeStart
@@ -23,11 +24,14 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var scheduleNotification = makeScheduleNotification
     @Route(.push) var getStreamChat = makeGetStreamChat
     @Route(.push) var geoTrack = makeGeoTrack
+    @Route(.push) var changeLanguage = makeChangeLanguage
     
     init(localNotificationManager: LocalNotificationManager,
-         getStreamManager: GetStreamManager) {
+         getStreamManager: GetStreamManager,
+         languageManager: LanguageManager) {
         self.localNotificationManager = localNotificationManager
         self.getStreamManager = getStreamManager
+        self.languageManager = languageManager
     }
 }
 
@@ -66,5 +70,9 @@ extension ContentCoordinator {
     
     @ViewBuilder func makeGeoTrack() -> some View {
         GeoTrackView()
+    }
+    
+    @ViewBuilder func makeChangeLanguage() -> some View {
+        ChangeLanguageView(languageManager: languageManager)
     }
 }

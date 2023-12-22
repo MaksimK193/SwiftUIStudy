@@ -1,0 +1,53 @@
+/* 
+  Localizable.strings
+  SwiftUIStudy
+
+  Created by USER on 21.12.2023.
+  
+*/
+
+"inactive.label.appName" = "SwiftUIStudy";
+
+"content.label.helloWolrd" = "Hello world";
+
+"sidebar.navigationRow.coreData" = "Core Data";
+"sidebar.navigationRow.swiftData" = "Swift Data";
+"sidebar.navigationRow.weather" = "Weather";
+"sidebar.navigationRow.photoCompression" = "Photo Compression";
+"sidebar.navigationRow.liveActivity" = "Live Activity";
+"sidebar.navigationRow.scheduleNotification" = "Schedule Notification";
+"sidebar.navigationRow.getStreamChat" = "Get Stream Chat";
+"sidebar.navigationRow.geoTrack" = "Geo Track";
+"sidebar.navigationRow.changeLanguage" = "Change language";
+
+"coreData.button.addDepartments" = "Add departments";
+"coreData.button.addEmployee" = "Add employee";
+
+"swiftData.button.addItem" = "Add item";
+"swiftData.textField.id" = "id";
+"swiftData.textField.name" = "name";
+
+"weather.label.temperature" = "Temperature %@ degrees";
+"weather.button.update" = "Update";
+
+"photoCompression.button.takePhoto" = "Take photo";
+"photoCompression.button.compressPhoto" = "Compress photo";
+
+"liveActivity.label.liveActivity" = "Live activity";
+"liveActivity.button.startActivity" = "Start activity";
+"liveActivity.button.cook" = "Cook";
+"liveActivity.button.deliver" = "Deliver";
+"liveActivity.button.finished" = "Finished";
+"liveActivity.activityStatus.cook" = "Cook";
+"liveActivity.activityStatus.deliver" = "Deliver";
+"liveActivity.activityStatus.finished" = "Finished";
+"liveActivity.activityStatus.accepted" = "Accepted";
+
+"scheduleNotification.textField.notificationText" = "Notification text";
+"scheduleNotification.button.scheduleNotification" = "Schedule notification";
+
+"geoTrack.label.geoTracker" = "Geo tracker";
+"geoTrack.button.allowTracking" = "Allow tracking";
+"geoTrack.alert.title" = "Allow tracking";
+"geoTrack.alert.settingsButton" = "Go to settings";
+"geoTrack.alert.cancelButton" = "Cancel";

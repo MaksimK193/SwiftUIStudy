@@ -17,11 +17,11 @@ struct SwiftDataView: View {
         ZStack {
             VStack {
                 HStack {
-                    TextField("id", text: $id)
+                    TextField(L10n.SwiftData.TextField.id, text: $id)
                         .textFieldStyle(.roundedBorder)
-                    TextField("name", text: $departmentName)
+                    TextField(L10n.SwiftData.TextField.name, text: $departmentName)
                         .textFieldStyle(.roundedBorder)
-                    Button("Add Item", systemImage: "plus"){
+                    Button(L10n.SwiftData.Button.addItem, systemImage: "plus"){
                         let department = Department(id: Int(id) ?? 1, name: departmentName, employees: [])
                         viewModel.addObject(department)
                     }
@@ -59,11 +59,11 @@ struct SwiftDataEmployeesView: View {
     var body: some View {
         ZStack {
             HStack {
-                TextField("id", text: $id)
+                TextField(L10n.SwiftData.TextField.id, text: $id)
                     .textFieldStyle(.roundedBorder)
-                TextField("name", text: $employeeName)
+                TextField(L10n.SwiftData.TextField.name, text: $employeeName)
                     .textFieldStyle(.roundedBorder)
-                Button("Add Item", systemImage: "plus") {
+                Button(L10n.SwiftData.Button.addItem, systemImage: "plus") {
                     let employee = Employee(id: Int(id) ?? 1, name: employeeName)
                     employee.department = department
                     vm.addObject(employee)

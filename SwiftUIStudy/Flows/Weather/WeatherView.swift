@@ -16,8 +16,8 @@ struct WeatherView: View {
         ZStack {
             let temp = viewModel.temperature == nil ? "--" : "\(viewModel.temperature!)"
             VStack {
-                Text("Температура: \(temp) градусов")
-                Button("Обновить") {
+                Text(L10n.Weather.Label.temperature(temp))//"Температура: \(temp) градусов")
+                Button(L10n.Weather.Button.update) {
                     viewModel.getCurrentWeather()
                 }
                 .accessibilityIdentifier("weatherUpdateButton")

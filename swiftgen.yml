@@ -1,0 +1,11 @@
+#input_dir: SwiftUIStudy/Sources/
+#output_dir: SwiftUIStudy/Generated/
+
+## Strings
+strings:
+    inputs:
+         - SwiftUIStudy/Common/Localization/en.lproj
+    outputs:
+         - templateName: /Users/user/Desktop/SwiftUIStudy/languageTemplate
+           output: SwiftUIStudy/Common/Localization/Strings+Generated.swift
+        

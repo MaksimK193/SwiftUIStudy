@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		805513BBA2AEBC3A0D7AD40C /* libPods-SwiftUIStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F864038B13D0AF578B7641 /* libPods-SwiftUIStudy.a */; };
 		CE0230772B318D9100D5887D /* Coordinates.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE0230752B318D9100D5887D /* Coordinates.xcdatamodeld */; };
 		CE0647A22B0F926E00FDEE12 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647A12B0F926E00FDEE12 /* WeatherView.swift */; };
 		CE0647A52B0F959500FDEE12 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE0647A42B0F959500FDEE12 /* Alamofire */; };
 		CE0647AB2B107AA200FDEE12 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647AA2B107AA200FDEE12 /* NetworkManager.swift */; };
 		CE0647B82B109D4A00FDEE12 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647B72B109D4A00FDEE12 /* WeatherViewModel.swift */; };
 		CE0647BC2B10A1AB00FDEE12 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0647BB2B10A1AB00FDEE12 /* WeatherModel.swift */; };
+		CE0CF7F52B359E5900FEEA84 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CF7F42B359E5900FEEA84 /* LanguageManager.swift */; };
 		CE0D617E2B186A6000E93536 /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D617D2B186A6000E93536 /* TokenStorage.swift */; };
 		CE0D61812B186B1200E93536 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE0D61802B186B1200E93536 /* KeychainSwift */; };
 		CE0D61842B188FCD00E93536 /* Stinsen in Frameworks */ = {isa = PBXBuildFile; productRef = CE0D61832B188FCD00E93536 /* Stinsen */; };
@@ -37,6 +39,9 @@
 		CE5F58E82B22FEB0008D91A1 /* LiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F58E72B22FEB0008D91A1 /* LiveActivityView.swift */; };
 		CE6329932B15C77C0020D37F /* InactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329922B15C77C0020D37F /* InactiveView.swift */; };
 		CE6329962B15CFAB0020D37F /* PhotoCompressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */; };
+		CE76E21A2B343D06006859E9 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76E2192B343D06006859E9 /* Strings+Generated.swift */; };
+		CE76E21B2B343E10006859E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE76E21D2B343E10006859E9 /* Localizable.strings */; };
+		CE76E2212B3466F0006859E9 /* ChangeLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76E2202B3466F0006859E9 /* ChangeLanguageView.swift */; };
 		CE7BCAC62B04EAB90015230C /* SwiftUIStudyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAC52B04EAB90015230C /* SwiftUIStudyApp.swift */; };
 		CE7BCAC82B04EAB90015230C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BCAC72B04EAB90015230C /* ContentView.swift */; };
 		CE7BCACA2B04EABA0015230C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7BCAC92B04EABA0015230C /* Assets.xcassets */; };
@@ -105,12 +110,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1611D6096146EBD6FE934AC5 /* Pods-SwiftUIStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUIStudy.release.xcconfig"; path = "Target Support Files/Pods-SwiftUIStudy/Pods-SwiftUIStudy.release.xcconfig"; sourceTree = "<group>"; };
+		5A62D88C996A7815DD6CABD2 /* Pods-SwiftUIStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUIStudy.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUIStudy/Pods-SwiftUIStudy.debug.xcconfig"; sourceTree = "<group>"; };
+		70F864038B13D0AF578B7641 /* libPods-SwiftUIStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftUIStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0230762B318D9100D5887D /* Coordinates.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Coordinates.xcdatamodel; sourceTree = "<group>"; };
 		CE0647A12B0F926E00FDEE12 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		CE0647AA2B107AA200FDEE12 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CE0647B72B109D4A00FDEE12 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		CE0647BB2B10A1AB00FDEE12 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		CE0647BF2B14BF5600FDEE12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CE0CF7F42B359E5900FEEA84 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		CE0D617D2B186A6000E93536 /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
 		CE0D61882B189B5600E93536 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		CE0D618A2B18AD0B00E93536 /* ContentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCoordinator.swift; sourceTree = "<group>"; };
@@ -133,6 +142,10 @@
 		CE5F58E72B22FEB0008D91A1 /* LiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityView.swift; sourceTree = "<group>"; };
 		CE6329922B15C77C0020D37F /* InactiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveView.swift; sourceTree = "<group>"; };
 		CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCompressionView.swift; sourceTree = "<group>"; };
+		CE76E2192B343D06006859E9 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		CE76E21C2B343E10006859E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE76E21E2B343E45006859E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE76E2202B3466F0006859E9 /* ChangeLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageView.swift; sourceTree = "<group>"; };
 		CE7BCAC22B04EAB90015230C /* SwiftUIStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BCAC52B04EAB90015230C /* SwiftUIStudyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIStudyApp.swift; sourceTree = "<group>"; };
 		CE7BCAC72B04EAB90015230C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -178,6 +191,7 @@
 				CE0D61842B188FCD00E93536 /* Stinsen in Frameworks */,
 				CE0D61812B186B1200E93536 /* KeychainSwift in Frameworks */,
 				CE0647A52B0F959500FDEE12 /* Alamofire in Frameworks */,
+				805513BBA2AEBC3A0D7AD40C /* libPods-SwiftUIStudy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +212,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02F1F9BFAC9BF2657F958024 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A62D88C996A7815DD6CABD2 /* Pods-SwiftUIStudy.debug.xcconfig */,
+				1611D6096146EBD6FE934AC5 /* Pods-SwiftUIStudy.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CE0647A02B0F926300FDEE12 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +280,7 @@
 			children = (
 				CE5F58D02B22FDCB008D91A1 /* WidgetKit.framework */,
 				CE5F58D22B22FDCB008D91A1 /* SwiftUI.framework */,
+				70F864038B13D0AF578B7641 /* libPods-SwiftUIStudy.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -297,6 +321,23 @@
 			path = PhotoCompression;
 			sourceTree = "<group>";
 		};
+		CE71BDC82B343B0300FF9DD1 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				CE76E2192B343D06006859E9 /* Strings+Generated.swift */,
+				CE76E21D2B343E10006859E9 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		CE76E21F2B3466E2006859E9 /* ChangeLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				CE76E2202B3466F0006859E9 /* ChangeLanguageView.swift */,
+			);
+			path = ChangeLanguage;
+			sourceTree = "<group>";
+		};
 		CE7BCAB92B04EAB90015230C = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +347,7 @@
 				CE5F58D42B22FDCB008D91A1 /* Test */,
 				CE5F58CF2B22FDCB008D91A1 /* Frameworks */,
 				CE7BCAC32B04EAB90015230C /* Products */,
+				02F1F9BFAC9BF2657F958024 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -362,6 +404,7 @@
 		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CE76E21F2B3466E2006859E9 /* ChangeLanguage */,
 				CEC327812B307A4E0078C5B2 /* GeoTrack */,
 				CEC327582B2B30DE0078C5B2 /* GetStreamChat */,
 				CEC3272E2B29E3F40078C5B2 /* ScheduleNotification */,
@@ -418,6 +461,7 @@
 		CEBC558A2B0B384D007F9B19 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CE71BDC82B343B0300FF9DD1 /* Localization */,
 				CE0D61872B189B4000E93536 /* MainCoordinator */,
 				CE0D617C2B186A5500E93536 /* Helpers */,
 				CE5962632B172093005BDEEB /* Services */,
@@ -435,6 +479,7 @@
 				CE5962612B15F101005BDEEB /* AppStateManager.swift */,
 				CEC3274B2B2AF4E80078C5B2 /* LocalNotificationManager.swift */,
 				CEC3277F2B2C84C30078C5B2 /* GetStreamManager.swift */,
+				CE0CF7F42B359E5900FEEA84 /* LanguageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -489,6 +534,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE7BCAE72B04EABA0015230C /* Build configuration list for PBXNativeTarget "SwiftUIStudy" */;
 			buildPhases = (
+				C149577DD5609DBF4B0D5560 /* [CP] Check Pods Manifest.lock */,
 				CE7BCABE2B04EAB90015230C /* Sources */,
 				CE7BCABF2B04EAB90015230C /* Frameworks */,
 				CE7BCAC02B04EAB90015230C /* Resources */,
@@ -561,6 +607,7 @@
 					};
 					CE7BCAC12B04EAB90015230C = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1500;
 					};
 					CE7BCAD22B04EABA0015230C = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -579,6 +626,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = CE7BCAB92B04EAB90015230C;
 			packageReferences = (
@@ -613,6 +661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7BCACE2B04EABA0015230C /* Preview Assets.xcassets in Resources */,
+				CE76E21B2B343E10006859E9 /* Localizable.strings in Resources */,
 				CE7BCACA2B04EABA0015230C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +681,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C149577DD5609DBF4B0D5560 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftUIStudy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE5F58CA2B22FDCB008D91A1 /* Sources */ = {
@@ -667,6 +741,7 @@
 				CE6329932B15C77C0020D37F /* InactiveView.swift in Sources */,
 				CEC3275A2B2B30ED0078C5B2 /* GetStreamChatView.swift in Sources */,
 				CEBC55892B0B3808007F9B19 /* CoreDataViewModel.swift in Sources */,
+				CE76E21A2B343D06006859E9 /* Strings+Generated.swift in Sources */,
 				CE5962842B172926005BDEEB /* CamViewController.swift in Sources */,
 				CEC327802B2C84C30078C5B2 /* GetStreamManager.swift in Sources */,
 				CE0647B82B109D4A00FDEE12 /* WeatherViewModel.swift in Sources */,
@@ -679,11 +754,13 @@
 				CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */,
 				CE0D617E2B186A6000E93536 /* TokenStorage.swift in Sources */,
 				CE0647BC2B10A1AB00FDEE12 /* WeatherModel.swift in Sources */,
+				CE76E2212B3466F0006859E9 /* ChangeLanguageView.swift in Sources */,
 				CE0D618B2B18AD0B00E93536 /* ContentCoordinator.swift in Sources */,
 				CE2A27D02B0C9979003F9601 /* SwiftDataViewModel.swift in Sources */,
 				CE5F58E82B22FEB0008D91A1 /* LiveActivityView.swift in Sources */,
 				CEBC55852B06424B007F9B19 /* CoreDataStudy.xcdatamodeld in Sources */,
 				CE2A27D22B0C9983003F9601 /* SwiftDataManager.swift in Sources */,
+				CE0CF7F52B359E5900FEEA84 /* LanguageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +805,18 @@
 			targetProxy = CE7BCADE2B04EABA0015230C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE76E21D2B343E10006859E9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE76E21C2B343E10006859E9 /* en */,
+				CE76E21E2B343E45006859E9 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CE5F58E22B22FDCC008D91A1 /* Debug */ = {
@@ -802,6 +891,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -860,6 +950,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -909,10 +1000,12 @@
 		};
 		CE7BCAE82B04EABA0015230C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A62D88C996A7815DD6CABD2 /* Pods-SwiftUIStudy.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SwiftUIStudy/SwiftUIStudy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -941,6 +1034,11 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-fprofile-instr-generate",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = fojin.SwiftUIStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -953,10 +1051,12 @@
 		};
 		CE7BCAE92B04EABA0015230C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1611D6096146EBD6FE934AC5 /* Pods-SwiftUIStudy.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SwiftUIStudy/SwiftUIStudy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

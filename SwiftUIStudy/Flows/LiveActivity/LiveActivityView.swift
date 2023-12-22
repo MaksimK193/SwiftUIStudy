@@ -13,13 +13,13 @@ struct LiveActivityView: View {
     @State private var isButtonsShown = false
     
     var body: some View {
-        Text("Live Activity")
+        Text(L10n.LiveActivity.Label.liveActivity)
         
-        Button("Start activity") {
+        Button(L10n.LiveActivity.Button.startActivity) {
             if ActivityAuthorizationInfo().areActivitiesEnabled {
                 do {
                     let attributes = TestAttributes()
-                    let initialState = TestAttributes.ContentState(status: "Приняли")
+                    let initialState = TestAttributes.ContentState(status: L10n.LiveActivity.ActivityStatus.accepted)
                     activity = try Activity.request(
                         attributes: attributes,
                         content: .init(state: initialState, staleDate: nil)
@@ -34,9 +34,9 @@ struct LiveActivityView: View {
         }
         .buttonStyle(.bordered)
         
-        Button("Готовим") {
+        Button(L10n.LiveActivity.Button.cook) {
             guard let activity = activity else { return }
-            let contentState = TestAttributes.ContentState(status: "Готовим")
+            let contentState = TestAttributes.ContentState(status: L10n.LiveActivity.ActivityStatus.cook)
             Task {
                 await activity.update(ActivityContent(state: contentState, staleDate: Date.now + 15))
             }
@@ -44,9 +44,9 @@ struct LiveActivityView: View {
         .buttonStyle(.bordered)
         .opacity(isButtonsShown ? 1 : 0)
         
-        Button("Доставляем") {
+        Button(L10n.LiveActivity.Button.deliver) {
             guard let activity = activity else { return }
-            let contentState = TestAttributes.ContentState(status: "Доставляем")
+            let contentState = TestAttributes.ContentState(status: L10n.LiveActivity.ActivityStatus.deliver)
             Task {
                 await activity.update(ActivityContent(state: contentState, staleDate: Date.now + 15))
             }
@@ -54,9 +54,9 @@ struct LiveActivityView: View {
         .buttonStyle(.bordered)
         .opacity(isButtonsShown ? 1 : 0)
         
-        Button("Завершен") {
+        Button(L10n.LiveActivity.Button.finished) {
             guard let activity = activity else { return }
-            let contentState = TestAttributes.ContentState(status: "Завершен")
+            let contentState = TestAttributes.ContentState(status: L10n.LiveActivity.ActivityStatus.finished)
             
             Task {
                 await activity.end(ActivityContent(state: contentState, staleDate: nil), dismissalPolicy: .after(.now + 5))

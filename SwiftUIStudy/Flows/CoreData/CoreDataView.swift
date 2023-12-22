@@ -21,7 +21,7 @@ struct CoreDataView: View {
                     }
                 }
             }
-            Button("Add departments") {
+            Button(L10n.CoreData.Button.addDepartments) {
                 // Add entities for testing
                 vm.addDepartment(name: "Backend")
                 vm.addDepartment(name: "Fromtend")
@@ -55,7 +55,7 @@ struct EmployeesView: View {
                 })
             }
             .navigationTitle(department)
-            Button("Add entity") {
+            Button(L10n.CoreData.Button.addEmployee) {
                 // Add entities for testing
                 if department == "Backend" {
                     vm.addEmployee(name: "Илья", departmentName: department)

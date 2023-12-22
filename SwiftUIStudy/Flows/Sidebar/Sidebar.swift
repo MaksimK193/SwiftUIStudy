@@ -45,7 +45,7 @@ struct SidebarView: View {
         HStack {
             List() {
                 ForEach(vm.screens) { item in
-                    Button("\(item.screen.rawValue)") {
+                    Button(item.screen.screenTitle()) {
                         switch item.screen {
                         case .coreData:
                             sidebarRouter.route(to: \.coreData, stateManager)
@@ -63,6 +63,8 @@ struct SidebarView: View {
                             sidebarRouter.route(to: \.getStreamChat)
                         case .geoTrack:
                             sidebarRouter.route(to: \.geoTrack)
+                        case .changeLanguage:
+                            sidebarRouter.route(to: \.changeLanguage)
                         }
                     }
                     .accessibilityIdentifier("\(item.screen.rawValue)")
