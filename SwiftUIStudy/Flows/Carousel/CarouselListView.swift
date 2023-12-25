@@ -10,8 +10,8 @@ import SwiftUI
 struct CarouselListView: View {
     var body: some View {
         List() {
-            ForEach(0..<10) { _ in
-                NavigationLink("123", destination: CarouselView())
+            ForEach(0..<10) { page in
+                NavigationLink("\(page)", destination: CarouselView(selectedPage: page))
             }
         }
     }

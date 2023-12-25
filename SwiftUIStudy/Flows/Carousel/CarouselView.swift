@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct CarouselView: View {
-        var body: some View {
-            VStack(){
-                TabView{
-                    ForEach(0..<5) { item in
-                        PageView()
-                    }
-                }
-                .tabViewStyle(PageTabViewStyle())
-                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+    @State var selectedPage: Int = 0
+    
+    var body: some View {
+        TabView(selection: $selectedPage) {
+            ForEach(0..<10) { item in
+                PageView(pageNumber: "\(item)")
             }
         }
+        .tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+    }
 }
 
 #Preview {
@@ -26,9 +26,10 @@ struct CarouselView: View {
 }
 
 struct PageView: View {
+    @State var pageNumber: String
     
     var body: some View {
-        Text("123")
+        Text(pageNumber)
             .background(.orange)
             .font(.title)
     }
