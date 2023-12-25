@@ -25,6 +25,7 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var getStreamChat = makeGetStreamChat
     @Route(.push) var geoTrack = makeGeoTrack
     @Route(.push) var changeLanguage = makeChangeLanguage
+    @Route(.push) var carousel = makeCarousel
     
     init(localNotificationManager: LocalNotificationManager,
          getStreamManager: GetStreamManager,
@@ -74,5 +75,9 @@ extension ContentCoordinator {
     
     @ViewBuilder func makeChangeLanguage() -> some View {
         ChangeLanguageView(languageManager: languageManager)
+    }
+    
+    @ViewBuilder func makeCarousel() -> some View {
+        CarouselListView()
     }
 }

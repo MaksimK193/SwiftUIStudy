@@ -65,6 +65,8 @@ struct SidebarView: View {
                             sidebarRouter.route(to: \.geoTrack)
                         case .changeLanguage:
                             sidebarRouter.route(to: \.changeLanguage)
+                        case .carousel:
+                            sidebarRouter.route(to: \.carousel)
                         }
                     }
                     .accessibilityIdentifier("\(item.screen.rawValue)")

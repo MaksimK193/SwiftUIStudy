@@ -19,6 +19,7 @@
 "sidebar.navigationRow.getStreamChat" = "Get Stream чат";
 "sidebar.navigationRow.geoTrack" = "Трекер геолокации";
 "sidebar.navigationRow.changeLanguage" = "Сменить язык";
+"sidebar.navigationRow.carousel" = "Карусель";
 
 "coreData.button.addDepartments" = "Добавить отдел";
 "coreData.button.addEmployee" = "Добавить сотрудника";
