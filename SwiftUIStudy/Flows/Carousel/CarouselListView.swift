@@ -11,7 +11,7 @@ struct CarouselListView: View {
     var body: some View {
         List() {
             ForEach(0..<10) { page in
-                NavigationLink("\(page)", destination: CarouselView(selectedPage: page))
+                NavigationLink("\(page)", destination: CarouselView(viewModel: CarouselViewModel(selectedPage: page)))
             }
         }
     }

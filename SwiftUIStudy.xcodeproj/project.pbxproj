@@ -71,6 +71,8 @@
 		CEC327802B2C84C30078C5B2 /* GetStreamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3277F2B2C84C30078C5B2 /* GetStreamManager.swift */; };
 		CEC327832B307A5B0078C5B2 /* GeoTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC327822B307A5B0078C5B2 /* GeoTrackView.swift */; };
 		CEC327872B307E0C0078C5B2 /* GeoTrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC327862B307E0C0078C5B2 /* GeoTrackViewModel.swift */; };
+		CECB24122B3AC94A00414570 /* CarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB24112B3AC94A00414570 /* CarouselViewModel.swift */; };
+		CECB24142B3AC96300414570 /* CarouselPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB24132B3AC96300414570 /* CarouselPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +177,8 @@
 		CEC3277F2B2C84C30078C5B2 /* GetStreamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStreamManager.swift; sourceTree = "<group>"; };
 		CEC327822B307A5B0078C5B2 /* GeoTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoTrackView.swift; sourceTree = "<group>"; };
 		CEC327862B307E0C0078C5B2 /* GeoTrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoTrackViewModel.swift; sourceTree = "<group>"; };
+		CECB24112B3AC94A00414570 /* CarouselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewModel.swift; sourceTree = "<group>"; };
+		CECB24132B3AC96300414570 /* CarouselPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,8 @@
 			children = (
 				CE0CF7F72B397D1C00FEEA84 /* CarouselListView.swift */,
 				CE0CF7F92B397FDE00FEEA84 /* CarouselView.swift */,
+				CECB24112B3AC94A00414570 /* CarouselViewModel.swift */,
+				CECB24132B3AC96300414570 /* CarouselPageView.swift */,
 			);
 			path = Carousel;
 			sourceTree = "<group>";
@@ -737,6 +743,7 @@
 			files = (
 				CEC327832B307A5B0078C5B2 /* GeoTrackView.swift in Sources */,
 				CE5F58E52B22FDD0008D91A1 /* TestLiveActivity.swift in Sources */,
+				CECB24122B3AC94A00414570 /* CarouselViewModel.swift in Sources */,
 				CEC327872B307E0C0078C5B2 /* GeoTrackViewModel.swift in Sources */,
 				CE0230772B318D9100D5887D /* Coordinates.xcdatamodeld in Sources */,
 				CE0CF7FA2B397FDE00FEEA84 /* CarouselView.swift in Sources */,
@@ -769,6 +776,7 @@
 				CE2A27CE2B0C994A003F9601 /* SwiftDataView.swift in Sources */,
 				CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */,
 				CE0D617E2B186A6000E93536 /* TokenStorage.swift in Sources */,
+				CECB24142B3AC96300414570 /* CarouselPageView.swift in Sources */,
 				CE0647BC2B10A1AB00FDEE12 /* WeatherModel.swift in Sources */,
 				CE76E2212B3466F0006859E9 /* ChangeLanguageView.swift in Sources */,
 				CE0D618B2B18AD0B00E93536 /* ContentCoordinator.swift in Sources */,
