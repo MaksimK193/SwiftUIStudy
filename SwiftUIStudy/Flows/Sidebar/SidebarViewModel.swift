@@ -17,6 +17,7 @@ enum TaskScreens: String {
     case getStreamChat
     case geoTrack
     case changeLanguage
+    case carousel
     
     func screenTitle() -> String {
         switch self {
@@ -38,6 +39,8 @@ enum TaskScreens: String {
             return  L10n.Sidebar.NavigationRow.geoTrack
         case .changeLanguage:
             return L10n.Sidebar.NavigationRow.changeLanguage
+        case .carousel:
+            return L10n.Sidebar.NavigationRow.carousel
         }
     }
 }
@@ -51,5 +54,6 @@ class SidebarViewModel: ObservableObject {
                                                   SidebarListModel(id: 5, screen: .scheduleNotification),
                                                   SidebarListModel(id: 6, screen: .getStreamChat),
                                                   SidebarListModel(id: 7, screen: .geoTrack),
-                                                  SidebarListModel(id: 8, screen: .changeLanguage)]
+                                                  SidebarListModel(id: 8, screen: .changeLanguage),
+                                                  SidebarListModel(id: 9, screen: .carousel)]
 }

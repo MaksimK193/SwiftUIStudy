@@ -19,6 +19,7 @@
 "sidebar.navigationRow.getStreamChat" = "Get Stream Chat";
 "sidebar.navigationRow.geoTrack" = "Geo Track";
 "sidebar.navigationRow.changeLanguage" = "Change language";
+"sidebar.navigationRow.carousel" = "Carousel";
 
 "coreData.button.addDepartments" = "Add departments";
 "coreData.button.addEmployee" = "Add employee";
