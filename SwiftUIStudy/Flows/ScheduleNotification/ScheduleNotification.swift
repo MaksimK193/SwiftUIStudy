@@ -28,12 +28,13 @@ struct ScheduleNotification: View {
     
     func scheduleNotification() {
         let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: notificationDate)
+        
         let model = LocalNotificationModel(identifier: UUID().uuidString,
                                            title: "Schedule notification",
-                                           subtitile: "",
                                            body: notificationText,
                                            dateComponents: components,
                                            repeats: false)
+        
         localNotificationManager.scheduleNotification(model: model)
     }
 }

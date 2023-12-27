@@ -64,6 +64,7 @@
 		CEBC55852B06424B007F9B19 /* CoreDataStudy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55832B06424B007F9B19 /* CoreDataStudy.xcdatamodeld */; };
 		CEBC55892B0B3808007F9B19 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55882B0B3808007F9B19 /* CoreDataViewModel.swift */; };
 		CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */; };
+		CEBC6E9F2B3AEA3B00BE786C /* NotificationActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC6E9E2B3AEA3B00BE786C /* NotificationActionsView.swift */; };
 		CEC327302B29E4240078C5B2 /* ScheduleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3272F2B29E4240078C5B2 /* ScheduleNotification.swift */; };
 		CEC3274C2B2AF4E80078C5B2 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3274B2B2AF4E80078C5B2 /* LocalNotificationManager.swift */; };
 		CEC3275A2B2B30ED0078C5B2 /* GetStreamChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC327592B2B30ED0078C5B2 /* GetStreamChatView.swift */; };
@@ -171,6 +172,7 @@
 		CEBC55842B06424B007F9B19 /* Departments.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Departments.xcdatamodel; sourceTree = "<group>"; };
 		CEBC55882B0B3808007F9B19 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
 		CEBC558C2B0B387B007F9B19 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CEBC6E9E2B3AEA3B00BE786C /* NotificationActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationActionsView.swift; sourceTree = "<group>"; };
 		CEC3272F2B29E4240078C5B2 /* ScheduleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotification.swift; sourceTree = "<group>"; };
 		CEC3274B2B2AF4E80078C5B2 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		CEC327592B2B30ED0078C5B2 /* GetStreamChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStreamChatView.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CEBC6E9D2B3AEA1900BE786C /* NotificationActions */,
 				CE0CF7F62B397D1000FEEA84 /* Carousel */,
 				CE76E21F2B3466E2006859E9 /* ChangeLanguage */,
 				CEC327812B307A4E0078C5B2 /* GeoTrack */,
@@ -502,6 +505,14 @@
 				CE0CF7F42B359E5900FEEA84 /* LanguageManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		CEBC6E9D2B3AEA1900BE786C /* NotificationActions */ = {
+			isa = PBXGroup;
+			children = (
+				CEBC6E9E2B3AEA3B00BE786C /* NotificationActionsView.swift */,
+			);
+			path = NotificationActions;
 			sourceTree = "<group>";
 		};
 		CEC3272E2B29E3F40078C5B2 /* ScheduleNotification */ = {
@@ -780,6 +791,7 @@
 				CE0647BC2B10A1AB00FDEE12 /* WeatherModel.swift in Sources */,
 				CE76E2212B3466F0006859E9 /* ChangeLanguageView.swift in Sources */,
 				CE0D618B2B18AD0B00E93536 /* ContentCoordinator.swift in Sources */,
+				CEBC6E9F2B3AEA3B00BE786C /* NotificationActionsView.swift in Sources */,
 				CE2A27D02B0C9979003F9601 /* SwiftDataViewModel.swift in Sources */,
 				CE5F58E82B22FEB0008D91A1 /* LiveActivityView.swift in Sources */,
 				CEBC55852B06424B007F9B19 /* CoreDataStudy.xcdatamodeld in Sources */,

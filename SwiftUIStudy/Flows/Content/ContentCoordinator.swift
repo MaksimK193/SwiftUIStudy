@@ -26,6 +26,7 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var geoTrack = makeGeoTrack
     @Route(.push) var changeLanguage = makeChangeLanguage
     @Route(.push) var carousel = makeCarousel
+    @Route(.push) var notificationActions = makeNotificationActions
     
     init(localNotificationManager: LocalNotificationManager,
          getStreamManager: GetStreamManager,
@@ -79,5 +80,9 @@ extension ContentCoordinator {
     
     @ViewBuilder func makeCarousel() -> some View {
         CarouselListView()
+    }
+    
+    @ViewBuilder func makeNotificationActions() -> some View {
+        NotificationActionsView(localNotificationManager: localNotificationManager)
     }
 }
