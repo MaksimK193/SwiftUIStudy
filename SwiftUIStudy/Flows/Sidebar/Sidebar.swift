@@ -67,6 +67,8 @@ struct SidebarView: View {
                             sidebarRouter.route(to: \.changeLanguage)
                         case .carousel:
                             sidebarRouter.route(to: \.carousel)
+                        case .notificationActions:
+                            sidebarRouter.route(to: \.notificationActions)
                         }
                     }
                     .accessibilityIdentifier("\(item.screen.rawValue)")
