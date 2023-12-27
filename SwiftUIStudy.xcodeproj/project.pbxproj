@@ -27,6 +27,9 @@
 		CE2A27D02B0C9979003F9601 /* SwiftDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */; };
 		CE2A27D22B0C9983003F9601 /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */; };
 		CE2A27D52B0C9996003F9601 /* SwiftDataEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27D42B0C9996003F9601 /* SwiftDataEntities.swift */; };
+		CE3507552B3C33CA005DC4C3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3507542B3C33CA005DC4C3 /* AuthenticationService.swift */; };
+		CE3507592B3C352E005DC4C3 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3507582B3C352E005DC4C3 /* AuthView.swift */; };
+		CE35075B2B3C3664005DC4C3 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35075A2B3C3664005DC4C3 /* AuthCoordinator.swift */; };
 		CE5962622B15F101005BDEEB /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5962612B15F101005BDEEB /* AppStateManager.swift */; };
 		CE5962652B17209E005BDEEB /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5962642B17209E005BDEEB /* CameraService.swift */; };
 		CE5962842B172926005BDEEB /* CamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59627E2B172926005BDEEB /* CamViewController.swift */; };
@@ -132,6 +135,9 @@
 		CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataViewModel.swift; sourceTree = "<group>"; };
 		CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
 		CE2A27D42B0C9996003F9601 /* SwiftDataEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataEntities.swift; sourceTree = "<group>"; };
+		CE3507542B3C33CA005DC4C3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		CE3507582B3C352E005DC4C3 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		CE35075A2B3C3664005DC4C3 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		CE5962612B15F101005BDEEB /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
 		CE5962642B17209E005BDEEB /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		CE59627E2B172926005BDEEB /* CamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamViewController.swift; sourceTree = "<group>"; };
@@ -274,10 +280,20 @@
 			path = SwiftData;
 			sourceTree = "<group>";
 		};
+		CE3507562B3C3508005DC4C3 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				CE3507582B3C352E005DC4C3 /* AuthView.swift */,
+				CE35075A2B3C3664005DC4C3 /* AuthCoordinator.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		CE5962632B172093005BDEEB /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				CE5962642B17209E005BDEEB /* CameraService.swift */,
+				CE3507542B3C33CA005DC4C3 /* AuthenticationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -409,6 +425,7 @@
 		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CE3507562B3C3508005DC4C3 /* Auth */,
 				CEBC6E9D2B3AEA1900BE786C /* NotificationActions */,
 				CE0CF7F62B397D1000FEEA84 /* Carousel */,
 				CE76E21F2B3466E2006859E9 /* ChangeLanguage */,
@@ -732,9 +749,11 @@
 				CE7BCAC82B04EAB90015230C /* ContentView.swift in Sources */,
 				CE6329932B15C77C0020D37F /* InactiveView.swift in Sources */,
 				CEC3275A2B2B30ED0078C5B2 /* GetStreamChatView.swift in Sources */,
+				CE35075B2B3C3664005DC4C3 /* AuthCoordinator.swift in Sources */,
 				CEBC55892B0B3808007F9B19 /* CoreDataViewModel.swift in Sources */,
 				CE76E21A2B343D06006859E9 /* Strings+Generated.swift in Sources */,
 				CE5962842B172926005BDEEB /* CamViewController.swift in Sources */,
+				CE3507592B3C352E005DC4C3 /* AuthView.swift in Sources */,
 				CEC327802B2C84C30078C5B2 /* GetStreamManager.swift in Sources */,
 				CE0647B82B109D4A00FDEE12 /* WeatherViewModel.swift in Sources */,
 				CE0D61892B189B5600E93536 /* MainCoordinator.swift in Sources */,
@@ -755,6 +774,7 @@
 				CEBC55852B06424B007F9B19 /* CoreDataStudy.xcdatamodeld in Sources */,
 				CE2A27D22B0C9983003F9601 /* SwiftDataManager.swift in Sources */,
 				CE0CF7F52B359E5900FEEA84 /* LanguageManager.swift in Sources */,
+				CE3507552B3C33CA005DC4C3 /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
