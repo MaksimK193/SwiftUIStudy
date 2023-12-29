@@ -21,19 +21,26 @@ final class MainCoordinator: NavigationCoordinatable {
     
     @ViewBuilder func sharedView(_ view: AnyView) -> some View {
         view
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+                AppStateManager.shared.isActive = true
+                guard let date  = UserDefaults.standard.object(forKey: "timeAuth") as? Date else { return }
+                if date.timeIntervalSinceNow < -30 {
+                    AuthenticationService.shared.status = .unauthenticated
+                } else {
+                    UserDefaults.standard.set(Date.now, forKey: "timeAuth")
+                }
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                AppStateManager.shared.isActive = false
+                UserDefaults.standard.set(Date.now, forKey: "timeAuth")
+            }
             .onReceive(AuthenticationService.shared.$status) { status in
                 switch status {
-                case .authenticated(_):
+                case .authenticated:
                     self.root(\.content)
                 case .unauthenticated:
                     self.root(\.auth)
                 }
-            }
-            .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
-                AppStateManager.shared.isActive = true
-            }
-            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-                AppStateManager.shared.isActive = false
             }
     }
     
@@ -44,7 +51,7 @@ final class MainCoordinator: NavigationCoordinatable {
     init() {
         languageManager.setDefaultLanguage()
         switch AuthenticationService.shared.status {
-        case .authenticated(_):
+        case .authenticated:
             stack = NavigationStack(initial: \MainCoordinator.content)
         case .unauthenticated:
             stack = NavigationStack(initial: \MainCoordinator.auth)

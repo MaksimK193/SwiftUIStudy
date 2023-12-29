@@ -7,14 +7,9 @@
 
 import Foundation
 
-struct User: Codable, Equatable {
-    let username: String
-    let accessToken: String
-}
-
 class AuthenticationService: ObservableObject {
-    enum Status: Equatable {
-        case authenticated(User)
+    enum Status {
+        case authenticated
         case unauthenticated
     }
     
@@ -24,19 +19,16 @@ class AuthenticationService: ObservableObject {
         didSet {
             switch status {
             case .unauthenticated:
-                UserDefaults.standard.removeObject(forKey: "user")
-            case .authenticated(let user):
-                let encoder = JSONEncoder()
-                let jsonString = try! encoder.encode(user)
-                UserDefaults.standard.setValue(jsonString, forKey: "user")
+                UserDefaults.standard.removeObject(forKey: "timeAuth")
+            case .authenticated:
+                UserDefaults.standard.setValue(Date.now, forKey: "timeAuth")
             }
         }
     }
 
     init() {
-        let decoder = JSONDecoder()
         if let data = UserDefaults.standard.data(forKey: "user") {
-            self.status = try! Status.authenticated(decoder.decode(User.self, from: data))
+            self.status = Status.authenticated
         } else {
             self.status = Status.unauthenticated
         }
