@@ -20,6 +20,8 @@
 "sidebar.navigationRow.geoTrack" = "Трекер геолокации";
 "sidebar.navigationRow.changeLanguage" = "Сменить язык";
 "sidebar.navigationRow.carousel" = "Карусель";
+"sidebar.navigationRow.notificationActions" = "Уведомления с кнопками";
+"sidebar.navigationRow.exit" = "Выход";
 
 "coreData.button.addDepartments" = "Добавить отдел";
 "coreData.button.addEmployee" = "Добавить сотрудника";
@@ -52,3 +54,10 @@
 "geoTrack.alert.title" = "Разрешить трекинг";
 "geoTrack.alert.settingsButton" = "Перейти в настройки";
 "geoTrack.alert.cancelButton" = "Отмена";
+
+"auth.textField.login" = "Логин";
+"auth.textField.password" = "Пароль";
+"auth.button.login" = "Войти";
+"auth.button.FaceID" = "FaceID";
+"auth.alert.title.incorrectPasswordOrLogin" = "Некорректный логин или пароль";
+"auth.alert.title.incorrectFaceID" = "Некорректный Face ID";

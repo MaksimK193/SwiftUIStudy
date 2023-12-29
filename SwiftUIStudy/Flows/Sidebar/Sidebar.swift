@@ -69,6 +69,8 @@ struct SidebarView: View {
                             sidebarRouter.route(to: \.carousel)
                         case .notificationActions:
                             sidebarRouter.route(to: \.notificationActions)
+                        case .exit:
+                            AuthenticationService.shared.status = .unauthenticated
                         }
                     }
                     .accessibilityIdentifier("\(item.screen.rawValue)")
