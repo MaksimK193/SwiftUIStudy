@@ -20,6 +20,8 @@
 "sidebar.navigationRow.geoTrack" = "Geo Track";
 "sidebar.navigationRow.changeLanguage" = "Change language";
 "sidebar.navigationRow.carousel" = "Carousel";
+"sidebar.navigationRow.notificationActions" = "Notification Actions";
+"sidebar.navigationRow.exit" = "Exit";
 
 "coreData.button.addDepartments" = "Add departments";
 "coreData.button.addEmployee" = "Add employee";
@@ -52,3 +54,10 @@
 "geoTrack.alert.title" = "Allow tracking";
 "geoTrack.alert.settingsButton" = "Go to settings";
 "geoTrack.alert.cancelButton" = "Cancel";
+
+"auth.textField.login" = "Login";
+"auth.textField.password" = "Password";
+"auth.button.login" = "LogIn";
+"auth.button.FaceID" = "FaceID";
+"auth.alert.title.incorrectPasswordOrLogin" = "Incorrect login or password";
+"auth.alert.title.incorrectFaceID" = "Incorrect Face ID";

@@ -44,9 +44,9 @@ enum TaskScreens: String {
         case .carousel:
             return L10n.Sidebar.NavigationRow.carousel
         case .notificationActions:
-            return "Notification Actions"
+            return L10n.Sidebar.NavigationRow.notificationActions
         case .exit:
-            return "Exit"
+            return L10n.Sidebar.NavigationRow.exit
         }
     }
 }

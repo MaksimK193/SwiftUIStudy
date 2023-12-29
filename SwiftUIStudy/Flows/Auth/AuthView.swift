@@ -19,21 +19,21 @@ struct AuthView: View {
     
     var body: some View {
         VStack {
-            TextField("Login", text: $login)
+            TextField(L10n.Auth.TextField.login, text: $login)
                 .textFieldStyle(.roundedBorder)
-            TextField("Password", text: $password)
+            TextField(L10n.Auth.TextField.password, text: $password)
                 .textFieldStyle(.roundedBorder)
             HStack {
-                Button("Войти") {
+                Button(L10n.Auth.Button.login) {
                     if login == correctLogin && password == correctPassword {
                         loginInApp()
                     } else {
-                        alertTitleText = "Incorrect login or password"
+                        alertTitleText = L10n.Auth.Alert.Title.incorrectPasswordOrLogin
                         showAlert = true
                     }
                 }
                 .buttonStyle(.bordered)
-                Button("Face ID") {
+                Button(L10n.Auth.Button.faceID) {
                     authenticate()
                 }
             }
@@ -59,7 +59,7 @@ struct AuthView: View {
                 }
             }
         } else {
-            alertTitleText = "Incorrect Face ID"
+            alertTitleText = L10n.Auth.Alert.Title.incorrectFaceID
             showAlert = true
         }
     }

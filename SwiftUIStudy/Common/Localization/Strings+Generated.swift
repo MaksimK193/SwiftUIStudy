@@ -12,6 +12,45 @@ enum L10n {
   static var bundle: Bundle?
 
 
+  enum Auth {
+
+  enum Alert {
+
+  enum Title {
+  /// Incorrect Face ID
+  static var incorrectFaceID: String {
+    return L10n.tr("Localizable", "auth.alert.title.incorrectFaceID")
+  }
+  /// Incorrect login or password
+  static var incorrectPasswordOrLogin: String {
+    return L10n.tr("Localizable", "auth.alert.title.incorrectPasswordOrLogin")
+  }
+  }
+  }
+
+  enum Button {
+  /// FaceID
+  static var faceID: String {
+    return L10n.tr("Localizable", "auth.button.FaceID")
+  }
+  /// LogIn
+  static var login: String {
+    return L10n.tr("Localizable", "auth.button.login")
+  }
+  }
+
+  enum TextField {
+  /// Login
+  static var login: String {
+    return L10n.tr("Localizable", "auth.textField.login")
+  }
+  /// Password
+  static var password: String {
+    return L10n.tr("Localizable", "auth.textField.password")
+  }
+  }
+  }
+
   enum Content {
 
   enum Label {
@@ -172,6 +211,10 @@ enum L10n {
   static var coreData: String {
     return L10n.tr("Localizable", "sidebar.navigationRow.coreData")
   }
+  /// Exit
+  static var exit: String {
+    return L10n.tr("Localizable", "sidebar.navigationRow.exit")
+  }
   /// Geo Track
   static var geoTrack: String {
     return L10n.tr("Localizable", "sidebar.navigationRow.geoTrack")
@@ -183,6 +226,10 @@ enum L10n {
   /// Live Activity
   static var liveActivity: String {
     return L10n.tr("Localizable", "sidebar.navigationRow.liveActivity")
+  }
+  /// Notification Actions
+  static var notificationActions: String {
+    return L10n.tr("Localizable", "sidebar.navigationRow.notificationActions")
   }
   /// Photo Compression
   static var photoCompression: String {
