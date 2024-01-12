@@ -58,10 +58,10 @@ final class MainCoordinator: NavigationCoordinatable {
         }
     }
     
-    func makeContent() -> ContentCoordinator {
-        return ContentCoordinator(localNotificationManager: localNotificationManager,
+    func makeContent() -> NavigationViewCoordinator<ContentCoordinator> {
+        return NavigationViewCoordinator(ContentCoordinator(localNotificationManager: localNotificationManager,
                                                             getStreamManager: getStreamManager,
-                                                            languageManager: languageManager)
+                                                            languageManager: languageManager))
     }
     
     func makeAuth() -> NavigationViewCoordinator<AuthCoordinator> {
