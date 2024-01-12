@@ -30,6 +30,7 @@
 		CE3507552B3C33CA005DC4C3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3507542B3C33CA005DC4C3 /* AuthenticationService.swift */; };
 		CE3507592B3C352E005DC4C3 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3507582B3C352E005DC4C3 /* AuthView.swift */; };
 		CE35075B2B3C3664005DC4C3 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35075A2B3C3664005DC4C3 /* AuthCoordinator.swift */; };
+		CE3507732B514EE3005DC4C3 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3507722B514EE3005DC4C3 /* AvatarView.swift */; };
 		CE5962622B15F101005BDEEB /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5962612B15F101005BDEEB /* AppStateManager.swift */; };
 		CE5962652B17209E005BDEEB /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5962642B17209E005BDEEB /* CameraService.swift */; };
 		CE5962842B172926005BDEEB /* CamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59627E2B172926005BDEEB /* CamViewController.swift */; };
@@ -138,6 +139,7 @@
 		CE3507542B3C33CA005DC4C3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		CE3507582B3C352E005DC4C3 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		CE35075A2B3C3664005DC4C3 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		CE3507722B514EE3005DC4C3 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		CE5962612B15F101005BDEEB /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
 		CE5962642B17209E005BDEEB /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		CE59627E2B172926005BDEEB /* CamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +291,14 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		CE3507712B514ED6005DC4C3 /* Avatar */ = {
+			isa = PBXGroup;
+			children = (
+				CE3507722B514EE3005DC4C3 /* AvatarView.swift */,
+			);
+			path = Avatar;
+			sourceTree = "<group>";
+		};
 		CE5962632B172093005BDEEB /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +435,7 @@
 		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CE3507712B514ED6005DC4C3 /* Avatar */,
 				CE3507562B3C3508005DC4C3 /* Auth */,
 				CEBC6E9D2B3AEA1900BE786C /* NotificationActions */,
 				CE0CF7F62B397D1000FEEA84 /* Carousel */,
@@ -757,6 +768,7 @@
 				CEC327802B2C84C30078C5B2 /* GetStreamManager.swift in Sources */,
 				CE0647B82B109D4A00FDEE12 /* WeatherViewModel.swift in Sources */,
 				CE0D61892B189B5600E93536 /* MainCoordinator.swift in Sources */,
+				CE3507732B514EE3005DC4C3 /* AvatarView.swift in Sources */,
 				CE7BCAF12B04F2AC0015230C /* Sidebar.swift in Sources */,
 				CEBC557D2B05FDB6007F9B19 /* SidebarListModel.swift in Sources */,
 				CE6329962B15CFAB0020D37F /* PhotoCompressionView.swift in Sources */,

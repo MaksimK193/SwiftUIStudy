@@ -27,6 +27,7 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var changeLanguage = makeChangeLanguage
     @Route(.push) var carousel = makeCarousel
     @Route(.push) var notificationActions = makeNotificationActions
+    @Route(.push) var avatar = makeAvatar
     
     init(localNotificationManager: LocalNotificationManager,
          getStreamManager: GetStreamManager,
@@ -84,5 +85,9 @@ extension ContentCoordinator {
     
     @ViewBuilder func makeNotificationActions() -> some View {
         NotificationActionsView(localNotificationManager: localNotificationManager)
+    }
+    
+    @ViewBuilder func makeAvatar() -> some View {
+        AvatarView()
     }
 }

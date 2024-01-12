@@ -20,6 +20,7 @@ enum TaskScreens: String {
     case carousel
     case notificationActions
     case exit
+    case avatar
     
     func screenTitle() -> String {
         switch self {
@@ -47,6 +48,8 @@ enum TaskScreens: String {
             return L10n.Sidebar.NavigationRow.notificationActions
         case .exit:
             return L10n.Sidebar.NavigationRow.exit
+        case .avatar:
+            return "avatar"
         }
     }
 }
@@ -63,5 +66,6 @@ class SidebarViewModel: ObservableObject {
                                                   SidebarListModel(id: 8, screen: .changeLanguage),
                                                   SidebarListModel(id: 9, screen: .carousel),
                                                   SidebarListModel(id: 10, screen: .notificationActions),
-                                                  SidebarListModel(id: 11, screen: .exit)]
+                                                  SidebarListModel(id: 11, screen: .exit),
+                                                  SidebarListModel(id: 12, screen: .avatar)]
 }
