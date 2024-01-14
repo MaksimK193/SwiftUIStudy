@@ -10,6 +10,7 @@ import CoreData
 enum CoreDataModels: String {
     case Coordinates
     case CoreDataStudy
+    case Avatars
 }
 
 final class CoreDataManager {
