@@ -22,6 +22,7 @@
 "sidebar.navigationRow.carousel" = "Carousel";
 "sidebar.navigationRow.notificationActions" = "Notification Actions";
 "sidebar.navigationRow.exit" = "Exit";
+"sidebar.navigationRow.avatar" = "Avatars";
 
 "coreData.button.addDepartments" = "Add departments";
 "coreData.button.addEmployee" = "Add employee";

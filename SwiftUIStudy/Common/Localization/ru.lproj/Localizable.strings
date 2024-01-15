@@ -22,6 +22,7 @@
 "sidebar.navigationRow.carousel" = "Карусель";
 "sidebar.navigationRow.notificationActions" = "Уведомления с кнопками";
 "sidebar.navigationRow.exit" = "Выход";
+"sidebar.navigationRow.avatar" = "Аватарки";
 
 "coreData.button.addDepartments" = "Добавить отдел";
 "coreData.button.addEmployee" = "Добавить сотрудника";

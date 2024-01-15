@@ -21,7 +21,7 @@ struct SwiftDataView: View {
                         .textFieldStyle(.roundedBorder)
                     TextField(L10n.SwiftData.TextField.name, text: $departmentName)
                         .textFieldStyle(.roundedBorder)
-                    Button(L10n.SwiftData.Button.addItem, systemImage: "plus"){
+                    Button(L10n.SwiftData.Button.addItem, systemImage: "plus") {
                         let department = Department(id: Int(id) ?? 1, name: departmentName, employees: [])
                         viewModel.addObject(department)
                     }
