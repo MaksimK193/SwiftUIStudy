@@ -79,6 +79,7 @@
 		CEC327872B307E0C0078C5B2 /* GeoTrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC327862B307E0C0078C5B2 /* GeoTrackViewModel.swift */; };
 		CECB24122B3AC94A00414570 /* CarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB24112B3AC94A00414570 /* CarouselViewModel.swift */; };
 		CECB24142B3AC96300414570 /* CarouselPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB24132B3AC96300414570 /* CarouselPageView.swift */; };
+		CED345982B580931005F65CB /* CountriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED345972B580931005F65CB /* CountriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		CEC327862B307E0C0078C5B2 /* GeoTrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoTrackViewModel.swift; sourceTree = "<group>"; };
 		CECB24112B3AC94A00414570 /* CarouselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewModel.swift; sourceTree = "<group>"; };
 		CECB24132B3AC96300414570 /* CarouselPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselPageView.swift; sourceTree = "<group>"; };
+		CED345972B580931005F65CB /* CountriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,6 +443,7 @@
 		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CED345962B580920005F65CB /* Countries */,
 				CE3507712B514ED6005DC4C3 /* Avatar */,
 				CE3507562B3C3508005DC4C3 /* Auth */,
 				CEBC6E9D2B3AEA1900BE786C /* NotificationActions */,
@@ -557,6 +560,14 @@
 				CE0230752B318D9100D5887D /* Coordinates.xcdatamodeld */,
 			);
 			path = GeoTrack;
+			sourceTree = "<group>";
+		};
+		CED345962B580920005F65CB /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				CED345972B580931005F65CB /* CountriesView.swift */,
+			);
+			path = Countries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -777,6 +788,7 @@
 				CE0D61892B189B5600E93536 /* MainCoordinator.swift in Sources */,
 				CE3507732B514EE3005DC4C3 /* AvatarView.swift in Sources */,
 				CE7BCAF12B04F2AC0015230C /* Sidebar.swift in Sources */,
+				CED345982B580931005F65CB /* CountriesView.swift in Sources */,
 				CEBC557D2B05FDB6007F9B19 /* SidebarListModel.swift in Sources */,
 				CE6329962B15CFAB0020D37F /* PhotoCompressionView.swift in Sources */,
 				CE7BCAC62B04EAB90015230C /* SwiftUIStudyApp.swift in Sources */,
