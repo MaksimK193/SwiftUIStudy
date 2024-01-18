@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "scalingheaderscrollview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/exyte/ScalingHeaderScrollView.git",
+      "state" : {
+        "revision" : "a3d0454aeebaf70362806599d8287db21724e349",
+        "version" : "1.1.0"
+      }
+    },
+    {
       "identity" : "stinsen",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rundfunk47/stinsen",
@@ -32,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/GetStream/stream-chat-swift.git",
       "state" : {
-        "revision" : "e6079f9a463fac0f241af5d67519902401a791c5",
-        "version" : "4.45.0"
+        "revision" : "2e77844e43790af3b5e4e0c1de8e7227e341e971",
+        "version" : "4.47.0"
       }
     },
     {
@@ -41,8 +50,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/getstream/stream-chat-swiftui",
       "state" : {
-        "revision" : "e215f10a89b2f4da68a76545d3db0bdfe8b13e1d",
-        "version" : "4.45.0"
+        "revision" : "4a7349559e02e08674223d75200aa8316b60901d",
+        "version" : "4.47.0"
+      }
+    },
+    {
+      "identity" : "swiftui-introspect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/siteline/swiftui-introspect",
+      "state" : {
+        "revision" : "18e965f867e37a558ad13c12d330dbe047099180",
+        "version" : "1.1.2"
       }
     }
   ],

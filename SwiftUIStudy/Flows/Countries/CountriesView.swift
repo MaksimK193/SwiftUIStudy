@@ -8,39 +8,50 @@
 import SwiftUI
 
 struct CountriesView: View {
+    @ObservedObject private var countriesViewModel = CountriesViewModel()
+    
     var body: some View {
-        NavigationStack {
-            List() {
-                ForEach(0..<10) { i in
+            List {
+                ForEach(countriesViewModel.countries, id: \.name) { country in
+                    
                     NavigationLink(destination: {
-                        
+                        DetailCountryView(countryModel: country)
                     }, label: {
-                        CountriesCellView()
+                        CountriesCellView(countryModel: country)
+                            .onAppear() {
+                                if country == countriesViewModel.countries.last {
+                                    countriesViewModel.fetch()
+                                }
+                                    
+                            }
                     })
                 }
             }
             .listStyle(.plain)
             .navigationTitle("Countries")
-        }
     }
 }
 
 struct CountriesCellView: View {
+    let countryModel: CountryModel
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 Image(systemName: "photo")
                     .frame(width: 54, height: 36)
                 VStack(alignment: .leading) {
-                    Text("Argentina")
-                    Text("Beunos Aires")
+                    Text(countryModel.name)
+                    Text(countryModel.capital)
                 }
             }
-            Text("In 2004, I completed two Inuit art buying trips to Iqaluit, the capital of Nunavut, Canada’s newest territory. For both trips, I flew out of Ottawa on Canadian airlines.")
+            Text(countryModel.description_small)
         }
     }
 }
 
 #Preview {
-    CountriesView()
+    NavigationStack {
+        CountriesView()
+    }
 }
