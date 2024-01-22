@@ -28,6 +28,7 @@
 		CE2A27D22B0C9983003F9601 /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */; };
 		CE2A27D52B0C9996003F9601 /* SwiftDataEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27D42B0C9996003F9601 /* SwiftDataEntities.swift */; };
 		CE325CB82B590C3400BEAF89 /* ScalingHeaderScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = CE325CB72B590C3400BEAF89 /* ScalingHeaderScrollView */; };
+		CE325CBA2B59605700BEAF89 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE325CB92B59605700BEAF89 /* ImageLoader.swift */; };
 		CE3507552B3C33CA005DC4C3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3507542B3C33CA005DC4C3 /* AuthenticationService.swift */; };
 		CE3507592B3C352E005DC4C3 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3507582B3C352E005DC4C3 /* AuthView.swift */; };
 		CE35075B2B3C3664005DC4C3 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35075A2B3C3664005DC4C3 /* AuthCoordinator.swift */; };
@@ -47,6 +48,7 @@
 		CE5F58E82B22FEB0008D91A1 /* LiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F58E72B22FEB0008D91A1 /* LiveActivityView.swift */; };
 		CE6329932B15C77C0020D37F /* InactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329922B15C77C0020D37F /* InactiveView.swift */; };
 		CE6329962B15CFAB0020D37F /* PhotoCompressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */; };
+		CE64FE052B5E507F00869B0D /* Countries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE325CBB2B5E4D0100BEAF89 /* Countries.xcdatamodeld */; };
 		CE76E21A2B343D06006859E9 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76E2192B343D06006859E9 /* Strings+Generated.swift */; };
 		CE76E21B2B343E10006859E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE76E21D2B343E10006859E9 /* Localizable.strings */; };
 		CE76E2212B3466F0006859E9 /* ChangeLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76E2202B3466F0006859E9 /* ChangeLanguageView.swift */; };
@@ -143,6 +145,8 @@
 		CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataViewModel.swift; sourceTree = "<group>"; };
 		CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
 		CE2A27D42B0C9996003F9601 /* SwiftDataEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataEntities.swift; sourceTree = "<group>"; };
+		CE325CB92B59605700BEAF89 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		CE325CBC2B5E4D0100BEAF89 /* Countries.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Countries.xcdatamodel; sourceTree = "<group>"; };
 		CE3507542B3C33CA005DC4C3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		CE3507582B3C352E005DC4C3 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		CE35075A2B3C3664005DC4C3 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0D617D2B186A6000E93536 /* TokenStorage.swift */,
+				CE325CB92B59605700BEAF89 /* ImageLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				CED345992B580D92005F65CB /* DetailCountryView.swift */,
 				CED3459B2B581137005F65CB /* CountryModel.swift */,
 				CED3459D2B58151F005F65CB /* CountriesViewModel.swift */,
+				CE325CBB2B5E4D0100BEAF89 /* Countries.xcdatamodeld */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -772,6 +778,7 @@
 				CE5F58E52B22FDD0008D91A1 /* TestLiveActivity.swift in Sources */,
 				CECB24122B3AC94A00414570 /* CarouselViewModel.swift in Sources */,
 				CEC327872B307E0C0078C5B2 /* GeoTrackViewModel.swift in Sources */,
+				CE64FE052B5E507F00869B0D /* Countries.xcdatamodeld in Sources */,
 				CE0230772B318D9100D5887D /* Coordinates.xcdatamodeld in Sources */,
 				CE0CF7FA2B397FDE00FEEA84 /* CarouselView.swift in Sources */,
 				CE0647A22B0F926E00FDEE12 /* WeatherView.swift in Sources */,
@@ -782,6 +789,7 @@
 				CEC3274C2B2AF4E80078C5B2 /* LocalNotificationManager.swift in Sources */,
 				CE23A5582B1EFC0100DED654 /* WeatherNetworkGateway.swift in Sources */,
 				CE5962622B15F101005BDEEB /* AppStateManager.swift in Sources */,
+				CE325CBA2B59605700BEAF89 /* ImageLoader.swift in Sources */,
 				CE0647AB2B107AA200FDEE12 /* NetworkManager.swift in Sources */,
 				CE3507782B518A2C005DC4C3 /* Avatars.xcdatamodeld in Sources */,
 				CE0CF7F82B397D1C00FEEA84 /* CarouselListView.swift in Sources */,
@@ -1376,6 +1384,16 @@
 			);
 			currentVersion = CE0230762B318D9100D5887D /* Coordinates.xcdatamodel */;
 			path = Coordinates.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		CE325CBB2B5E4D0100BEAF89 /* Countries.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE325CBC2B5E4D0100BEAF89 /* Countries.xcdatamodel */,
+			);
+			currentVersion = CE325CBC2B5E4D0100BEAF89 /* Countries.xcdatamodel */;
+			path = Countries.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

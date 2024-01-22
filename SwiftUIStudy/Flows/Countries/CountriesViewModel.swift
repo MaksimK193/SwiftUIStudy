@@ -6,21 +6,88 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
 class CountriesViewModel: ObservableObject {
-    @Published var countries: [CountryModel] = [
-        CountryModel(name: "Argentina", continent: "South America", capital: "Buenos Aires", population: 43_417_000, description_small: "In 2004, I completed two Inuit art buying trips to Iqaluit, the capital of Nunavut, Canada’s newest territory. For both trips, I flew out of Ottawa on Canadian airlines.", description: "As long as humans can think, there will be wars. Wars over such concepts as freedom, honor, dignity, etc.. Wars over territory, greed, power, prejudice, etc.. War is a part of human nature. For example, every human being is prejudiced. If they don’t like some race, nationality or religion, they don’t like short or tall or fat or skinny or smart or not smart or loud or quiet people. Some people don’t like children, some people don’t like old people, some people don’t like people with pets, or people that play their music too loud, or bad drivers, or people that believe in God or people that don’t believe in God.", image: URL(string: "https://www.votpusk.ru/country/ctimages/new/AR01.jpg")!, country_info: CountryInfo(images: [], flag: URL(string: "http://flags.fmcdn.net/data/flags/w580/ar.png")!)),
-        CountryModel(name: "Argentina", continent: "South America", capital: "Buenos Aires", population: 43_417_000, description_small: "In 2004, I completed two Inuit art buying trips to Iqaluit, the capital of Nunavut, Canada’s newest territory. For both trips, I flew out of Ottawa on Canadian airlines.", description: "As long as humans can think, there will be wars. Wars over such concepts as freedom, honor, dignity, etc.. Wars over territory, greed, power, prejudice, etc.. War is a part of human nature. For example, every human being is prejudiced. If they don’t like some race, nationality or religion, they don’t like short or tall or fat or skinny or smart or not smart or loud or quiet people. Some people don’t like children, some people don’t like old people, some people don’t like people with pets, or people that play their music too loud, or bad drivers, or people that believe in God or people that don’t believe in God.", image: URL(string: "https://www.votpusk.ru/country/ctimages/new/AR01.jpg")!, country_info: CountryInfo(images: [], flag: URL(string: "http://flags.fmcdn.net/data/flags/w580/ar.png")!)),
-        CountryModel(name: "Argentina", continent: "South America", capital: "Buenos Aires", population: 43_417_000, description_small: "In 2004, I completed two Inuit art buying trips to Iqaluit, the capital of Nunavut, Canada’s newest territory. For both trips, I flew out of Ottawa on Canadian airlines.", description: "As long as humans can think, there will be wars. Wars over such concepts as freedom, honor, dignity, etc.. Wars over territory, greed, power, prejudice, etc.. War is a part of human nature. For example, every human being is prejudiced. If they don’t like some race, nationality or religion, they don’t like short or tall or fat or skinny or smart or not smart or loud or quiet people. Some people don’t like children, some people don’t like old people, some people don’t like people with pets, or people that play their music too loud, or bad drivers, or people that believe in God or people that don’t believe in God.", image: URL(string: "https://www.votpusk.ru/country/ctimages/new/AR01.jpg")!, country_info: CountryInfo(images: [], flag: URL(string: "http://flags.fmcdn.net/data/flags/w580/ar.png")!)),
-        CountryModel(name: "Argentina", continent: "South America", capital: "Buenos Aires", population: 43_417_000, description_small: "In 2004, I completed two Inuit art buying trips to Iqaluit, the capital of Nunavut, Canada’s newest territory. For both trips, I flew out of Ottawa on Canadian airlines.", description: "As long as humans can think, there will be wars. Wars over such concepts as freedom, honor, dignity, etc.. Wars over territory, greed, power, prejudice, etc.. War is a part of human nature. For example, every human being is prejudiced. If they don’t like some race, nationality or religion, they don’t like short or tall or fat or skinny or smart or not smart or loud or quiet people. Some people don’t like children, some people don’t like old people, some people don’t like people with pets, or people that play their music too loud, or bad drivers, or people that believe in God or people that don’t believe in God.", image: URL(string: "https://www.votpusk.ru/country/ctimages/new/AR01.jpg")!, country_info: CountryInfo(images: [], flag: URL(string: "http://flags.fmcdn.net/data/flags/w580/ar.png")!)),
-    ]
+    private let networkManager = NetworkManager.shared
+    private let imageLoader = ImageLoader()
+    private let coreDataManager = CoreDataManager.shared
+    var next = ""
     
-    func fetch() {
-        let c = CountryModel(name: "Argentina", continent: "South America", capital: "Buenos Aires", population: 43_417_000, description_small: "In 2004, I completed two Inuit art buying trips to Iqaluit, the capital of Nunavut, Canada’s newest territory. For both trips, I flew out of Ottawa on Canadian airlines.", description: "As long as humans can think, there will be wars. Wars over such concepts as freedom, honor, dignity, etc.. Wars over territory, greed, power, prejudice, etc.. War is a part of human nature. For example, every human being is prejudiced. If they don’t like some race, nationality or religion, they don’t like short or tall or fat or skinny or smart or not smart or loud or quiet people. Some people don’t like children, some people don’t like old people, some people don’t like people with pets, or people that play their music too loud, or bad drivers, or people that believe in God or people that don’t believe in God.", image: URL(string: "https://www.votpusk.ru/country/ctimages/new/AR01.jpg")!, country_info: CountryInfo(images: [], flag: URL(string: "http://flags.fmcdn.net/data/flags/w580/ar.png")!))
+    @Published var countries: [CountryModel] = []
+    @Published var countriesCoreData: [CountryEntity] = []
+    
+    init() {
+        coreDataManager.setupDataModel(name: .Countries)
+    }
+    
+    func fetch(next: String = "https://rawgit.com/NikitaAsabin/799e4502c9fc3e0ea7af439b2dfd88fa/raw/7f5c6c66358501f72fada21e04d75f64474a7888/page1.json") {
+        getCountries()
+        networkManager.request(gateway: JSONNetworkGateway(path: next), parameters: [:], resultType: CountryResponse.self) { result in
+            switch result {
+            case .success(let data):
+                self.next = data?.next ?? ""
+                data?.countries.compactMap { country in
+                    if !self.countries.contains(country) {
+                        self.countries.append(country)
+                        self.addCountry(country: country)
+                    }
+                }
+            case .failure(let failure):
+                print(failure)
+            }
+        }
+    }
+}
+
+extension CountriesViewModel {
+    func addCountry(country: CountryModel) {
+        let newCountry = CountryEntity(context: coreDataManager.context)
         
-        countries.append(c)
-        countries.append(c)
-        countries.append(c)
-        countries.append(c)
+        newCountry.id = country.id
+        newCountry.capital = country.capital
+        newCountry.continent = country.continent
+        newCountry.description_big = country.description
+        newCountry.description_small = country.description_small
+        
+        imageLoader.load(fromURLString: country.country_info.flag)
+        if let image = imageLoader.image {
+            newCountry.flagImageData = image.pngData()
+        } else {
+            newCountry.flagImageData = UIImage(systemName: "photo")?.pngData()
+        }
+        
+        var infoImages: [Data] = []
+        for _ in country.country_info.images {
+            imageLoader.load(fromURLString: country.country_info.flag)
+            if let image = imageLoader.image {
+                infoImages.append(image.pngData()!)
+            } else {
+                infoImages.append((UIImage(systemName: "photo")?.pngData())!)
+            }
+        }
+        newCountry.infoImages = infoImages
+        
+        newCountry.name = country.name
+        
+        coreDataManager.save()
+    }
+    
+    func getCountries() {
+        let request = NSFetchRequest<CountryEntity>(entityName: "CountryEntity")
+        do {
+            countriesCoreData = try coreDataManager.context.fetch(request)
+            if !countriesCoreData.isEmpty {
+                for country in countriesCoreData {
+                    let countryModel = CountryModel(name: country.name!, continent: country.continent!, capital: country.capital!, population: Int(country.population), description_small: country.description_small!, description: country.description_big!, image: "", country_info: CountryInfo(images: [], flag: ""))
+                    if !self.countries.contains(countryModel) {
+                        countries.append(countryModel)
+                    }
+                }
+            }
+        } catch let error {
+            print("Error fetching entity: \(error.localizedDescription)")
+        }
     }
 }

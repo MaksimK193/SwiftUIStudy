@@ -13,3 +13,13 @@ final class WeatherNetworkGateway: NetworkGatewayProtocol {
     var method: HTTPMethod = .get
     var path: String = "v2/forecast?"
 }
+
+final class JSONNetworkGateway: NetworkGatewayProtocol {
+    var headers: HTTPHeaders = []
+    var method: HTTPMethod = .get
+    var path: String = "https://rawgit.com/NikitaAsabin/b37bf67c8668d54a517e02fdf0e0d435/raw/2021870812a13c6dbae1f8a0e9845661396c1e8d/page2.json"
+    
+    init(path: String) {
+        self.path = path
+    }
+}

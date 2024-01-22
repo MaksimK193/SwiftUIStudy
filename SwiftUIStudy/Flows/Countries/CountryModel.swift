@@ -17,7 +17,7 @@ struct CountryModel: Codable, Identifiable, Equatable {
     let population: Int
     let description_small: String
     let description: String
-    let image: URL
+    let image: String
     let country_info: CountryInfo
     
     static func == (lhs: CountryModel, rhs: CountryModel) -> Bool {
@@ -26,6 +26,11 @@ struct CountryModel: Codable, Identifiable, Equatable {
 }
 
 struct CountryInfo: Codable {
-    let images: [URL]
-    let flag: URL
+    let images: [String]
+    let flag: String
+}
+
+struct CountryResponse: Codable {
+    let next: String
+    let countries: [CountryModel]
 }

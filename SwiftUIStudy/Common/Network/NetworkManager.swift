@@ -26,7 +26,9 @@ final class NetworkManager: NetworkManagerProtocol {
         configuration.timeoutIntervalForRequest = 30
         configuration.timeoutIntervalForResource = 30
         self.session = Session(configuration: configuration)
-        self.apiBaseURL = "https://api.weather.yandex.ru/"
+//        self.apiBaseURL = "https://api.weather.yandex.ru/"
+        self.apiBaseURL = ""
+//        "https://rawgit.com/NikitaAsabin/799e4502c9fc3e0ea7af439b2dfd88fa/raw/7f5c6c66358501f72fada21e04d75f64474a7888/page2.json"
     }
     
     func request<T>(gateway: NetworkGatewayProtocol,

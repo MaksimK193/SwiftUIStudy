@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CountryEntity" representedClassName="CountryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="capital" optional="YES" attributeType="String"/>
+        <attribute name="continent" optional="YES" attributeType="String"/>
+        <attribute name="description_big" optional="YES" attributeType="String"/>
+        <attribute name="description_small" optional="YES" attributeType="String"/>
+        <attribute name="flagImage" optional="YES" attributeType="String"/>
+        <attribute name="flagImageData" optional="YES" attributeType="Binary"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="infoImages" optional="YES" attributeType="Transformable" customClassName="[Data]"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="population" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+</model>
