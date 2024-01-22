@@ -11,51 +11,51 @@ struct CountriesView: View {
     @ObservedObject private var countriesViewModel = CountriesViewModel()
     
     var body: some View {
-        List {
-            ForEach(countriesViewModel.countries, id: \.name) { country in
-                
-                NavigationLink(destination: {
-                    DetailCountryView(countryModel: country)
-                }, label: {
-                    CountriesCellView(countryModel: country, countriesViewModel: countriesViewModel)
-                        .onAppear() {
-                            if country == countriesViewModel.countries.last {
-                                countriesViewModel.fetch(next: countriesViewModel.next)
+        VStack {
+            List {
+                ForEach(countriesViewModel.countriesCoreData, id: \.name) { country in
+                    NavigationLink(destination: {
+                        DetailCountryView(countryModel: country)
+                    }, label: {
+                        CountriesCellView(countryModel: country, countriesViewModel: countriesViewModel)
+                            .onAppear() {
+                                if country == countriesViewModel.countriesCoreData.last {
+                                    countriesViewModel.fetch(next: countriesViewModel.next)
+                                }
                             }
-                            
-                        }
-                })
+                    })
+                }
             }
-        }
-        .listStyle(.plain)
-        .navigationTitle("Countries")
-        .onAppear {
-            countriesViewModel.fetch()
-        }
-        .refreshable {
-            countriesViewModel.countries = []
-            countriesViewModel.fetch()
+            .listStyle(.plain)
+            .navigationTitle("Countries")
+            .onAppear {
+                countriesViewModel.fetch()
+                countriesViewModel.getCountries()
+            }
+            .refreshable {
+                countriesViewModel.fetch()
+            }
         }
     }
 }
 
 struct CountriesCellView: View {
-    let countryModel: CountryModel
+    let countryModel: CountryEntity
     @ObservedObject var countriesViewModel: CountriesViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                AsyncImageView(urlString: countryModel.country_info.flag)
+                AsyncImageView(urlString: countryModel.flagImage ?? "")
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 54, maxHeight: 36)
                 VStack(alignment: .leading) {
-                    Text(countryModel.name)
-                    Text(countryModel.capital)
+                    Text(countryModel.name ?? "")
+                    Text(countryModel.capital ?? "")
                         .foregroundStyle(.gray)
                 }
             }
-            Text(countryModel.description_small)
+            Text(countryModel.description_small ?? "")
         }
     }
 }
@@ -73,12 +73,12 @@ struct AsyncImageView: View {
     var body: some View {
         Group {
             if loader.isLoading {
-                ProgressView() // Индикатор загрузки
+                ProgressView()
             } else if let image = loader.image {
                 Image(uiImage: image)
                     .resizable()
             } else {
-                Image(systemName: "photo") // Запасное изображение
+                Image(systemName: "photo")
             }
         }
         .onAppear {

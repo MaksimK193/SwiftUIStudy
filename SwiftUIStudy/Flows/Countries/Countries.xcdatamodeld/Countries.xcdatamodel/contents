@@ -6,10 +6,8 @@
         <attribute name="description_big" optional="YES" attributeType="String"/>
         <attribute name="description_small" optional="YES" attributeType="String"/>
         <attribute name="flagImage" optional="YES" attributeType="String"/>
-        <attribute name="flagImageData" optional="YES" attributeType="Binary"/>
-        <attribute name="id" optional="YES" attributeType="String"/>
-        <attribute name="infoImages" optional="YES" attributeType="Transformable" customClassName="[Data]"/>
+        <attribute name="infoImages" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="population" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="population" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
 </model>

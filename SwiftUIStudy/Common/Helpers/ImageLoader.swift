@@ -15,9 +15,12 @@ class ImageLoader: ObservableObject {
     private var cancellable: AnyCancellable?
 
     func load(fromURLString urlString: String) {
-        guard let url = URL(string: urlString) else {
+        if let cachedImage = ImageCache.shared.getImage(forKey: urlString) {
+            self.image = cachedImage
             return
         }
+
+        guard let url = URL(string: urlString) else { return }
 
         isLoading = true
 
@@ -26,12 +29,28 @@ class ImageLoader: ObservableObject {
             .replaceError(with: nil)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
+                if let image = $0 {
+                    ImageCache.shared.setImage(image, forKey: urlString)
+                }
                 self?.image = $0
                 self?.isLoading = false
-            }
+            } 
     }
     
     deinit {
         cancellable?.cancel()
+    }
+}
+
+class ImageCache {
+    static let shared = ImageCache()
+    private var cache = NSCache<NSString, UIImage>()
+
+    func getImage(forKey key: String) -> UIImage? {
+        return cache.object(forKey: NSString(string: key))
+    }
+
+    func setImage(_ image: UIImage, forKey key: String) {
+        cache.setObject(image, forKey: NSString(string: key))
     }
 }
