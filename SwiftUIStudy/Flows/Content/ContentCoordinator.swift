@@ -28,6 +28,7 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var carousel = makeCarousel
     @Route(.push) var notificationActions = makeNotificationActions
     @Route(.push) var avatar = makeAvatar
+    @Route(.push) var countries = makeCountries
     
     init(localNotificationManager: LocalNotificationManager,
          getStreamManager: GetStreamManager,
@@ -89,5 +90,9 @@ extension ContentCoordinator {
     
     @ViewBuilder func makeAvatar() -> some View {
         AvatarView()
+    }
+    
+    @ViewBuilder func makeCountries() -> some View {
+        CountriesView()
     }
 }

@@ -73,6 +73,8 @@ struct SidebarView: View {
                             AuthenticationService.shared.status = .unauthenticated
                         case .avatar:
                             sidebarRouter.route(to: \.avatar)
+                        case .countries:
+                            sidebarRouter.route(to: \.countries)
                         }
                     }
                     .accessibilityIdentifier("\(item.screen.rawValue)")

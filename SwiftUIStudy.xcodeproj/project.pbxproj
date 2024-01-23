@@ -27,6 +27,8 @@
 		CE2A27D02B0C9979003F9601 /* SwiftDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */; };
 		CE2A27D22B0C9983003F9601 /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */; };
 		CE2A27D52B0C9996003F9601 /* SwiftDataEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A27D42B0C9996003F9601 /* SwiftDataEntities.swift */; };
+		CE325CB82B590C3400BEAF89 /* ScalingHeaderScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = CE325CB72B590C3400BEAF89 /* ScalingHeaderScrollView */; };
+		CE325CBA2B59605700BEAF89 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE325CB92B59605700BEAF89 /* ImageLoader.swift */; };
 		CE3507552B3C33CA005DC4C3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3507542B3C33CA005DC4C3 /* AuthenticationService.swift */; };
 		CE3507592B3C352E005DC4C3 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3507582B3C352E005DC4C3 /* AuthView.swift */; };
 		CE35075B2B3C3664005DC4C3 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35075A2B3C3664005DC4C3 /* AuthCoordinator.swift */; };
@@ -46,6 +48,7 @@
 		CE5F58E82B22FEB0008D91A1 /* LiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F58E72B22FEB0008D91A1 /* LiveActivityView.swift */; };
 		CE6329932B15C77C0020D37F /* InactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329922B15C77C0020D37F /* InactiveView.swift */; };
 		CE6329962B15CFAB0020D37F /* PhotoCompressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */; };
+		CE64FE052B5E507F00869B0D /* Countries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE325CBB2B5E4D0100BEAF89 /* Countries.xcdatamodeld */; };
 		CE76E21A2B343D06006859E9 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76E2192B343D06006859E9 /* Strings+Generated.swift */; };
 		CE76E21B2B343E10006859E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE76E21D2B343E10006859E9 /* Localizable.strings */; };
 		CE76E2212B3466F0006859E9 /* ChangeLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76E2202B3466F0006859E9 /* ChangeLanguageView.swift */; };
@@ -79,6 +82,10 @@
 		CEC327872B307E0C0078C5B2 /* GeoTrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC327862B307E0C0078C5B2 /* GeoTrackViewModel.swift */; };
 		CECB24122B3AC94A00414570 /* CarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB24112B3AC94A00414570 /* CarouselViewModel.swift */; };
 		CECB24142B3AC96300414570 /* CarouselPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB24132B3AC96300414570 /* CarouselPageView.swift */; };
+		CED345982B580931005F65CB /* CountriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED345972B580931005F65CB /* CountriesView.swift */; };
+		CED3459A2B580D92005F65CB /* DetailCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED345992B580D92005F65CB /* DetailCountryView.swift */; };
+		CED3459C2B581137005F65CB /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3459B2B581137005F65CB /* CountryModel.swift */; };
+		CED3459E2B58151F005F65CB /* CountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3459D2B58151F005F65CB /* CountriesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +145,8 @@
 		CE2A27CF2B0C9979003F9601 /* SwiftDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataViewModel.swift; sourceTree = "<group>"; };
 		CE2A27D12B0C9983003F9601 /* SwiftDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
 		CE2A27D42B0C9996003F9601 /* SwiftDataEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataEntities.swift; sourceTree = "<group>"; };
+		CE325CB92B59605700BEAF89 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		CE325CBC2B5E4D0100BEAF89 /* Countries.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Countries.xcdatamodel; sourceTree = "<group>"; };
 		CE3507542B3C33CA005DC4C3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		CE3507582B3C352E005DC4C3 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		CE35075A2B3C3664005DC4C3 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
@@ -189,6 +198,10 @@
 		CEC327862B307E0C0078C5B2 /* GeoTrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoTrackViewModel.swift; sourceTree = "<group>"; };
 		CECB24112B3AC94A00414570 /* CarouselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewModel.swift; sourceTree = "<group>"; };
 		CECB24132B3AC96300414570 /* CarouselPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselPageView.swift; sourceTree = "<group>"; };
+		CED345972B580931005F65CB /* CountriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesView.swift; sourceTree = "<group>"; };
+		CED345992B580D92005F65CB /* DetailCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCountryView.swift; sourceTree = "<group>"; };
+		CED3459B2B581137005F65CB /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		CED3459D2B58151F005F65CB /* CountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +222,7 @@
 				CE0D61842B188FCD00E93536 /* Stinsen in Frameworks */,
 				CE0D61812B186B1200E93536 /* KeychainSwift in Frameworks */,
 				CE0647A52B0F959500FDEE12 /* Alamofire in Frameworks */,
+				CE325CB82B590C3400BEAF89 /* ScalingHeaderScrollView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0D617D2B186A6000E93536 /* TokenStorage.swift */,
+				CE325CB92B59605700BEAF89 /* ImageLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -441,6 +456,7 @@
 		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CED345962B580920005F65CB /* Countries */,
 				CE3507712B514ED6005DC4C3 /* Avatar */,
 				CE3507562B3C3508005DC4C3 /* Auth */,
 				CEBC6E9D2B3AEA1900BE786C /* NotificationActions */,
@@ -559,6 +575,18 @@
 			path = GeoTrack;
 			sourceTree = "<group>";
 		};
+		CED345962B580920005F65CB /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				CED345972B580931005F65CB /* CountriesView.swift */,
+				CED345992B580D92005F65CB /* DetailCountryView.swift */,
+				CED3459B2B581137005F65CB /* CountryModel.swift */,
+				CED3459D2B58151F005F65CB /* CountriesViewModel.swift */,
+				CE325CBB2B5E4D0100BEAF89 /* Countries.xcdatamodeld */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -599,6 +627,7 @@
 				CE0D61802B186B1200E93536 /* KeychainSwift */,
 				CE0D61832B188FCD00E93536 /* Stinsen */,
 				CEC3275C2B2B34C50078C5B2 /* StreamChatSwiftUI */,
+				CE325CB72B590C3400BEAF89 /* ScalingHeaderScrollView */,
 			);
 			productName = SwiftUIStudy;
 			productReference = CE7BCAC22B04EAB90015230C /* SwiftUIStudy.app */;
@@ -682,6 +711,7 @@
 				CE0D617F2B186B1200E93536 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				CE0D61822B188FCD00E93536 /* XCRemoteSwiftPackageReference "stinsen" */,
 				CEC3275B2B2B34C40078C5B2 /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */,
+				CE325CB62B590C3400BEAF89 /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */,
 			);
 			productRefGroup = CE7BCAC32B04EAB90015230C /* Products */;
 			projectDirPath = "";
@@ -748,6 +778,7 @@
 				CE5F58E52B22FDD0008D91A1 /* TestLiveActivity.swift in Sources */,
 				CECB24122B3AC94A00414570 /* CarouselViewModel.swift in Sources */,
 				CEC327872B307E0C0078C5B2 /* GeoTrackViewModel.swift in Sources */,
+				CE64FE052B5E507F00869B0D /* Countries.xcdatamodeld in Sources */,
 				CE0230772B318D9100D5887D /* Coordinates.xcdatamodeld in Sources */,
 				CE0CF7FA2B397FDE00FEEA84 /* CarouselView.swift in Sources */,
 				CE0647A22B0F926E00FDEE12 /* WeatherView.swift in Sources */,
@@ -758,12 +789,14 @@
 				CEC3274C2B2AF4E80078C5B2 /* LocalNotificationManager.swift in Sources */,
 				CE23A5582B1EFC0100DED654 /* WeatherNetworkGateway.swift in Sources */,
 				CE5962622B15F101005BDEEB /* AppStateManager.swift in Sources */,
+				CE325CBA2B59605700BEAF89 /* ImageLoader.swift in Sources */,
 				CE0647AB2B107AA200FDEE12 /* NetworkManager.swift in Sources */,
 				CE3507782B518A2C005DC4C3 /* Avatars.xcdatamodeld in Sources */,
 				CE0CF7F82B397D1C00FEEA84 /* CarouselListView.swift in Sources */,
 				CE5962652B17209E005BDEEB /* CameraService.swift in Sources */,
 				CEBC55792B05FCBF007F9B19 /* SidebarViewModel.swift in Sources */,
 				CEC327302B29E4240078C5B2 /* ScheduleNotification.swift in Sources */,
+				CED3459C2B581137005F65CB /* CountryModel.swift in Sources */,
 				CE7BCAC82B04EAB90015230C /* ContentView.swift in Sources */,
 				CE6329932B15C77C0020D37F /* InactiveView.swift in Sources */,
 				CEC3275A2B2B30ED0078C5B2 /* GetStreamChatView.swift in Sources */,
@@ -777,18 +810,21 @@
 				CE0D61892B189B5600E93536 /* MainCoordinator.swift in Sources */,
 				CE3507732B514EE3005DC4C3 /* AvatarView.swift in Sources */,
 				CE7BCAF12B04F2AC0015230C /* Sidebar.swift in Sources */,
+				CED345982B580931005F65CB /* CountriesView.swift in Sources */,
 				CEBC557D2B05FDB6007F9B19 /* SidebarListModel.swift in Sources */,
 				CE6329962B15CFAB0020D37F /* PhotoCompressionView.swift in Sources */,
 				CE7BCAC62B04EAB90015230C /* SwiftUIStudyApp.swift in Sources */,
 				CE2A27CE2B0C994A003F9601 /* SwiftDataView.swift in Sources */,
 				CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */,
 				CE3507752B5189AD005DC4C3 /* AvatarViewModel.swift in Sources */,
+				CED3459A2B580D92005F65CB /* DetailCountryView.swift in Sources */,
 				CE0D617E2B186A6000E93536 /* TokenStorage.swift in Sources */,
 				CECB24142B3AC96300414570 /* CarouselPageView.swift in Sources */,
 				CE0647BC2B10A1AB00FDEE12 /* WeatherModel.swift in Sources */,
 				CE76E2212B3466F0006859E9 /* ChangeLanguageView.swift in Sources */,
 				CE0D618B2B18AD0B00E93536 /* ContentCoordinator.swift in Sources */,
 				CEBC6E9F2B3AEA3B00BE786C /* NotificationActionsView.swift in Sources */,
+				CED3459E2B58151F005F65CB /* CountriesViewModel.swift in Sources */,
 				CE2A27D02B0C9979003F9601 /* SwiftDataViewModel.swift in Sources */,
 				CE5F58E82B22FEB0008D91A1 /* LiveActivityView.swift in Sources */,
 				CEBC55852B06424B007F9B19 /* CoreDataStudy.xcdatamodeld in Sources */,
@@ -1294,6 +1330,14 @@
 				minimumVersion = 2.0.13;
 			};
 		};
+		CE325CB62B590C3400BEAF89 /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ScalingHeaderScrollView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 		CEC3275B2B2B34C40078C5B2 /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/getstream/stream-chat-swiftui";
@@ -1320,6 +1364,11 @@
 			package = CE0D61822B188FCD00E93536 /* XCRemoteSwiftPackageReference "stinsen" */;
 			productName = Stinsen;
 		};
+		CE325CB72B590C3400BEAF89 /* ScalingHeaderScrollView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE325CB62B590C3400BEAF89 /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */;
+			productName = ScalingHeaderScrollView;
+		};
 		CEC3275C2B2B34C50078C5B2 /* StreamChatSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CEC3275B2B2B34C40078C5B2 /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */;
@@ -1335,6 +1384,16 @@
 			);
 			currentVersion = CE0230762B318D9100D5887D /* Coordinates.xcdatamodel */;
 			path = Coordinates.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		CE325CBB2B5E4D0100BEAF89 /* Countries.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE325CBC2B5E4D0100BEAF89 /* Countries.xcdatamodel */,
+			);
+			currentVersion = CE325CBC2B5E4D0100BEAF89 /* Countries.xcdatamodel */;
+			path = Countries.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

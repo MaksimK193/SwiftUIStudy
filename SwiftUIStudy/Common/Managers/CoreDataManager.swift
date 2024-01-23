@@ -11,6 +11,7 @@ enum CoreDataModels: String {
     case Coordinates
     case CoreDataStudy
     case Avatars
+    case Countries
 }
 
 final class CoreDataManager {
