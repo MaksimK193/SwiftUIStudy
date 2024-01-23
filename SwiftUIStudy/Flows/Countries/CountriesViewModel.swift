@@ -67,14 +67,4 @@ extension CountriesViewModel {
             print("Error fetching entity: \(error.localizedDescription)")
         }
     }
-    
-    func reset() {
-        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "CountryEntity")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
-        do {
-            try coreDataManager.context.execute(deleteRequest)
-        } catch {
-            print ("There was an error")
-        }
-    }
 }
