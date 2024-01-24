@@ -10,11 +10,18 @@ import YandexMapsMobile
 
 struct YandexMapsView: View {
     @ObservedObject var yandexLocationManager = YandexMapLocationManager()
-    
+    @State private var searchRequestText = ""
     var body: some View {
         ZStack {
-            YandexMapView().edgesIgnoringSafeArea(.all).environmentObject(yandexLocationManager)
+            YandexMapView()
+                .edgesIgnoringSafeArea(.all)
+                .environmentObject(yandexLocationManager)
             VStack {
+                TextField("Search", text: $searchRequestText) {
+                    yandexLocationManager.search(withText: searchRequestText)
+                }
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
                 Spacer()
                 HStack {
                     Spacer()
