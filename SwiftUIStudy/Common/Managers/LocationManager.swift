@@ -10,7 +10,7 @@ import Combine
 import CoreLocation
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
-    private let locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
     let locationPublisher = PassthroughSubject<CLLocation, Never>()
     let locationStatusPublisher = PassthroughSubject<CLAuthorizationStatus, Never>()
     var locationStatus: CLAuthorizationStatus?
