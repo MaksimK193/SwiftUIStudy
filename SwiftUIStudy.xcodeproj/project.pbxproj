@@ -71,6 +71,7 @@
 		CEB574512B60F69800E95DE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB574502B60F69800E95DE8 /* AppDelegate.swift */; };
 		CEB574532B60F87B00E95DE8 /* YandexMapLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB574522B60F87B00E95DE8 /* YandexMapLocationManager.swift */; };
 		CEB574552B60F8DB00E95DE8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB574542B60F8DB00E95DE8 /* LocationManager.swift */; };
+		CEB574582B61082300E95DE8 /* YandexMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB574572B61082300E95DE8 /* YandexMapsView.swift */; };
 		CEBC55792B05FCBF007F9B19 /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55782B05FCBF007F9B19 /* SidebarViewModel.swift */; };
 		CEBC557D2B05FDB6007F9B19 /* SidebarListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC557C2B05FDB6007F9B19 /* SidebarListModel.swift */; };
 		CEBC55822B0617BD007F9B19 /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC55812B0617BD007F9B19 /* CoreDataView.swift */; };
@@ -202,6 +203,7 @@
 		CEB574502B60F69800E95DE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB574522B60F87B00E95DE8 /* YandexMapLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapLocationManager.swift; sourceTree = "<group>"; };
 		CEB574542B60F8DB00E95DE8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		CEB574572B61082300E95DE8 /* YandexMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapsView.swift; sourceTree = "<group>"; };
 		CEBC55782B05FCBF007F9B19 /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
 		CEBC557C2B05FDB6007F9B19 /* SidebarListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarListModel.swift; sourceTree = "<group>"; };
 		CEBC55812B0617BD007F9B19 /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
@@ -500,9 +502,18 @@
 			path = SwiftUIStudyUITests;
 			sourceTree = "<group>";
 		};
+		CEB574562B61081400E95DE8 /* YandexMaps */ = {
+			isa = PBXGroup;
+			children = (
+				CEB574572B61082300E95DE8 /* YandexMapsView.swift */,
+			);
+			path = YandexMaps;
+			sourceTree = "<group>";
+		};
 		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CEB574562B61081400E95DE8 /* YandexMaps */,
 				CED345962B580920005F65CB /* Countries */,
 				CE3507712B514ED6005DC4C3 /* Avatar */,
 				CE3507562B3C3508005DC4C3 /* Auth */,
@@ -965,6 +976,7 @@
 				CE0647A22B0F926E00FDEE12 /* WeatherView.swift in Sources */,
 				CE23A55A2B1EFC2200DED654 /* NetworkGatewayProtocol.swift in Sources */,
 				CE2A27D52B0C9996003F9601 /* SwiftDataEntities.swift in Sources */,
+				CEB574582B61082300E95DE8 /* YandexMapsView.swift in Sources */,
 				CE7BCAF32B0512EE0015230C /* NewTaskView.swift in Sources */,
 				CEBC55822B0617BD007F9B19 /* CoreDataView.swift in Sources */,
 				CEC3274C2B2AF4E80078C5B2 /* LocalNotificationManager.swift in Sources */,
