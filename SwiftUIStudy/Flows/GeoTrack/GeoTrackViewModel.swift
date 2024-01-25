@@ -56,5 +56,3 @@ class GeoTrackViewModel: ObservableObject {
         }
     }
 }
-
-//addCoordinate(longitude: location.coordinate.longitude, latitude: location.coordinate.latitude, date: location.timestamp)

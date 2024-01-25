@@ -55,13 +55,13 @@ class YandexMapLocationManager: ObservableObject {
         self.currentUserLocation()
     }
     
-    func currentUserLocation(){
+    func currentUserLocation() {
         centerMapLocation(target: YMKPoint(latitude: lastUserLocation.coordinate.latitude, longitude: lastUserLocation.coordinate.longitude), map: mapView )
     }
     
     func centerMapLocation(target location: YMKPoint?, map: YMKMapView) {
         
-        guard let location = location else { print("Failed to get user location"); return }
+        guard let location = location else { return }
         
         map.mapWindow.map.move(
             with: YMKCameraPosition(target: location, zoom: 18, azimuth: 0, tilt: 0),
@@ -89,14 +89,8 @@ extension YandexMapLocationManager {
             print(error.localizedDescription)
             return
         }
-
-        guard let drivingRoutes else {
-            return
-        }
         
-        guard let polyline = drivingRoutes.first?.geometry else {
-            return
-        }
+        guard let polyline = drivingRoutes?.first?.geometry else { return }
         
         drawRoute(polyline: polyline)
     }
@@ -134,12 +128,9 @@ extension YandexMapLocationManager {
         }
         
         let geoObjects = response?.collection.children.compactMap { $0.obj }
-        let coordinates = geoObjects?.first?.geometry.first?.point
-        
-//        let metadata = geoObjects?.first?.metadataContainer.getItemOf(Topony)
-//        print
+        guard let coordinates = geoObjects?.first?.geometry.first?.point else { return }
         
         centerMapLocation(target: coordinates, map: mapView)
-        createRoute(point: coordinates!)
+        createRoute(point: coordinates)
     }
 }
