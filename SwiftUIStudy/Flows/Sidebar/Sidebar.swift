@@ -75,6 +75,8 @@ struct SidebarView: View {
                             sidebarRouter.route(to: \.avatar)
                         case .countries:
                             sidebarRouter.route(to: \.countries)
+                        case .yandexMaps:
+                            sidebarRouter.route(to: \.yandexMaps)
                         }
                     }
                     .accessibilityIdentifier("\(item.screen.rawValue)")

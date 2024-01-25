@@ -29,6 +29,7 @@ final class ContentCoordinator: NavigationCoordinatable {
     @Route(.push) var notificationActions = makeNotificationActions
     @Route(.push) var avatar = makeAvatar
     @Route(.push) var countries = makeCountries
+    @Route(.push) var yandexMaps = makeYandexMaps
     
     init(localNotificationManager: LocalNotificationManager,
          getStreamManager: GetStreamManager,
@@ -94,5 +95,9 @@ extension ContentCoordinator {
     
     @ViewBuilder func makeCountries() -> some View {
         CountriesView()
+    }
+    
+    @ViewBuilder func makeYandexMaps() -> some View {
+        YandexMapsView()
     }
 }

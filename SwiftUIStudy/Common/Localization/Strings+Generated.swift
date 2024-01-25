@@ -215,6 +215,10 @@ enum L10n {
   static var coreData: String {
     return L10n.tr("Localizable", "sidebar.navigationRow.coreData")
   }
+  /// JSON Countries
+  static var countries: String {
+    return L10n.tr("Localizable", "sidebar.navigationRow.countries")
+  }
   /// Exit
   static var exit: String {
     return L10n.tr("Localizable", "sidebar.navigationRow.exit")
@@ -250,6 +254,10 @@ enum L10n {
   /// Weather
   static var weather: String {
     return L10n.tr("Localizable", "sidebar.navigationRow.weather")
+  }
+  /// Yandex Maps
+  static var yandexMaps: String {
+    return L10n.tr("Localizable", "sidebar.navigationRow.yandexMaps")
   }
   }
   }

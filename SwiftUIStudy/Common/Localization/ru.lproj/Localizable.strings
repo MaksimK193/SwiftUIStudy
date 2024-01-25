@@ -23,6 +23,8 @@
 "sidebar.navigationRow.notificationActions" = "Уведомления с кнопками";
 "sidebar.navigationRow.exit" = "Выход";
 "sidebar.navigationRow.avatar" = "Аватарки";
+"sidebar.navigationRow.countries" = "JSON Страны";
+"sidebar.navigationRow.yandexMaps" = "Яндекс Карты";
 
 "coreData.button.addDepartments" = "Добавить отдел";
 "coreData.button.addEmployee" = "Добавить сотрудника";
