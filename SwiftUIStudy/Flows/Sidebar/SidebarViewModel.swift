@@ -54,9 +54,9 @@ enum TaskScreens: String {
         case .avatar:
             return L10n.Sidebar.NavigationRow.avatar
         case .countries:
-            return "Countries"
+            return L10n.Sidebar.NavigationRow.countries
         case .yandexMaps:
-            return "YandexMaps"
+            return L10n.Sidebar.NavigationRow.yandexMaps
         }
     }
 }

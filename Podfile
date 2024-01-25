@@ -7,6 +7,8 @@ target 'SwiftUIStudy' do
 
   # Pods for SwiftUIStudy
   pod 'YandexMapsMobile', '4.4.0-full'
+  pod 'RxSwift', '6.6.0'
+  pod 'RxCocoa', '6.6.0'
 
   target 'SwiftUIStudyTests' do
     inherit! :search_paths

@@ -15,18 +15,20 @@ class YandexMapLocationManager: ObservableObject {
     private let searchManager = YMKSearch.sharedInstance().createSearchManager(with: .combined)
     let drivingRouter: YMKDrivingRouter = YMKDirections.sharedInstance().createDrivingRouter()
     let mapView: YMKMapView = YMKMapView(frame: CGRect.zero)
+    
     private var searchSession: YMKSearchSession?
     private var drivingSession: YMKDrivingSession?
-    var routesCollection: YMKMapObjectCollection!
-    lazy var map: YMKMap = {
-        return mapView.mapWindow.map
-    }()
     @Published var lastUserLocation: CLLocation = CLLocation()
     private var cancellables = Set<AnyCancellable>()
     
+    lazy var map: YMKMap = {
+        return mapView.mapWindow.map
+    }()
+    var routesCollection: YMKMapObjectCollection!
+    
     private let searchOptions: YMKSearchOptions = {
         let options = YMKSearchOptions()
-        options.searchTypes = .biz
+        options.searchTypes = .geo
         options.resultPageSize = 32
         return options
     }()
@@ -133,6 +135,9 @@ extension YandexMapLocationManager {
         
         let geoObjects = response?.collection.children.compactMap { $0.obj }
         let coordinates = geoObjects?.first?.geometry.first?.point
+        
+//        let metadata = geoObjects?.first?.metadataContainer.getItemOf(Topony)
+//        print
         
         centerMapLocation(target: coordinates, map: mapView)
         createRoute(point: coordinates!)

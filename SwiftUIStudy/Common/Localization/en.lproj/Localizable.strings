@@ -23,6 +23,8 @@
 "sidebar.navigationRow.notificationActions" = "Notification Actions";
 "sidebar.navigationRow.exit" = "Exit";
 "sidebar.navigationRow.avatar" = "Avatars";
+"sidebar.navigationRow.countries" = "JSON Countries";
+"sidebar.navigationRow.yandexMaps" = "Yandex Maps";
 
 "coreData.button.addDepartments" = "Add departments";
 "coreData.button.addEmployee" = "Add employee";
