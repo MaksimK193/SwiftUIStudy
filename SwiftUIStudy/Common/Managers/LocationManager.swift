@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 import CoreLocation
 import RxSwift
 import RxRelay
@@ -60,6 +59,5 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         locationRelay.accept(location)
-        print("locManager: \(location)")
     }
 }

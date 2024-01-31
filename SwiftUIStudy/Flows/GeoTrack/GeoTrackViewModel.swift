@@ -7,7 +7,6 @@
 
 import Foundation
 import CoreData
-import Combine
 import CoreLocation
 import RxSwift
 
@@ -15,7 +14,6 @@ class GeoTrackViewModel: ObservableObject {
     private let coreDataManager = CoreDataManager.shared
     private let locationManager = LocationManager()
     private var coordinates = [CoordinateEntity]()
-    private var cancellables = Set<AnyCancellable>()
     private let disposeBag = DisposeBag()
     @Published var locationStatus: CLAuthorizationStatus
 
@@ -27,11 +25,6 @@ class GeoTrackViewModel: ObservableObject {
     }
     
     func setupLocationUpdates() {
-//        locationManager.locationPublisher
-//            .sink { [weak self] location in
-//                self?.addCoordinate(longitude: location.coordinate.longitude, latitude: location.coordinate.latitude, date: location.timestamp)
-//            }
-//            .store(in: &cancellables)
         locationManager.locationRelay.subscribe { [weak self] location in
             self?.addCoordinate(longitude: location.coordinate.longitude, latitude: location.coordinate.latitude, date: location.timestamp)
             print(location)
@@ -39,10 +32,6 @@ class GeoTrackViewModel: ObservableObject {
     }
     
     func setupLocationStatusUpdates() {
-//        locationManager.locationStatusPublisher
-//            .receive(on: RunLoop.main)
-//            .assign(to: \.locationStatus, on: self)
-//            .store(in: &cancellables)
         locationManager.locationStatusRelay
             .subscribe {
                 self.locationStatus = $0
