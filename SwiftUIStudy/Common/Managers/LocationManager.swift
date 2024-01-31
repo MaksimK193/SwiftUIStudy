@@ -8,11 +8,13 @@
 import Foundation
 import Combine
 import CoreLocation
+import RxSwift
+import RxRelay
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
-    let locationPublisher = PassthroughSubject<CLLocation, Never>()
-    let locationStatusPublisher = PassthroughSubject<CLAuthorizationStatus, Never>()
+    let locationRelay = BehaviorRelay(value: CLLocation())
+    let locationStatusRelay = BehaviorRelay<CLAuthorizationStatus>(value: .notDetermined)
     var locationStatus: CLAuthorizationStatus?
     var lastLocation: CLLocation?
 
@@ -51,12 +53,13 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         locationStatus = status
-        locationStatusPublisher.send(status)
+        locationStatusRelay.accept(status)
         checkLocationAuth()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        locationPublisher.send(location)
+        locationRelay.accept(location)
+        print("locManager: \(location)")
     }
 }

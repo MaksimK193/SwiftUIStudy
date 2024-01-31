@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import CoreLocation
 import YandexMapsMobile
+import RxSwift
 
 class YandexMapLocationManager: ObservableObject {
     private let locationManager = LocationManager()
@@ -20,6 +21,8 @@ class YandexMapLocationManager: ObservableObject {
     private var drivingSession: YMKDrivingSession?
     @Published var lastUserLocation: CLLocation = CLLocation()
     private var cancellables = Set<AnyCancellable>()
+    
+    private let disposeBag = DisposeBag()
     
     lazy var map: YMKMap = {
         return mapView.mapWindow.map
@@ -45,9 +48,13 @@ class YandexMapLocationManager: ObservableObject {
     }
     
     func setupLocationUpdates() {
-        locationManager.locationPublisher
-            .assign(to: \.lastUserLocation, on: self)
-            .store(in: &cancellables)
+//        locationManager.locationPublisher
+//            .assign(to: \.lastUserLocation, on: self)
+//            .store(in: &cancellables)
+        locationManager.locationRelay.subscribe(onNext: { [weak self] location in
+            print(location)
+            self?.lastUserLocation = location
+        }).disposed(by: disposeBag)
     }
     
     func setupFirstLocation() {
