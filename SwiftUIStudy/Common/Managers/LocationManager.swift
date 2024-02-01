@@ -12,7 +12,7 @@ import RxRelay
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
-    let locationRelay = BehaviorRelay(value: CLLocation())
+    let locationRelay = PublishRelay<CLLocation>()
     let locationStatusRelay = BehaviorRelay<CLAuthorizationStatus>(value: .notDetermined)
     var locationStatus: CLAuthorizationStatus?
     var lastLocation: CLLocation?

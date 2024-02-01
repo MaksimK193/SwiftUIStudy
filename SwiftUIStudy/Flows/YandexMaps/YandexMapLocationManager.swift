@@ -40,20 +40,29 @@ class YandexMapLocationManager: ObservableObject {
         return options
     }()
     
-    init() {        
+    init() {
         setupLocationUpdates()
         routesCollection = map.mapObjects.add()
     }
     
     func setupLocationUpdates() {
-        locationManager.locationRelay.subscribe(onNext: { [weak self] location in
-            print(location)
-            self?.lastUserLocation = location
-        }).disposed(by: disposeBag)
+        locationManager.locationRelay
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] location in
+                self?.lastUserLocation = location
+            }).disposed(by: disposeBag)
     }
     
     func setupFirstLocation() {
-        lastUserLocation = locationManager.locationManager.location ?? CLLocation()
+        locationManager.locationRelay
+            .element(at: 1)
+            .take(1)
+            .asSingle()
+            .subscribe(onSuccess: { [weak self] location in
+                self?.lastUserLocation = location
+            })
+            .disposed(by: disposeBag)
+        
         self.currentUserLocation()
     }
     
@@ -62,7 +71,6 @@ class YandexMapLocationManager: ObservableObject {
     }
     
     func centerMapLocation(target location: YMKPoint?, map: YMKMapView) {
-        
         guard let location = location else { return }
         
         map.mapWindow.map.move(
@@ -74,8 +82,9 @@ class YandexMapLocationManager: ObservableObject {
 
 extension YandexMapLocationManager {
     func createRoute(point: YMKPoint) {
+        let lastUserYMKPoint = YMKPoint(latitude: lastUserLocation.coordinate.latitude, longitude: lastUserLocation.coordinate.longitude)
         let points = [
-            YMKRequestPoint(point: YMKPoint(latitude: lastUserLocation.coordinate.latitude, longitude: lastUserLocation.coordinate.longitude), type: .waypoint, pointContext: nil, drivingArrivalPointId: nil),
+            YMKRequestPoint(point: lastUserYMKPoint, type: .waypoint, pointContext: nil, drivingArrivalPointId: nil),
             YMKRequestPoint(point: point, type: .waypoint, pointContext: nil, drivingArrivalPointId: nil)
         ]
         
