@@ -20,6 +20,8 @@ class YandexMapLocationManager: ObservableObject {
     private var drivingSession: YMKDrivingSession?
     @Published var lastUserLocation: CLLocation = CLLocation()
     
+    @Published var shouldOnLocation = false
+    
     private let disposeBag = DisposeBag()
     
     lazy var map: YMKMap = {
@@ -41,6 +43,7 @@ class YandexMapLocationManager: ObservableObject {
     }()
     
     init() {
+        setupLocationStatusUpdates()
         setupLocationUpdates()
         routesCollection = map.mapObjects.add()
     }
@@ -64,6 +67,26 @@ class YandexMapLocationManager: ObservableObject {
             .disposed(by: disposeBag)
         
         self.currentUserLocation()
+    }
+    
+    func setupLocationStatusUpdates() {
+        locationManager.locationStatusRelay
+            .subscribe(onNext: { status in
+                switch status {
+                case .notDetermined:
+                    self.shouldOnLocation = true
+                case .restricted:
+                    self.shouldOnLocation = true
+                case .denied:
+                    self.shouldOnLocation = true
+                case .authorizedAlways:
+                    self.shouldOnLocation = false
+                case .authorizedWhenInUse:
+                    self.shouldOnLocation = false
+                @unknown default:
+                    self.shouldOnLocation = true
+                }
+            }).disposed(by: disposeBag)
     }
     
     func currentUserLocation() {

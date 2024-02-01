@@ -27,7 +27,6 @@ class GeoTrackViewModel: ObservableObject {
     func setupLocationUpdates() {
         locationManager.locationRelay.subscribe { [weak self] location in
             self?.addCoordinate(longitude: location.coordinate.longitude, latitude: location.coordinate.latitude, date: location.timestamp)
-            print(location)
         }.disposed(by: disposeBag)
     }
     

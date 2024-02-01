@@ -64,3 +64,5 @@
 "auth.button.FaceID" = "FaceID";
 "auth.alert.title.incorrectPasswordOrLogin" = "Некорректный логин или пароль";
 "auth.alert.title.incorrectFaceID" = "Некорректный Face ID";
+
+"yandexMap.alert.cancelButton" = "Отмена";

@@ -25,7 +25,7 @@ struct GeoTrackView: View {
                                           action: {
                                               UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                                           }),
-                  secondaryButton: .default(Text(L10n.GeoTrack.Button.allowTracking)))
+                  secondaryButton: .default(Text(L10n.GeoTrack.Alert.cancelButton)))
         }
     }
 }
