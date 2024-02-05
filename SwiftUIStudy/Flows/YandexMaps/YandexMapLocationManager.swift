@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import Combine
 import CoreLocation
 import YandexMapsMobile
+import RxSwift
 
 class YandexMapLocationManager: ObservableObject {
     private let locationManager = LocationManager()
@@ -19,7 +19,10 @@ class YandexMapLocationManager: ObservableObject {
     private var searchSession: YMKSearchSession?
     private var drivingSession: YMKDrivingSession?
     @Published var lastUserLocation: CLLocation = CLLocation()
-    private var cancellables = Set<AnyCancellable>()
+    
+    @Published var shouldOnLocation = false
+    
+    private let disposeBag = DisposeBag()
     
     lazy var map: YMKMap = {
         return mapView.mapWindow.map
@@ -39,20 +42,51 @@ class YandexMapLocationManager: ObservableObject {
         return options
     }()
     
-    init() {        
+    init() {
+        setupLocationStatusUpdates()
         setupLocationUpdates()
         routesCollection = map.mapObjects.add()
     }
     
     func setupLocationUpdates() {
-        locationManager.locationPublisher
-            .assign(to: \.lastUserLocation, on: self)
-            .store(in: &cancellables)
+        locationManager.locationRelay
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] location in
+                self?.lastUserLocation = location
+            }).disposed(by: disposeBag)
     }
     
     func setupFirstLocation() {
-        lastUserLocation = locationManager.locationManager.location ?? CLLocation()
+        locationManager.locationRelay
+            .element(at: 1)
+            .take(1)
+            .asSingle()
+            .subscribe(onSuccess: { [weak self] location in
+                self?.lastUserLocation = location
+            })
+            .disposed(by: disposeBag)
+        
         self.currentUserLocation()
+    }
+    
+    func setupLocationStatusUpdates() {
+        locationManager.locationStatusRelay
+            .subscribe(onNext: { status in
+                switch status {
+                case .notDetermined:
+                    self.shouldOnLocation = true
+                case .restricted:
+                    self.shouldOnLocation = true
+                case .denied:
+                    self.shouldOnLocation = true
+                case .authorizedAlways:
+                    self.shouldOnLocation = false
+                case .authorizedWhenInUse:
+                    self.shouldOnLocation = false
+                @unknown default:
+                    self.shouldOnLocation = true
+                }
+            }).disposed(by: disposeBag)
     }
     
     func currentUserLocation() {
@@ -60,7 +94,6 @@ class YandexMapLocationManager: ObservableObject {
     }
     
     func centerMapLocation(target location: YMKPoint?, map: YMKMapView) {
-        
         guard let location = location else { return }
         
         map.mapWindow.map.move(
@@ -72,8 +105,9 @@ class YandexMapLocationManager: ObservableObject {
 
 extension YandexMapLocationManager {
     func createRoute(point: YMKPoint) {
+        let lastUserYMKPoint = YMKPoint(latitude: lastUserLocation.coordinate.latitude, longitude: lastUserLocation.coordinate.longitude)
         let points = [
-            YMKRequestPoint(point: YMKPoint(latitude: lastUserLocation.coordinate.latitude, longitude: lastUserLocation.coordinate.longitude), type: .waypoint, pointContext: nil, drivingArrivalPointId: nil),
+            YMKRequestPoint(point: lastUserYMKPoint, type: .waypoint, pointContext: nil, drivingArrivalPointId: nil),
             YMKRequestPoint(point: point, type: .waypoint, pointContext: nil, drivingArrivalPointId: nil)
         ]
         

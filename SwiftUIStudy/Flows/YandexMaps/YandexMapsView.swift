@@ -10,7 +10,9 @@ import YandexMapsMobile
 
 struct YandexMapsView: View {
     @ObservedObject var yandexLocationManager = YandexMapLocationManager()
+    @State private var showAlert = false
     @State private var searchRequestText = ""
+    
     var body: some View {
         ZStack {
             YandexMapView()
@@ -20,8 +22,8 @@ struct YandexMapsView: View {
                 TextField("Search", text: $searchRequestText) {
                     yandexLocationManager.search(withText: searchRequestText)
                 }
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
+                .textFieldStyle(.roundedBorder)
+                .padding()
                 Spacer()
                 HStack {
                     Spacer()
@@ -40,6 +42,17 @@ struct YandexMapsView: View {
         }
         .onAppear {
             yandexLocationManager.setupFirstLocation()
+            showAlert = yandexLocationManager.shouldOnLocation
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text(L10n.GeoTrack.Alert.title),
+                  primaryButton: .default(Text(L10n.GeoTrack.Alert.settingsButton),
+                                          action: {
+                if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(settingsURL)
+                }
+            }),
+                  secondaryButton: .default(Text(L10n.YandexMap.Alert.cancelButton)))
         }
     }
 }

@@ -505,6 +505,7 @@
 		CEB574562B61081400E95DE8 /* YandexMaps */ = {
 			isa = PBXGroup;
 			children = (
+				CEB574522B60F87B00E95DE8 /* YandexMapLocationManager.swift */,
 				CEB574572B61082300E95DE8 /* YandexMapsView.swift */,
 			);
 			path = YandexMaps;
@@ -595,7 +596,6 @@
 				CEC3274B2B2AF4E80078C5B2 /* LocalNotificationManager.swift */,
 				CEC3277F2B2C84C30078C5B2 /* GetStreamManager.swift */,
 				CE0CF7F42B359E5900FEEA84 /* LanguageManager.swift */,
-				CEB574522B60F87B00E95DE8 /* YandexMapLocationManager.swift */,
 				CEB574542B60F8DB00E95DE8 /* LocationManager.swift */,
 			);
 			path = Managers;
