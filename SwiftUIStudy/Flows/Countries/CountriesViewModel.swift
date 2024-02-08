@@ -8,11 +8,14 @@
 import Foundation
 import CoreData
 import UIKit
+import RxSwift
+import RxAlamofire
 
 class CountriesViewModel: ObservableObject {
     private let networkManager = NetworkManager.shared
     private let imageLoader = ImageLoader()
     private let coreDataManager = CoreDataManager.shared
+    private let disposeBag = DisposeBag()
     var next = ""
     
     @Published var countriesCoreData: [CountryEntity] = []
@@ -22,23 +25,29 @@ class CountriesViewModel: ObservableObject {
     }
     
     func fetch(next: String = "https://rawgit.com/NikitaAsabin/799e4502c9fc3e0ea7af439b2dfd88fa/raw/7f5c6c66358501f72fada21e04d75f64474a7888/page1.json") {
-        networkManager.request(gateway: JSONNetworkGateway(path: next), parameters: [:], resultType: CountryResponse.self) { result in
-            switch result {
-            case .success(let data):
-                self.next = data?.next ?? ""
-                data?.countries.compactMap { country in
-                    DispatchQueue.main.async {
-                        let contains = self.countriesCoreData.contains { $0.name == country.name }
-                        if !contains  {
-                            self.addCountry(country: country)
+        let gateway = JSONNetworkGateway(path: next)
+        RxAlamofire
+            .requestJSON(gateway.method,
+                       gateway.path,
+                       headers: gateway.headers)
+            .debug()
+            .subscribe(onNext: { [weak self] response, json in
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: json)
+                    let data = try JSONDecoder().decode(CountryResponse.self, from: jsonData)
+                    self?.next = data.next
+                    data.countries.compactMap { country in
+                        let contains = self?.countriesCoreData.contains { $0.name == country.name }
+                        if contains == false  {
+                            self?.addCountry(country: country)
                         }
+                        self?.getCountries()
                     }
-                    self.getCountries()
+                } catch {
+                    print("Error serialization")
                 }
-            case .failure(let failure):
-                print(failure)
-            }
-        }
+            })
+            .disposed(by: disposeBag)
     }
 }
 
