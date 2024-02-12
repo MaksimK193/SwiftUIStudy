@@ -11,7 +11,7 @@ import Alamofire
 final class WeatherNetworkGateway: NetworkGatewayProtocol {
     var headers: HTTPHeaders = ["X-Yandex-API-Key": "26792f4a-06cb-4c0c-aecd-b5ca965b50ab"]
     var method: HTTPMethod = .get
-    var path: String = "v2/forecast?"
+    var path: String = "https://api.weather.yandex.ru/v2/forecast?"
 }
 
 final class JSONNetworkGateway: NetworkGatewayProtocol {
