@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Stinsen
+import YandexMobileMetrica
 
 struct SidebarView: View {
     @StateObject private var vm = SidebarViewModel()
@@ -39,6 +40,9 @@ struct SidebarView: View {
                 .gesture(drag)
         }
         .edgesIgnoringSafeArea(.all)
+        .onAppear {
+            YMMYandexMetrica.reportEvent("SidebarScreen opened")
+        }
     }
     
     var content: some View {
@@ -95,6 +99,6 @@ struct SidebarView: View {
 
 struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(stateManager: AppStateManager.shared)
+        MainView(stateManager: AppStateManager.shared)
     }
 }

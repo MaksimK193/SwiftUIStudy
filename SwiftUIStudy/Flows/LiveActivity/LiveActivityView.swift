@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ActivityKit
+import YandexMobileMetrica
 
 struct LiveActivityView: View {
     @State private var activity: Activity<TestAttributes>? = nil
@@ -14,7 +15,9 @@ struct LiveActivityView: View {
     
     var body: some View {
         Text(L10n.LiveActivity.Label.liveActivity)
-        
+            .onAppear {
+                YMMYandexMetrica.reportEvent("LiveActivityScreen opened")
+            }
         Button(L10n.LiveActivity.Button.startActivity) {
             if ActivityAuthorizationInfo().areActivitiesEnabled {
                 do {

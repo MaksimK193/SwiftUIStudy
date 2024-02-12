@@ -8,6 +8,7 @@
 import SwiftUI
 import UIKit
 import AVFoundation
+import YandexMobileMetrica
 
 protocol CamViewControllerDelegate: AnyObject {
     func takePhoto(image: UIImage)
@@ -34,6 +35,7 @@ final class CamViewController: UIViewController {
         checkPermissions()
         setupPreviewLayer()
         setupUI()
+        YMMYandexMetrica.reportEvent("CamViewScreen opened")
     }
     
     private func setupPreviewLayer() {

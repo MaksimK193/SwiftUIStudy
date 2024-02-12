@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YandexMobileMetrica
 
 struct ChangeLanguageView: View {
     @State private var language: LocalizationLanguage
@@ -28,6 +29,9 @@ struct ChangeLanguageView: View {
         }
         .pickerStyle(.segmented)
         .frame(maxWidth: 200)
+        .onAppear {
+            YMMYandexMetrica.reportEvent("ChangeLanguageScreen opened")
+        }
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YandexMobileMetrica
 
 struct SwiftDataView: View {
     @State private var viewModel = SwiftDataViewModel()
@@ -45,6 +46,9 @@ struct SwiftDataView: View {
             }
             InactiveView()
                 .opacity(stateManager.isActive ? 0 : 100)
+        }
+        .onAppear {
+            YMMYandexMetrica.reportEvent("SwiftDataScreen opened")
         }
     }
 }

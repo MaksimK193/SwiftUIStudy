@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YandexMobileMetrica
 
 struct ScheduleNotification: View {
     @State private var notificationDate = Date.now
@@ -24,6 +25,9 @@ struct ScheduleNotification: View {
             .buttonStyle(.bordered)
         }
         .frame(maxWidth: 190)
+        .onAppear {
+            YMMYandexMetrica.reportEvent("ScheduleNotificationScreen opened")
+        }
     }
     
     func scheduleNotification() {

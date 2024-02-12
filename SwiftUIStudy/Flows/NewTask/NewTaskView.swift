@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YandexMobileMetrica
 
 struct NewTaskView: View {
     @State var text: String
@@ -17,6 +18,9 @@ struct NewTaskView: View {
                 .navigationTitle(text)
             InactiveView()
                 .opacity(stateManager.isActive ? 0 : 100)
+        }
+        .onAppear {
+            YMMYandexMetrica.reportEvent("NewTaskScreen opened")
         }
     }
 }

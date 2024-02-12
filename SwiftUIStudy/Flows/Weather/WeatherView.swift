@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YandexMobileMetrica
 
 struct WeatherView: View {
     @ObservedObject private var viewModel = WeatherViewModel()
@@ -27,6 +28,9 @@ struct WeatherView: View {
             }
             InactiveView()
                 .opacity(stateManager.isActive ? 0 : 100)
+        }
+        .onAppear {
+            YMMYandexMetrica.reportEvent("WeatherScreen opened")
         }
     }
 }

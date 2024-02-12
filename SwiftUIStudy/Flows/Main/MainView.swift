@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  SwiftUIStudy
 //
 //  Created by USER on 15.11.2023.
@@ -7,8 +7,9 @@
 
 import SwiftUI
 import Stinsen
+import YandexMobileMetrica
 
-struct ContentView: View {
+struct MainView: View {
     @State var isSideBarOpened = false
     @ObservedObject var stateManager: AppStateManager
     
@@ -32,6 +33,9 @@ struct ContentView: View {
                 .opacity(stateManager.isActive ? 0 : 100)
         }
         .gesture(drag)
+        .onAppear {
+            YMMYandexMetrica.reportEvent("MainScreen opened")
+        }
     }
     
     @ViewBuilder var button: some View {
@@ -44,6 +48,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(stateManager: AppStateManager.shared)
+        MainView(stateManager: AppStateManager.shared)
     }
 }
