@@ -25,6 +25,7 @@
 "sidebar.navigationRow.avatar" = "Avatars";
 "sidebar.navigationRow.countries" = "JSON Countries";
 "sidebar.navigationRow.yandexMaps" = "Yandex Maps";
+"sidebar.navigationRow.realm" = "Realm";
 
 "coreData.button.addDepartments" = "Add departments";
 "coreData.button.addEmployee" = "Add employee";

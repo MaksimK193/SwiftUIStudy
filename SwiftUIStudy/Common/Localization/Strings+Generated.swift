@@ -243,6 +243,10 @@ enum L10n {
             static var photoCompression: String {
                 return L10n.tr("Localizable", "sidebar.navigationRow.photoCompression")
             }
+            /// Realm
+            static var realm: String {
+                return L10n.tr("Localizable", "sidebar.navigationRow.realm")
+            }
             /// Schedule Notification
             static var scheduleNotification: String {
                 return L10n.tr("Localizable", "sidebar.navigationRow.scheduleNotification")
