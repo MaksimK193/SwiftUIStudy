@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ScalingHeaderScrollView
+import YandexMobileMetrica
 
 struct DetailCountryView: View {
     
@@ -37,6 +38,9 @@ struct DetailCountryView: View {
         .headerAlignment(.top)
         .ignoresSafeArea()
         .toolbarBackground(.hidden, for: .navigationBar)
+        .onAppear {
+            YMMYandexMetrica.reportEvent("DetailCountryScreen (\(countryModel.name ?? "")) opened")
+        }
     }
     
     @ViewBuilder

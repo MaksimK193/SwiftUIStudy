@@ -62,7 +62,7 @@ extension ContentCoordinator {
     }
     
     @ViewBuilder func makeStart() -> some View {
-        ContentView(stateManager: AppStateManager.shared)
+        MainView(stateManager: AppStateManager.shared)
     }
     
     @ViewBuilder func makeScheduleNotification() -> some View {

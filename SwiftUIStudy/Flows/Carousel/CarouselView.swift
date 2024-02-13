@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YandexMobileMetrica
 
 struct CarouselView: View {
     @ObservedObject var viewModel: CarouselViewModel
@@ -37,6 +38,9 @@ struct CarouselView: View {
                 viewModel.selectedPage = 0
             }
         })
+        .onAppear {
+            YMMYandexMetrica.reportEvent("CarouselScreen opened")
+        }
     }
 }
 

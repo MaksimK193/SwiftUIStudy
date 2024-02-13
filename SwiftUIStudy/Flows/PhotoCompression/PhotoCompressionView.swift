@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YandexMobileMetrica
 
 struct PhotoCompressionView: View {
     @State var imageData: UIImage = UIImage()
@@ -29,6 +30,9 @@ struct PhotoCompressionView: View {
             }
             InactiveView()
                 .opacity(stateManager.isActive ? 0 : 100)
+        }
+        .onAppear {
+            YMMYandexMetrica.reportEvent("PhotoCompressionScreen opened")
         }
     }
     

@@ -5,8 +5,9 @@
 //  Created by USER on 27.12.2023.
 //
 
-import LocalAuthentication
 import SwiftUI
+import LocalAuthentication
+import YandexMobileMetrica
 
 struct AuthView: View {
     @EnvironmentObject private var authRouter: AuthCoordinator.Router
@@ -43,6 +44,9 @@ struct AuthView: View {
         .padding()
         .alert(isPresented: $showAlert) {
             Alert(title: Text(alertTitleText))
+        }
+        .onAppear {
+            YMMYandexMetrica.reportEvent("AuthScreen opened")
         }
     }
     

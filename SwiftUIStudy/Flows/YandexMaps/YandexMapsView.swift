@@ -7,6 +7,7 @@
 
 import SwiftUI
 import YandexMapsMobile
+import YandexMobileMetrica
 
 struct YandexMapsView: View {
     @ObservedObject var yandexLocationManager = YandexMapLocationManager()
@@ -41,6 +42,7 @@ struct YandexMapsView: View {
             }
         }
         .onAppear {
+            YMMYandexMetrica.reportEvent("YandexMapsScreen opened")
             yandexLocationManager.setupFirstLocation()
             showAlert = yandexLocationManager.shouldOnLocation
         }

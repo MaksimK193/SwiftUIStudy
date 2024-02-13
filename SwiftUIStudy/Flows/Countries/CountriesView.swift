@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YandexMobileMetrica
 
 struct CountriesView: View {
     @ObservedObject private var countriesViewModel = CountriesViewModel()
@@ -29,6 +30,7 @@ struct CountriesView: View {
             .listStyle(.plain)
             .navigationTitle("Countries")
             .onAppear {
+                YMMYandexMetrica.reportEvent("YandexMapsScreen opened")
                 countriesViewModel.fetch()
                 countriesViewModel.getCountries()
             }

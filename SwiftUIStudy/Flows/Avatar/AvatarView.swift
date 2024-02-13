@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YandexMobileMetrica
 
 struct AvatarView: View {
     @StateObject private var viewModel = AvatarViewModel()
@@ -46,6 +47,9 @@ struct AvatarView: View {
                     
                 }
             }
+        }
+        .onAppear {
+            YMMYandexMetrica.reportEvent("AvatarScreen opened")
         }
     }
 }

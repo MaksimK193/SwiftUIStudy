@@ -8,6 +8,7 @@
 import SwiftUI
 import StreamChat
 import StreamChatSwiftUI
+import YandexMobileMetrica
 
 struct GetStreamChatView: View {
     let getStreamManager: GetStreamManager?
@@ -34,6 +35,9 @@ struct GetStreamChatView: View {
                     channelDestination: DefaultViewFactory.shared.makeChannelDestination())
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing, content: { newChatButton })
+        }
+        .onAppear {
+            YMMYandexMetrica.reportEvent("GetStreamChatScreen opened")
         }
     }
     

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YandexMobileMetrica
 
 struct InactiveView: View {
     var body: some View {
@@ -15,6 +16,9 @@ struct InactiveView: View {
                 .fontWeight(.ultraLight)
         }
         .ignoresSafeArea()
+        .onAppear {
+            YMMYandexMetrica.reportEvent("InactiveScreen opened")
+        }
     }
 }
 

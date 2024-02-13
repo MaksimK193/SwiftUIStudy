@@ -7,12 +7,16 @@
 
 import SwiftUI
 import UserNotifications
+import YandexMobileMetrica
 
 struct NotificationActionsView: View {
     let localNotificationManager: LocalNotificationManager
     
     var body: some View {
         Text("Notification Actions")
+            .onAppear {
+                YMMYandexMetrica.reportEvent("NotificationActionsScreen opened")
+            }
     }
     
     init(localNotificationManager: LocalNotificationManager) {

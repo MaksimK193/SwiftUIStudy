@@ -7,6 +7,7 @@
 
 import CoreData
 import SwiftUI
+import YandexMobileMetrica
 
 struct CoreDataView: View {
     @StateObject var vm = CoreDataViewModel()
@@ -31,6 +32,9 @@ struct CoreDataView: View {
             .accessibilityIdentifier("coreDataAddButton")
             InactiveView()
                 .opacity(stateManager.isActive ? 0 : 100)
+        }
+        .onAppear {
+            YMMYandexMetrica.reportEvent("CoreDataScreen opened")
         }
     }
 }
@@ -98,5 +102,5 @@ struct EmployeeRowView: View {
 }
 
 #Preview {
-    ContentView(stateManager: AppStateManager.shared)
+    MainView(stateManager: AppStateManager.shared)
 }

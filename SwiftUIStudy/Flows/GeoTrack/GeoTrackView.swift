@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YandexMobileMetrica
 
 struct GeoTrackView: View {
     @StateObject private var viewModel = GeoTrackViewModel()
@@ -26,6 +27,9 @@ struct GeoTrackView: View {
                                               UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                                           }),
                   secondaryButton: .default(Text(L10n.GeoTrack.Alert.cancelButton)))
+        }
+        .onAppear {
+            YMMYandexMetrica.reportEvent("GeoTrackScreen opened")
         }
     }
 }
