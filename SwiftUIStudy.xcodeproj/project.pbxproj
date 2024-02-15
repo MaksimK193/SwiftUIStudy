@@ -67,6 +67,10 @@
 		CEA709D12B7A5152004B954B /* ContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA709D02B7A5152004B954B /* ContentCoordinator.swift */; };
 		CEA709D22B7A5152004B954B /* ContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA709D02B7A5152004B954B /* ContentCoordinator.swift */; };
 		CEA709D32B7A5152004B954B /* ContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA709D02B7A5152004B954B /* ContentCoordinator.swift */; };
+		CEA709D62B7B5A90004B954B /* RealmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA709D52B7B5A90004B954B /* RealmView.swift */; };
+		CEA709DB2B7B5CED004B954B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CEA709DA2B7B5CED004B954B /* Realm */; };
+		CEA709DD2B7B5CED004B954B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEA709DC2B7B5CED004B954B /* RealmSwift */; };
+		CEA70A042B7B8F6F004B954B /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA70A032B7B8F6F004B954B /* CarModel.swift */; };
 		CEACB7772B205E7D004144B7 /* PhotoCompressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6329952B15CFAB0020D37F /* PhotoCompressionView.swift */; };
 		CEACB7782B205F73004144B7 /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5962612B15F101005BDEEB /* AppStateManager.swift */; };
 		CEACB7792B205F8D004144B7 /* CamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59627E2B172926005BDEEB /* CamViewController.swift */; };
@@ -204,6 +208,8 @@
 		CE7BCAF02B04F2AC0015230C /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		CE7BCAF22B0512EE0015230C /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		CEA709D02B7A5152004B954B /* ContentCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCoordinator.swift; sourceTree = "<group>"; };
+		CEA709D52B7B5A90004B954B /* RealmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmView.swift; sourceTree = "<group>"; };
+		CEA70A032B7B8F6F004B954B /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		CEB574502B60F69800E95DE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB574522B60F87B00E95DE8 /* YandexMapLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapLocationManager.swift; sourceTree = "<group>"; };
 		CEB574542B60F8DB00E95DE8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -253,7 +259,9 @@
 				CE0D61812B186B1200E93536 /* KeychainSwift in Frameworks */,
 				CE0647A52B0F959500FDEE12 /* Alamofire in Frameworks */,
 				CEA709C52B7A40E5004B954B /* YandexMobileMetrica in Frameworks */,
+				CEA709DB2B7B5CED004B954B /* Realm in Frameworks */,
 				CE325CB82B590C3400BEAF89 /* ScalingHeaderScrollView in Frameworks */,
+				CEA709DD2B7B5CED004B954B /* RealmSwift in Frameworks */,
 				1CA746F998B39A09AD3B654A /* Pods_SwiftUIStudy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +516,15 @@
 			path = SwiftUIStudyUITests;
 			sourceTree = "<group>";
 		};
+		CEA709D42B7B5A77004B954B /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				CEA709D52B7B5A90004B954B /* RealmView.swift */,
+				CEA70A032B7B8F6F004B954B /* CarModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		CEB574562B61081400E95DE8 /* YandexMaps */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +536,7 @@
 		CEBC557A2B05FD88007F9B19 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CEA709D42B7B5A77004B954B /* Realm */,
 				CEB574562B61081400E95DE8 /* YandexMaps */,
 				CED345962B580920005F65CB /* Countries */,
 				CE3507712B514ED6005DC4C3 /* Avatar */,
@@ -700,6 +718,8 @@
 				CE325CB72B590C3400BEAF89 /* ScalingHeaderScrollView */,
 				CEA709C42B7A40E5004B954B /* YandexMobileMetrica */,
 				CEA709C62B7A40E5004B954B /* YandexMobileMetricaCrashes */,
+				CEA709DA2B7B5CED004B954B /* Realm */,
+				CEA709DC2B7B5CED004B954B /* RealmSwift */,
 			);
 			productName = SwiftUIStudy;
 			productReference = CE7BCAC22B04EAB90015230C /* SwiftUIStudy.app */;
@@ -789,6 +809,7 @@
 				CEC3275B2B2B34C40078C5B2 /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */,
 				CE325CB62B590C3400BEAF89 /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */,
 				CEA709C32B7A40E5004B954B /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */,
+				CEA709D92B7B5CED004B954B /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = CE7BCAC32B04EAB90015230C /* Products */;
 			projectDirPath = "";
@@ -1030,6 +1051,7 @@
 				CE325CBA2B59605700BEAF89 /* ImageLoader.swift in Sources */,
 				CE0647AB2B107AA200FDEE12 /* NetworkManager.swift in Sources */,
 				CE3507782B518A2C005DC4C3 /* Avatars.xcdatamodeld in Sources */,
+				CEA709D62B7B5A90004B954B /* RealmView.swift in Sources */,
 				CE0CF7F82B397D1C00FEEA84 /* CarouselListView.swift in Sources */,
 				CE5962652B17209E005BDEEB /* CameraService.swift in Sources */,
 				CEBC55792B05FCBF007F9B19 /* SidebarViewModel.swift in Sources */,
@@ -1056,6 +1078,7 @@
 				CE7BCAC62B04EAB90015230C /* SwiftUIStudyApp.swift in Sources */,
 				CE2A27CE2B0C994A003F9601 /* SwiftDataView.swift in Sources */,
 				CEBC558D2B0B387B007F9B19 /* CoreDataManager.swift in Sources */,
+				CEA70A042B7B8F6F004B954B /* CarModel.swift in Sources */,
 				CE3507752B5189AD005DC4C3 /* AvatarViewModel.swift in Sources */,
 				CED3459A2B580D92005F65CB /* DetailCountryView.swift in Sources */,
 				CE0D617E2B186A6000E93536 /* TokenStorage.swift in Sources */,
@@ -1596,6 +1619,14 @@
 				minimumVersion = 4.5.2;
 			};
 		};
+		CEA709D92B7B5CED004B954B /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		CEC3275B2B2B34C40078C5B2 /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/getstream/stream-chat-swiftui";
@@ -1636,6 +1667,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CEA709C32B7A40E5004B954B /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */;
 			productName = YandexMobileMetricaCrashes;
+		};
+		CEA709DA2B7B5CED004B954B /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEA709D92B7B5CED004B954B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		CEA709DC2B7B5CED004B954B /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEA709D92B7B5CED004B954B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 		CEC3275C2B2B34C50078C5B2 /* StreamChatSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;

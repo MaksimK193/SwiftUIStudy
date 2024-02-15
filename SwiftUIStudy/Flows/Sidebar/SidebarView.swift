@@ -81,6 +81,8 @@ struct SidebarView: View {
                             sidebarRouter.route(to: \.countries)
                         case .yandexMaps:
                             sidebarRouter.route(to: \.yandexMaps)
+                        case .realm:
+                            sidebarRouter.route(to: \.realm)
                         }
                     }
                     .accessibilityIdentifier("\(item.screen.rawValue)")

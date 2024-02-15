@@ -11,8 +11,8 @@ import YandexMobileMetrica
 
 struct AuthView: View {
     @EnvironmentObject private var authRouter: AuthCoordinator.Router
-    @State private var login: String = ""
-    @State private var password: String = ""
+    @State private var login: String = "123"
+    @State private var password: String = "123"
     @State private var showAlert: Bool = false
     @State private var alertTitleText = ""
     private let correctLogin = "123"
