@@ -44,13 +44,13 @@ final class MainCoordinator: NavigationCoordinatable {
                     if self.routeAfterDeepLink.0 {
                         guard let screen = self.routeAfterDeepLink.1 else { return }
                         self.route(to: screen)
+                        self.routeAfterDeepLink = (false, nil)
                     }
                 case .unauthenticated:
                     self.root(\.auth)
                 }
             }
             .onOpenURL { url in
-                print(url)
                 guard let screen = self.handleIncomingURL(url) else {
                     print("Invalid deeplink")
                     return
